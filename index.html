@@ -5,75 +5,88 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🇺🇸 US Market Morning Briefing</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
   * { margin:0; padding:0; box-sizing:border-box; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: #0b1622;
-    color: #dde6f0;
+    font-family: 'Noto Sans KR', -apple-system, sans-serif;
+    background: #e2e8f0;
+    color: #0f172a;
     min-height: 100vh;
     padding: 24px;
   }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+    padding: 28px 32px;
+  }
   .header {
     text-align: center;
-    padding: 32px 0 24px;
-    border-bottom: 2px solid #3b82f6;
-    margin-bottom: 28px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2.5px solid #0f172a;
   }
-  .header h1 { font-size: 26px; font-weight: 800; color: #e8f4ff; letter-spacing: -0.5px; }
-  .header p { font-size: 13px; color: #8ba8bf; margin-top: 6px; }
-  .list { max-width: 760px; margin: 0 auto; }
+  .header h1 { font-size: 22px; font-weight: 900; color: #0f172a; letter-spacing: -0.5px; }
+  .header p { font-size: 12px; color: #64748b; margin-top: 6px; }
   .item {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #111f2e;
-    border: 1px solid #1e3a52;
-    border-radius: 10px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
     padding: 14px 18px;
     margin-bottom: 10px;
     text-decoration: none;
     color: inherit;
-    transition: background 0.2s, border-color 0.2s;
+    transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
   }
-  .item:hover { background: #16293d; border-color: #3b82f6; }
+  .item:hover { background: #f8fafc; border-color: #2563eb; box-shadow: 0 2px 8px rgba(37,99,235,0.08); }
   .item.new { border-left: 3px solid #dc2626; }
-  .item-date { font-size: 15px; font-weight: 700; color: #e8f4ff; }
-  .item-sub { font-size: 11px; color: #8ba8bf; margin-top: 3px; }
+  .item-date { font-size: 14px; font-weight: 800; color: #0f172a; }
+  .item-sub { font-size: 11px; color: #64748b; margin-top: 3px; line-height: 1.5; }
   .badge-new {
     background: #dc2626;
     color: #fff;
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 800;
     padding: 2px 8px;
     border-radius: 4px;
+    letter-spacing: 0.5px;
   }
   .badge-link {
-    color: #3b82f6;
+    color: #2563eb;
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 700;
   }
   .footer {
     text-align: center;
-    margin-top: 32px;
-    font-size: 11px;
-    color: #4a6a85;
+    margin-top: 24px;
+    font-size: 10px;
+    color: #94a3b8;
+    line-height: 1.6;
   }
 </style>
 </head>
 <body>
+<div class="wrap">
+
 <div class="header">
   <h1>🇺🇸 US Market Morning Briefing</h1>
   <p>매일 아침 7시 — 전일 미국 시장 마감 요약 브리핑 (IB 스타일 3페이지 A4)</p>
 </div>
 
-<div class="list" id="briefing-list"></div>
+<div id="briefing-list"></div>
 
 <div class="footer">
-  자동 생성 브리핑 — 투자 권유가 아닙니다 &nbsp;|&nbsp; Data: Yahoo Finance (yfinance)
+  ⚠️ 자동 생성 브리핑 — 투자 권유가 아닙니다 &nbsp;|&nbsp; Data: Yahoo Finance (yfinance)
+</div>
+
 </div>
 
 <script>
-// b 배열: 최신 항목이 맨 앞, n:true는 최신 1개에만 표시
 const b = [
   { d: "2026-04-01", label: "2026년 4월 1일 (수)", sub: "3/31 마감 — S&P500 +2.91% / NASDAQ +3.83% / 이란 종전 기대 + NVDA $2B Marvell 투자", n: true },
 ];
