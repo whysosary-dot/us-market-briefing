@@ -3,35 +3,98 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>US Market Morning Briefing</title>
+<title>🇺🇸 US Market Morning Briefing</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
-:root{--ink:#0f172a;--s3:#94a3b8;--s5:#e2e8f0;--w:#fff;--g:#16a34a}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Noto Sans KR',-apple-system,sans-serif;background:#e2e8f0;color:var(--ink)}
-.wrap{max-width:700px;margin:0 auto;padding:40px 20px}
-.hdr{background:linear-gradient(135deg,#0f172a,#1e293b,#334155);border-radius:12px;padding:28px 32px;margin-bottom:24px;color:#fff}
-.hdr h1{font-size:22pt;font-weight:900;letter-spacing:-1px;margin-bottom:6px}
-.hdr p{font-size:10pt;color:#94a3b8}
-.card{background:var(--w);border:1px solid var(--s5);border-radius:10px;margin-bottom:10px;transition:box-shadow .2s}
-.card:hover{box-shadow:0 4px 16px rgba(0,0,0,.08)}
-.card a{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;text-decoration:none;color:var(--ink)}
-.card-date{font-size:13pt;font-weight:800}
-.card-sub{font-size:8pt;color:var(--s3);margin-top:2px}
-.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:7pt;font-weight:700;margin-left:8px;background:#dcfce7;color:var(--g)}
-.ftr{text-align:center;padding:20px;font-size:7pt;color:var(--s3)}
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #0b1622;
+    color: #dde6f0;
+    min-height: 100vh;
+    padding: 24px;
+  }
+  .header {
+    text-align: center;
+    padding: 32px 0 24px;
+    border-bottom: 2px solid #3b82f6;
+    margin-bottom: 28px;
+  }
+  .header h1 { font-size: 26px; font-weight: 800; color: #e8f4ff; letter-spacing: -0.5px; }
+  .header p { font-size: 13px; color: #8ba8bf; margin-top: 6px; }
+  .list { max-width: 760px; margin: 0 auto; }
+  .item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #111f2e;
+    border: 1px solid #1e3a52;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .item:hover { background: #16293d; border-color: #3b82f6; }
+  .item.new { border-left: 3px solid #dc2626; }
+  .item-date { font-size: 15px; font-weight: 700; color: #e8f4ff; }
+  .item-sub { font-size: 11px; color: #8ba8bf; margin-top: 3px; }
+  .badge-new {
+    background: #dc2626;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+  .badge-link {
+    color: #3b82f6;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .footer {
+    text-align: center;
+    margin-top: 32px;
+    font-size: 11px;
+    color: #4a6a85;
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-<div class="hdr"><h1>US Market Morning Briefing</h1><p>Yahoo Finance data | AI auto-generated daily</p></div>
-<div id="bl"></div>
-<div class="ftr"><p>Powered by Claude AI | GitHub Pages</p></div>
+<div class="header">
+  <h1>🇺🇸 US Market Morning Briefing</h1>
+  <p>매일 아침 7시 — 전일 미국 시장 마감 요약 브리핑 (IB 스타일 3페이지 A4)</p>
 </div>
+
+<div class="list" id="briefing-list"></div>
+
+<div class="footer">
+  자동 생성 브리핑 — 투자 권유가 아닙니다 &nbsp;|&nbsp; Data: Yahoo Finance (yfinance)
+</div>
+
 <script>
-const b=[{d:'2026-04-01',f:'briefings/us-market-briefing-2026-04-01.html',l:'Trump Iran flexibility, S&P +1.39%',n:true}];
-const el=document.getElementById('bl');
-b.forEach(x=>{const c=document.createElement('div');c.className='card';c.innerHTML='<a href="'+x.f+'"><div><div class="card-date">'+x.d+(x.n?'<span class="badge">NEW</span>':'')+'</div><div class="card-sub">'+x.l+'</div></div><div style="font-size:16pt;color:#94a3b8">→</div></a>';el.appendChild(c)});
+// b 배열: 최신 항목이 맨 앞, n:true는 최신 1개에만 표시
+const b = [
+  { d: "2026-04-01", label: "2026년 4월 1일 (수)", sub: "3/31 마감 — S&P500 +2.91% / NASDAQ +3.83% / 이란 종전 기대 + NVDA $2B Marvell 투자", n: true },
+];
+
+const list = document.getElementById('briefing-list');
+b.forEach(item => {
+  const a = document.createElement('a');
+  a.className = 'item' + (item.n ? ' new' : '');
+  a.href = `briefings/us-market-briefing-${item.d}.html`;
+  a.innerHTML = `
+    <div>
+      <div class="item-date">${item.label}</div>
+      <div class="item-sub">${item.sub}</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;">
+      ${item.n ? '<span class="badge-new">NEW</span>' : ''}
+      <span class="badge-link">브리핑 보기 →</span>
+    </div>
+  `;
+  list.appendChild(a);
+});
 </script>
 </body>
 </html>
