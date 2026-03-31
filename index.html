@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>US Market Morning Briefing</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+:root{--ink:#0f172a;--s3:#94a3b8;--s5:#e2e8f0;--w:#fff;--g:#16a34a}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans KR',-apple-system,sans-serif;background:#e2e8f0;color:var(--ink)}
+.wrap{max-width:700px;margin:0 auto;padding:40px 20px}
+.hdr{background:linear-gradient(135deg,#0f172a,#1e293b,#334155);border-radius:12px;padding:28px 32px;margin-bottom:24px;color:#fff}
+.hdr h1{font-size:22pt;font-weight:900;letter-spacing:-1px;margin-bottom:6px}
+.hdr p{font-size:10pt;color:#94a3b8}
+.card{background:var(--w);border:1px solid var(--s5);border-radius:10px;margin-bottom:10px;transition:box-shadow .2s}
+.card:hover{box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.card a{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;text-decoration:none;color:var(--ink)}
+.card-date{font-size:13pt;font-weight:800}
+.card-sub{font-size:8pt;color:var(--s3);margin-top:2px}
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:7pt;font-weight:700;margin-left:8px;background:#dcfce7;color:var(--g)}
+.ftr{text-align:center;padding:20px;font-size:7pt;color:var(--s3)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hdr"><h1>US Market Morning Briefing</h1><p>Yahoo Finance data | AI auto-generated daily</p></div>
+<div id="bl"></div>
+<div class="ftr"><p>Powered by Claude AI | GitHub Pages</p></div>
+</div>
+<script>
+const b=[{d:'2026-04-01',f:'briefings/us-market-briefing-2026-04-01.html',l:'Trump Iran flexibility, S&P +1.39%',n:true}];
+const el=document.getElementById('bl');
+b.forEach(x=>{const c=document.createElement('div');c.className='card';c.innerHTML='<a href="'+x.f+'"><div><div class="card-date">'+x.d+(x.n?'<span class="badge">NEW</span>':'')+'</div><div class="card-sub">'+x.l+'</div></div><div style="font-size:16pt;color:#94a3b8">→</div></a>';el.appendChild(c)});
+</script>
+</body>
+</html>
