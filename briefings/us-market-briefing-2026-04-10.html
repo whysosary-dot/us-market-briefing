@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>미국 시장 모닝 브리핑 | 2026.04.10</title>
+<style>
+  @page { size: A4 portrait; margin: 10mm 12mm; }
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+
+  :root {
+    --red: #dc2626; --red-bg: #fef2f2; --red-light: #fee2e2;
+    --blue: #2563eb; --blue-bg: #eff6ff; --blue-light: #dbeafe;
+    --green: #16a34a; --green-bg: #f0fdf4;
+    --amber: #d97706; --amber-bg: #fffbeb;
+    --slate: #334155; --slate2: #64748b; --slate3: #94a3b8;
+    --slate4: #cbd5e1; --slate5: #e2e8f0; --slate6: #f1f5f9;
+    --white: #ffffff; --ink: #0f172a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+  body { font-family: 'Noto Sans KR', -apple-system, sans-serif; color: var(--ink); background: var(--white); font-size: 9pt; line-height: 1.5; }
+  .page { width: 186mm; max-width: 186mm; margin: 0 auto; }
+  .page-break { page-break-before: always; }
+  .nb { page-break-inside: avoid; break-inside: avoid; }
+  @media screen {
+    body { background: #e2e8f0; padding: 24px 0; }
+    .page { background: #fff; padding: 10mm 12mm; box-shadow: 0 4px 20px rgba(0,0,0,0.12); border-radius: 6px; margin-bottom: 20px; }
+  }
+  @media print { .page { width: 100%; max-width: 100%; padding: 0; } }
+
+  .hdr { background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%) !important; border-radius: 8px; padding: 14px 18px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; color: #fff; }
+  .hdr h1 { font-size: 15pt; font-weight: 900; letter-spacing: -0.8px; }
+  .hdr .sub { font-size: 7.5pt; color: #94a3b8; margin-top: 2px; font-weight: 400; }
+  .hdr .dt { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); padding: 5px 14px; border-radius: 20px; font-size: 8pt; font-weight: 700; }
+
+  .hero { border-radius: 8px; padding: 12px 16px; margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
+  .hero.positive { background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%) !important; border: 1.5px solid #86efac; }
+  .hero.positive .hero-icon { background: var(--green); }
+  .hero.positive .hero-text { color: #14532d; }
+  .hero.positive .hero-text b { color: var(--green); }
+  .hero.negative { background: linear-gradient(135deg, #fef2f2 0%, #fff1f2 100%) !important; border: 1.5px solid #fca5a5; }
+  .hero.negative .hero-icon { background: var(--red); }
+  .hero.negative .hero-text { color: #991b1b; }
+  .hero.negative .hero-text b { color: var(--red); }
+  .hero.mixed { background: linear-gradient(135deg, #fffbeb 0%, #fefce8 100%) !important; border: 1.5px solid #fde68a; }
+  .hero-icon { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; color: #fff; }
+  .hero-text { font-size: 8.5pt; line-height: 1.6; }
+
+  .kpi-row { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; margin-bottom: 12px; }
+  .kpi { text-align: center; padding: 8px 4px; border-radius: 6px; border: 1px solid var(--slate5); }
+  .kpi.neg { background: var(--blue-bg); border-color: var(--blue-light); }
+  .kpi.pos { background: var(--red-bg); border-color: var(--red-light); }
+  .kpi.neu { background: var(--slate6); }
+  .kpi-lb { font-size: 6.5pt; font-weight: 700; color: var(--slate3); text-transform: uppercase; letter-spacing: 0.5px; }
+  .kpi-v { font-size: 13pt; font-weight: 900; margin-top: 2px; }
+
+  .top2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+
+  .sent { border: 1px solid var(--slate5); border-radius: 8px; padding: 12px 14px; background: var(--white); }
+  .sent-hdr { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .sent-badge { font-size: 11pt; font-weight: 900; padding: 4px 12px; border-radius: 16px; }
+  .sent-badge.fear { color: var(--amber); background: var(--amber-bg); border: 1px solid #fde68a; }
+  .sent-badge.greed { color: var(--red); background: var(--red-bg); border: 1px solid var(--red-light); }
+  .sent-badge.neutral { color: var(--slate2); background: var(--slate6); border: 1px solid var(--slate5); }
+  .sent-mode { font-size: 7.5pt; font-weight: 700; color: var(--green); background: var(--green-bg); border: 1px solid #bbf7d0; padding: 3px 10px; border-radius: 12px; }
+  .gauge-wrap { margin-top: 6px; }
+  .gauge-lbl { display: flex; justify-content: space-between; font-size: 6pt; color: var(--slate3); margin-top: 4px; font-weight: 500; }
+
+  .idx-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .ix { border: 1px solid var(--slate5); border-radius: 6px; padding: 8px 10px; position: relative; overflow: hidden; }
+  .ix::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+  .ix.dn::after { background: var(--blue); }
+  .ix.up::after { background: var(--red); }
+  .ix-n { font-size: 6.5pt; color: var(--slate3); font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; }
+  .ix-v { font-size: 14pt; font-weight: 900; margin: 1px 0; }
+  .ix-c { font-size: 8pt; font-weight: 700; }
+  .ix-t { font-size: 6.5pt; display: inline-block; padding: 1px 5px; border-radius: 3px; font-weight: 700; margin-top: 2px; }
+  .t-dn { background: var(--blue-bg); color: var(--blue); }
+  .t-up { background: var(--red-bg); color: var(--red); }
+  .t-warn { background: var(--amber-bg); color: var(--amber); }
+
+  .stit { font-size: 10pt; font-weight: 900; color: var(--ink); margin-bottom: 6px; padding-bottom: 4px; border-bottom: 2.5px solid var(--ink); display: flex; align-items: center; gap: 6px; }
+
+  .g3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .mb { margin-bottom: 10px; }
+
+  .dcard { border: 1px solid var(--slate5); border-radius: 6px; padding: 8px 10px; background: var(--white); }
+  .dcard-t { font-size: 7pt; font-weight: 700; color: var(--slate3); text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 5px; }
+  .dr { display: flex; justify-content: space-between; align-items: center; padding: 3px 0; }
+  .dr + .dr { border-top: 1px solid var(--slate6); }
+  .dr-l { font-size: 7.5pt; color: var(--slate2); }
+  .dr-r { font-size: 7.5pt; font-weight: 700; }
+
+  .sec-chart { border: 1px solid var(--slate5); border-radius: 6px; padding: 10px 12px; }
+  .sec-r { display: flex; align-items: center; gap: 6px; padding: 4px 0; }
+  .sec-r + .sec-r { border-top: 1px solid var(--slate6); }
+  .sec-nm { flex: 0 0 80px; font-size: 7.5pt; color: var(--slate2); font-weight: 500; }
+  .sec-vis { flex: 1; display: flex; align-items: center; height: 16px; position: relative; }
+  .sec-vis .mid { position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: var(--slate4); }
+  .sec-bar-c { width: 50%; display: flex; align-items: center; height: 100%; }
+  .sec-bar-c.left { justify-content: flex-end; }
+  .sec-bar-c.right { justify-content: flex-start; }
+  .sb { height: 12px; border-radius: 2px; min-width: 2px; }
+  .sb.up { background: linear-gradient(90deg, #fca5a5, var(--red)) !important; border-radius: 2px 0 0 2px; }
+  .sb.dn { background: linear-gradient(90deg, var(--blue), #93c5fd) !important; border-radius: 0 2px 2px 0; }
+  .sec-v { flex: 0 0 42px; text-align: right; font-size: 8pt; font-weight: 800; }
+
+  .tbl { width: 100%; border-collapse: collapse; border: 1px solid var(--slate5); border-radius: 6px; overflow: hidden; }
+  .tbl th { font-size: 6.5pt; font-weight: 700; color: var(--slate3); text-transform: uppercase; letter-spacing: 0.4px; padding: 6px 8px; text-align: left; background: var(--slate6); border-bottom: 1.5px solid var(--slate5); }
+  .tbl td { padding: 5px 8px; font-size: 8pt; border-bottom: 1px solid var(--slate6); }
+  .tbl tr:last-child td { border-bottom: none; }
+  .tbl tr:nth-child(even) td { background: #fafbfc; }
+  .tk { font-weight: 900; font-size: 9pt; letter-spacing: 0.3px; }
+  .co { color: var(--slate3); font-size: 6.5pt; font-weight: 500; }
+  .nt { color: var(--slate2); font-size: 7pt; line-height: 1.5; }
+  .pct-pill { display: inline-block; padding: 2px 7px; border-radius: 4px; font-weight: 800; font-size: 8.5pt; }
+  .pct-pill.dn { background: var(--blue-bg); color: var(--blue); }
+  .pct-pill.up { background: var(--red-bg); color: var(--red); }
+
+  .ins { border-radius: 6px; padding: 10px 12px; margin-bottom: 6px; border: 1px solid var(--slate5); position: relative; overflow: hidden; }
+  .ins::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; }
+  .ins.i-blue::before { background: var(--blue); }
+  .ins.i-red::before { background: var(--red); }
+  .ins.i-green::before { background: var(--green); }
+  .ins.i-amber::before { background: var(--amber); }
+  .ins-tag { display: inline-block; font-size: 6pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 2px 7px; border-radius: 3px; margin-bottom: 4px; }
+  .ins h3 { font-size: 9pt; font-weight: 800; margin-bottom: 3px; line-height: 1.4; }
+  .ins p { font-size: 7.5pt; color: var(--slate2); line-height: 1.65; }
+
+  .strat { border: 2px solid var(--green); border-radius: 8px; padding: 12px 14px; background: linear-gradient(135deg, var(--green-bg) 0%, #fff 100%) !important; }
+  .strat-mode { display: inline-block; background: var(--green); color: #fff; padding: 5px 16px; border-radius: 6px; font-size: 11pt; font-weight: 900; margin-bottom: 10px; letter-spacing: -0.3px; }
+  .strat-list { list-style: none; }
+  .strat-list li { padding: 4px 0; font-size: 8pt; color: var(--slate2); display: flex; gap: 6px; align-items: flex-start; }
+  .strat-list li + li { border-top: 1px solid #bbf7d0; }
+  .strat-list .bullet { display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; border-radius: 50%; background: var(--green); color: #fff; font-size: 6.5pt; font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+
+  .summ { border: 2px solid var(--red); border-radius: 8px; overflow: hidden; }
+  .summ-hdr { background: var(--red); color: #fff; padding: 6px 14px; font-size: 9pt; font-weight: 800; }
+  .summ-body { padding: 10px 14px; background: var(--red-bg); }
+  .summ-item { display: flex; gap: 10px; padding: 6px 0; align-items: flex-start; }
+  .summ-item + .summ-item { border-top: 1px solid var(--red-light); }
+  .summ-n { width: 24px; height: 24px; border-radius: 50%; background: var(--red); color: #fff; font-size: 10pt; font-weight: 900; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .summ-t { font-size: 8.5pt; font-weight: 600; line-height: 1.65; color: var(--ink); }
+
+  .sched { border: 1px solid var(--slate5); border-radius: 6px; padding: 8px 10px; }
+  .sched .dr-l { font-size: 8pt; }
+  .tag { display: inline-block; font-size: 6pt; font-weight: 700; padding: 2px 6px; border-radius: 8px; }
+  .tag.r { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-light); }
+  .tag.b { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-light); }
+  .tag.y { background: var(--amber-bg); color: var(--amber); border: 1px solid #fde68a; }
+  .tag.g { background: var(--green-bg); color: var(--green); border: 1px solid #bbf7d0; }
+
+  .kr-card { border: 1px solid var(--slate5); border-radius: 6px; overflow: hidden; }
+  .kr-card .kr-hdr { background: var(--slate6); padding: 5px 10px; font-size: 7pt; font-weight: 700; color: var(--slate2); text-transform: uppercase; }
+  .kr-card .kr-body { padding: 6px 10px; }
+  .kr-r { display: grid; grid-template-columns: 70px 1fr auto; gap: 6px; align-items: center; padding: 4px 0; }
+  .kr-r + .kr-r { border-top: 1px solid var(--slate6); }
+  .kr-sec { font-size: 8pt; font-weight: 800; color: var(--ink); }
+  .kr-desc { font-size: 7pt; color: var(--slate2); }
+  .kr-impact { font-size: 7.5pt; font-weight: 800; text-align: right; }
+
+  .ftr { text-align: center; padding: 10px 0; margin-top: 8px; border-top: 1.5px solid var(--slate5); }
+  .ftr p { font-size: 6.5pt; color: var(--slate3); line-height: 1.7; }
+
+  .c-up { color: var(--red); }
+  .c-dn { color: var(--blue); }
+  .c-gn { color: var(--green); }
+  .c-am { color: var(--amber); }
+</style>
+</head>
+<body>
+
+<!-- ══════════════ PAGE 1 ══════════════ -->
+<div class="page">
+
+<div class="hdr nb">
+  <div>
+    <h1>🇺🇸 미국 시장 모닝 브리핑</h1>
+    <div class="sub">4/9(목) 마감 기준 · S&P500 5일 연속 상승 · CPI 발표일 경계 속 완만한 Risk-On 지속 · 출처: Yahoo Finance</div>
+  </div>
+  <div class="dt">2026. 4. 10 (금)</div>
+</div>
+
+<div class="hero positive nb">
+  <div class="hero-icon">📈</div>
+  <div class="hero-text">
+    <b>S&P500 +0.62% 5일 연속 상승 · DOW +0.58%(+276p) · NASDAQ +0.83% · SOX +2.10% 반도체 강세 지속.</b>
+    미·이란 휴전 합의 이후 Risk-On 분위기 유지되나, <b>오늘(4/10) 3월 CPI 발표</b> 앞두고 상승폭 제한. <b>AMZN +5.60% 세션 최대 상승 빅캡</b> · MU +3.63%·AMAT +3.13%·INTC +4.70% 반도체 후속 강세. WTI +3.78% $97.98 반등(휴전 불확실성). VIX -7.37% 19.49 20선 하회 근접.
+  </div>
+</div>
+
+<div class="kpi-row nb">
+  <div class="kpi pos"><div class="kpi-lb">S&amp;P 500</div><div class="kpi-v c-up">+0.62%</div></div>
+  <div class="kpi pos"><div class="kpi-lb">NASDAQ</div><div class="kpi-v c-up">+0.83%</div></div>
+  <div class="kpi pos"><div class="kpi-lb">VIX</div><div class="kpi-v c-gn">19.49</div></div>
+  <div class="kpi pos"><div class="kpi-lb">USD/KRW</div><div class="kpi-v c-dn">1,474</div></div>
+  <div class="kpi pos"><div class="kpi-lb">WTI</div><div class="kpi-v c-up">$97.98</div></div>
+  <div class="kpi pos"><div class="kpi-lb">GOLD</div><div class="kpi-v c-up">$4,791</div></div>
+</div>
+
+<div class="top2 nb mb">
+  <div class="sent">
+    <div class="sent-hdr">
+      <span class="sent-badge fear">😰 공포</span>
+      <span class="sent-mode">CPI 대기 · 완만한 Risk-On 유지</span>
+    </div>
+    <div style="font-size:7.5pt; color:var(--slate2); margin-bottom:8px;">CNN F&G 34(극도의 공포→공포) 소폭 개선 · VIX 19.49(-7.37%) 20선 하회 임박 · S&P500 5일 연속↑ 완만한 상승 · CPI 발표일 앞두고 관망 심리 혼재 · 에너지·유가 반등으로 완전한 Risk-On은 아닌 상태</div>
+    <div class="gauge-wrap">
+      <div style="position:relative; height:14px;">
+        <svg width="100%" height="10" style="border-radius:5px; display:block;">
+          <defs>
+            <linearGradient id="gg" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#1d4ed8"/><stop offset="18%" stop-color="#3b82f6"/>
+              <stop offset="35%" stop-color="#22c55e"/><stop offset="52%" stop-color="#eab308"/>
+              <stop offset="68%" stop-color="#f97316"/><stop offset="82%" stop-color="#ef4444"/>
+              <stop offset="100%" stop-color="#991b1b"/>
+            </linearGradient>
+          </defs>
+          <rect width="100%" height="10" rx="5" ry="5" fill="url(#gg)"/>
+          <circle cx="34%" cy="5" r="8" fill="#fff" stroke="#3b82f6" stroke-width="2.5"/>
+        </svg>
+      </div>
+      <div class="gauge-lbl"><span>극도의 공포</span><span>공포</span><span>중립</span><span>탐욕</span><span>극도의 탐욕</span></div>
+    </div>
+  </div>
+  <div class="idx-grid">
+    <div class="ix up"><div class="ix-n">S&amp;P 500</div><div class="ix-v">6,825</div><div class="ix-c c-up">▲ 41.85p <span class="ix-t t-up">+0.62%</span></div><div class="ix-t t-up" style="margin-top:3px;">5일 연속 상승</div></div>
+    <div class="ix up"><div class="ix-n">NASDAQ</div><div class="ix-v">22,822</div><div class="ix-c c-up">▲ 187.43p <span class="ix-t t-up">+0.83%</span></div></div>
+    <div class="ix up"><div class="ix-n">DOW JONES</div><div class="ix-v">48,186</div><div class="ix-c c-up">▲ 275.88p <span class="ix-t t-up">+0.58%</span></div><div class="ix-t t-up" style="margin-top:3px;">48,000 돌파 안착</div></div>
+    <div class="ix up"><div class="ix-n">RUSSELL 2000</div><div class="ix-v">2,636</div><div class="ix-c c-up">▲ 15.85p <span class="ix-t t-up">+0.60%</span></div></div>
+  </div>
+</div>
+
+<div class="nb">
+<div class="stit">💰 채권 · 환율 · 원자재</div>
+<div class="g3 mb">
+  <div class="dcard">
+    <div class="dcard-t">🏦 채권·금리</div>
+    <div class="dr"><span class="dr-l">미 국채 10년물</span><span class="dr-r">4.29% (보합)</span></div>
+    <div class="dr"><span class="dr-l">미 국채 2년물</span><span class="dr-r">3.81% (보합)</span></div>
+    <div class="dr"><span class="dr-l">장단기 스프레드</span><span class="dr-r c-gn">~+48bp (정상)</span></div>
+    <div class="dr"><span class="dr-l">미 국채 30년물</span><span class="dr-r">4.90% (+1bp)</span></div>
+  </div>
+  <div class="dcard">
+    <div class="dcard-t">💱 환율</div>
+    <div class="dr"><span class="dr-l">달러인덱스 (DXY)</span><span class="dr-r c-dn">98.78 (-0.36%)</span></div>
+    <div class="dr"><span class="dr-l">USD/KRW</span><span class="dr-r c-dn">1,474 (-1.67%)</span></div>
+    <div class="dr"><span class="dr-l">달러 약세 지속</span><span class="dr-r" style="color:var(--slate3);">DXY 99 하회</span></div>
+  </div>
+  <div class="dcard">
+    <div class="dcard-t">🛢️ 원자재·암호화폐</div>
+    <div class="dr"><span class="dr-l">WTI 원유 (CL=F)</span><span class="dr-r c-up">$97.98 (+3.78%)</span></div>
+    <div class="dr"><span class="dr-l">금 (GC=F)</span><span class="dr-r c-up">$4,791 (+0.86%)</span></div>
+    <div class="dr"><span class="dr-l">비트코인</span><span class="dr-r c-up">$72,342 (+1.71%)</span></div>
+  </div>
+</div>
+</div>
+
+<div class="nb">
+<div class="stit">🏢 S&P 섹터별 등락 차트 <span style="font-size:6.5pt; font-weight:500; color:var(--slate3);">4/9 마감 기준</span></div>
+<div class="sec-chart mb">
+  <div style="font-size:6.5pt; color:var(--slate3); margin-bottom:6px; text-align:center;">← 하락 (파랑) │ 상승 (빨강) →</div>
+  <div class="sec-r"><span class="sec-nm">🛒 임의소비재</span><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:100%"></div></div></div><span class="sec-v c-up">+1.73%</span></div>
+  <div class="sec-r"><span class="sec-nm">🏭 산업재</span><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:60%"></div></div></div><span class="sec-v c-up">+1.03%</span></div>
+  <div class="sec-r"><span class="sec-nm">🛒 필수소비재</span><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:47%"></div></div></div><span class="sec-v c-up">+0.81%</span></div>
+  <div class="sec-r"><span class="sec-nm">⚡ 유틸리티</span><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:46%"></div></div></div><span class="sec-v c-up">+0.79%</span></div>
+  <div class="sec-r"><span class="sec-nm">🏠 부동산</span><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:39%"></div></div></div><span class="sec-v c-up">+0.68%</span></div>
+  <div class="sec-r"><span class="sec-nm">📡 통신서비스</span><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:23%"></div></div></div><span class="sec-v c-up">+0.40%</span></div>
+  <div class="sec-r"><span class="sec-nm">💻 정보기술</span><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:16%"></div></div></div><span class="sec-v c-up">+0.27%</span></div>
+  <div class="sec-r"><span class="sec-nm">🏦 금융</span><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:14%"></div></div></div><span class="sec-v c-up">+0.25%</span></div>
+  <div class="sec-r"><span class="sec-nm">🧱 소재</span><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"><div class="sb dn" style="width:9%"></div></div><div class="sec-bar-c right"></div></div><span class="sec-v c-dn">-0.15%</span></div>
+  <div class="sec-r"><span class="sec-nm">🏥 헬스케어</span><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"><div class="sb dn" style="width:13%"></div></div><div class="sec-bar-c right"></div></div><span class="sec-v c-dn">-0.23%</span></div>
+  <div class="sec-r"><span class="sec-nm">⚡ 에너지</span><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"><div class="sb dn" style="width:72%"></div></div><div class="sec-bar-c right"></div></div><span class="sec-v c-dn">-1.24%</span></div>
+</div>
+</div>
+
+</div><!-- end page 1 -->
+
+<!-- ══════════════ PAGE 2 ══════════════ -->
+<div class="page page-break">
+
+<div class="nb">
+<div class="stit">🚀 주요 기술주 동향 <span style="font-size:6.5pt; font-weight:500; color:var(--slate3);">출처: Yahoo Finance 4/9 종가</span></div>
+<table class="tbl mb">
+  <thead><tr><th>티커</th><th>종가</th><th>등락률</th><th>등락폭</th><th>주요 원인</th></tr></thead>
+  <tbody>
+    <tr><td><span class="tk">AMZN</span><br><span class="co">아마존</span></td><td>$233.65</td><td><span class="pct-pill up">+5.60%</span></td><td class="c-up">+$12.40</td><td class="nt">세션 빅캡 최대 상승 · AWS 수요 견조 + 달러 약세 글로벌 매출 효과 + 유가 하락 물류비 절감 기대</td></tr>
+    <tr><td><span class="tk">INTC</span><br><span class="co">인텔</span></td><td>$61.72</td><td><span class="pct-pill up">+4.70%</span></td><td class="c-up">+$2.77</td><td class="nt">Fab 투자 후속 모멘텀 · 반도체 섹터 강세 지속 동조 · 18A 프로세스 기대</td></tr>
+    <tr><td><span class="tk">MU</span><br><span class="co">마이크론</span></td><td>$421.51</td><td><span class="pct-pill up">+3.63%</span></td><td class="c-up">+$14.78</td><td class="nt">HBM4 모멘텀 2일 연속 강세 · 메모리 사이클 확인 · SOX +2.10% 동조</td></tr>
+    <tr><td><span class="tk">AMAT</span><br><span class="co">어플라이드</span></td><td>$397.81</td><td><span class="pct-pill up">+3.13%</span></td><td class="c-up">+$12.09</td><td class="nt">반도체 장비 후속 강세 · 2nm·HBM 투자 사이클 수혜 지속</td></tr>
+    <tr><td><span class="tk">META</span><br><span class="co">메타</span></td><td>$628.39</td><td><span class="pct-pill up">+2.61%</span></td><td class="c-up">+$15.97</td><td class="nt">$600 돌파 후 추가 상승 · AI 광고 매출 성장 기대 · 빅테크 2일 연속 강세</td></tr>
+    <tr><td><span class="tk">AMD</span><br><span class="co">AMD</span></td><td>$236.64</td><td><span class="pct-pill up">+2.08%</span></td><td class="c-up">+$4.82</td><td class="nt">MI450 양산 임박 기대 · SOX 강세 동조 · 데이터센터 GPU 수요 견조</td></tr>
+    <tr><td><span class="tk">ASML</span><br><span class="co">ASML</span></td><td>$1,448.64</td><td><span class="pct-pill up">+1.94%</span></td><td class="c-up">+$27.59</td><td class="nt">전일 +8.77% 급등 후 소화·추가 상승 · 장비주 모멘텀 유지 · MATCH Act 리스크 잔존</td></tr>
+    <tr><td><span class="tk">AVGO</span><br><span class="co">브로드컴</span></td><td>$354.91</td><td><span class="pct-pill up">+1.22%</span></td><td class="c-up">+$4.28</td><td class="nt">ASIC 사이클 모멘텀 지속 · Anthropic 딜 후속 관심 · 꾸준한 상승 기조</td></tr>
+    <tr><td><span class="tk">NVDA</span><br><span class="co">엔비디아</span></td><td>$183.91</td><td><span class="pct-pill up">+1.01%</span></td><td class="c-up">+$1.83</td><td class="nt">SOX 랠리 동조하나 고점 부담 · ASIC 경쟁 우려 속 상대적 부진 지속</td></tr>
+    <tr><td><span class="tk">AAPL</span><br><span class="co">애플</span></td><td>$260.49</td><td><span class="pct-pill up">+0.61%</span></td><td class="c-up">+$1.59</td><td class="nt">$260 밴드 유지 · 폴더블 우려 소화 · 완만한 반등</td></tr>
+    <tr><td><span class="tk">TSM</span><br><span class="co">TSMC</span></td><td>$365.49</td><td><span class="pct-pill dn">-0.11%</span></td><td class="c-dn">-$0.41</td><td class="nt">전일 +5.96% 급등 후 차익실현 소화 · 다음주 Q1 실적 발표(4/16) 대기</td></tr>
+    <tr><td><span class="tk">MSFT</span><br><span class="co">마이크로소프트</span></td><td>$373.07</td><td><span class="pct-pill dn">-0.34%</span></td><td class="c-dn">-$1.26</td><td class="nt">Azure 성장 안정적이나 기대 프리미엄 소화 · 랠리 대비 상대적 부진 2일째</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="nb">
+<div class="stit">⭐ 주목할 개별 종목</div>
+
+<div style="margin-bottom:4px;"><span class="tag r" style="font-size:7pt; padding:3px 8px;">🔥 급등 종목</span></div>
+<table class="tbl" style="margin-bottom:8px;">
+  <thead><tr><th>티커</th><th>종가</th><th>등락률</th><th>급등 사유</th></tr></thead>
+  <tbody>
+    <tr><td><span class="tk">AMZN</span><br><span class="co">아마존</span></td><td>$233.65</td><td><span class="pct-pill up">+5.60%</span></td><td class="nt">빅캡 세션 최대 상승 — AWS 성장 + 달러 약세 + 유가 하락 물류비 절감 = 3중 호재 · $230 돌파</td></tr>
+    <tr><td><span class="tk">INTC</span><br><span class="co">인텔</span></td><td>$61.72</td><td><span class="pct-pill up">+4.70%</span></td><td class="nt">18A 프로세스 기대 · $14.2B Fab 투자 후속 모멘텀 · 2일 연속 강세</td></tr>
+    <tr><td><span class="tk">MU</span><br><span class="co">마이크론</span></td><td>$421.51</td><td><span class="pct-pill up">+3.63%</span></td><td class="nt">HBM4 양산 모멘텀 2일 연속 · SOX 주도주 자리 유지 · $420 돌파</td></tr>
+    <tr><td><span class="tk">SOX</span><br><span class="co">필라델피아 반도체</span></td><td>8,689.53</td><td><span class="pct-pill up">+2.10%</span></td><td class="nt">반도체 2일 연속 강세 · 전일 +6.34% 후 추가 상승 · 8,700 근접</td></tr>
+  </tbody>
+</table>
+
+<div style="margin-bottom:4px;"><span class="tag b" style="font-size:7pt; padding:3px 8px;">📉 급락 / 주의 종목</span></div>
+<table class="tbl" style="margin-bottom:10px;">
+  <thead><tr><th>티커</th><th>종가</th><th>등락률</th><th>주의 사유</th></tr></thead>
+  <tbody>
+    <tr><td><span class="tk">XLE</span><br><span class="co">에너지 섹터</span></td><td>$57.33</td><td><span class="pct-pill dn">-1.24%</span></td><td class="nt">WTI 반등에도 에너지 ETF 2일 연속 하락 · 유가 $100 회복 실패 · 매도세 지속</td></tr>
+    <tr><td><span class="tk">CVX</span><br><span class="co">쉐브론</span></td><td>$190.36</td><td><span class="pct-pill dn">-1.31%</span></td><td class="nt">에너지 섹터 약세 주도 · 전일 WTI -14% 여진 · 배당 매력 대비 실적 우려</td></tr>
+    <tr><td><span class="tk">XOM</span><br><span class="co">엑슨모빌</span></td><td>$155.04</td><td><span class="pct-pill dn">-0.76%</span></td><td class="nt">유가 하락 기조 속 에너지 대형주 약세 · 전일 급락 후 반등 제한적</td></tr>
+    <tr><td><span class="tk">MSFT</span><br><span class="co">마이크로소프트</span></td><td>$373.07</td><td><span class="pct-pill dn">-0.34%</span></td><td class="nt">빅테크 랠리 속 상대적 부진 2일째 · Azure 기대 프리미엄 소화 · $375 저항</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="nb">
+<div class="stit">🇰🇷 한국 관련주 영향 체크</div>
+<div class="kr-card mb">
+  <div class="kr-hdr">S&P500 5일 연속↑ · 반도체 강세 지속 · CPI 대기 → 오늘 국내 관련주 영향 예측</div>
+  <div class="kr-body">
+    <div class="kr-r"><span class="kr-sec">반도체</span><span class="kr-desc">SOX +2.10%, MU +3.63%, AMAT +3.13%, INTC +4.70% · 반도체 2일 연속 강세</span><span class="kr-impact c-up">삼성전자·SK하이닉스 ▲</span></div>
+    <div class="kr-r"><span class="kr-sec">반도체 장비</span><span class="kr-desc">ASML +1.94%, AMAT +3.13% · 장비주 모멘텀 유지 · 2nm·HBM 사이클</span><span class="kr-impact c-up">한미반도체·이오테크닉스 ▲</span></div>
+    <div class="kr-r"><span class="kr-sec">이커머스</span><span class="kr-desc">AMZN +5.60% 세션 최대 상승 · 달러 약세 + 유가 하락 수혜</span><span class="kr-impact c-up">쿠팡·네이버 ▲</span></div>
+    <div class="kr-r"><span class="kr-sec">정유·화학</span><span class="kr-desc">WTI +3.78% 반등 · 에너지 ETF는 여전히 -1.24% · 혼조</span><span class="kr-impact c-am">S-Oil·SK이노 혼조</span></div>
+    <div class="kr-r"><span class="kr-sec">조선·방산</span><span class="kr-desc">휴전 합의 유지 중 · 지정학 테마 약화 지속 · 다만 수주 구조 건재</span><span class="kr-impact c-am">한화오션 혼조</span></div>
+    <div class="kr-r"><span class="kr-sec">항공·해운</span><span class="kr-desc">유가 $98 수준 유지 · 전일 급락 수혜 지속 · 달러 약세 추가 호재</span><span class="kr-impact c-up">대한항공·HMM ▲</span></div>
+    <div class="kr-r"><span class="kr-sec">환율·외국인</span><span class="kr-desc">USD/KRW 1,474(-1.67%) · DXY 98.78 · 원화 강세 2일 연속 → 외국인 유입 환경 지속</span><span class="kr-impact c-gn">외국인 순매수↑</span></div>
+  </div>
+</div>
+</div>
+
+<div class="nb">
+<div class="stit">📰 매크로 · 주요 이슈</div>
+<div class="g2 mb">
+  <div class="dcard">
+    <div class="dcard-t">🌍 지정학 · 시장</div>
+    <div class="dr"><span class="dr-l">미·이란 2주 휴전 유지 중</span><span class="tag g">유지</span></div>
+    <div class="dr"><span class="dr-l">WTI +3.78% 반등 · 휴전 불확실성 잔존</span><span class="tag y">반등</span></div>
+    <div class="dr"><span class="dr-l">VIX 19.49 20선 하회 근접</span><span class="tag g">안정</span></div>
+    <div class="dr"><span class="dr-l">주간 실업수당 219K(+16K) 소폭 증가</span><span class="tag y">모니터</span></div>
+  </div>
+  <div class="dcard">
+    <div class="dcard-t">🏦 연준 · 경제지표</div>
+    <div class="dr"><span class="dr-l">10Y 4.29% · 2Y 3.81% 보합</span><span class="tag g">안정</span></div>
+    <div class="dr"><span class="dr-l">오늘(4/10) 3월 CPI 발표</span><span class="tag r">최우선</span></div>
+    <div class="dr"><span class="dr-l">오늘(4/10) 미시간대 소비자심리</span><span class="tag y">주요</span></div>
+    <div class="dr"><span class="dr-l">Q1 어닝시즌 JPM·WFC 다음주(4/14)</span><span class="tag y">대기</span></div>
+  </div>
+</div>
+</div>
+
+</div><!-- end page 2 -->
+
+<!-- ══════════════ PAGE 3 ══════════════ -->
+<div class="page page-break">
+
+<div class="nb">
+<div class="stit">🔍 분석 · 인사이트</div>
+
+<div class="g2" style="margin-bottom:6px;">
+  <div class="ins i-green" style="margin-bottom:0;">
+    <span class="ins-tag" style="background:var(--green-bg); color:var(--green);">추세 확인</span>
+    <h3>S&P500 5일 연속 상승 — 휴전 합의 이후 완만한 Risk-On 기조 정착</h3>
+    <p>S&P500 +0.62% 5일 연속↑, DOW 48,186(+0.58%) 48,000 돌파 안착, NASDAQ +0.83%. VIX 19.49로 20선 하회 임박. 전일 폭등(DOW +2.85%) 이후 차익실현 없이 추가 상승한 점은 시장 체력 건전성 시사. <b>다만 상승폭이 축소되며 CPI 발표 대기 모드 진입 — '추세는 상향, 속도는 감속'</b>.</p>
+  </div>
+  <div class="ins i-red" style="margin-bottom:0;">
+    <span class="ins-tag" style="background:var(--red-bg); color:var(--red);">반도체 모멘텀</span>
+    <h3>SOX +2.10% 2일 연속 강세 · AMZN +5.60% 이커머스 서프라이즈</h3>
+    <p>SOX 8,689(+2.10%) 반도체 2일 연속 강세, MU +3.63%·AMAT +3.13%·INTC +4.70% 장비·메모리·파운드리 전방위. 특히 <b>AMZN +5.60%</b>가 세션 최대 상승 빅캡으로 부상 — AWS 클라우드 성장 + 달러 약세 + 유가 하락(물류비 절감) 3중 호재 구조. <b>국내 이커머스(쿠팡·네이버)·반도체(삼성·SK하이닉스) 동반 수혜 기대</b>.</p>
+  </div>
+</div>
+
+<div class="g2" style="margin-bottom:6px;">
+  <div class="ins i-blue" style="margin-bottom:0;">
+    <span class="ins-tag" style="background:var(--blue-bg); color:var(--blue);">💡 아이디어 ①</span>
+    <h3>CPI가 오늘의 분수령 — 디스인플레이션 확인 시 금리 인하 기대 재점화</h3>
+    <p>오늘 발표될 3월 CPI가 시장 방향을 결정. 유가 급등(전쟁기 WTI $110+)이 3월 물가에 상방 반영될 가능성 있으나, 근원 CPI 안정 시 금리 인하 기대 재점화 → 추가 상승 동력. <b>CPI 상회 시 금리 인하 지연 우려로 5일 연속 상승 중인 지수 조정 가능 — 양방향 준비 필수</b>.</p>
+  </div>
+  <div class="ins i-amber" style="margin-bottom:0;">
+    <span class="ins-tag" style="background:var(--amber-bg); color:var(--amber);">💡 아이디어 ②</span>
+    <h3>원화 강세 2일째 — 외국인 매수 환경 최적화 지속</h3>
+    <p>USD/KRW 1,474(-1.67%), DXY 98.78 달러 약세 2일 연속. 달러 약세 + Risk-On + 금리 안정 조합은 외국인 한국 순매수 최적 환경. 전일에 이어 삼성전자·SK하이닉스 해외 피어 대비 리레이팅 여지 존재. <b>외국인 2일 연속 순매수 시 삼성전자·SK하이닉스 상방 돌파 가능성↑</b>.</p>
+  </div>
+</div>
+
+<div class="ins i-red" style="margin-bottom:10px;">
+  <span class="ins-tag" style="background:var(--red-bg); color:var(--red);">🚨 리스크</span>
+  <h3>주의할 하방 위험</h3>
+  <p>
+    <b>①</b> CPI 상회 충격: 3월 CPI에 고유가 누적 반영 시 금리 인하 기대 후퇴 → 5일 연속 상승 중인 지수 단기 조정 트리거 &nbsp;
+    <b>②</b> WTI 반등(+3.78%): 휴전 불확실성으로 유가 재상승 시작 — $100 재돌파 시 인플레이션 우려 재부각 &nbsp;
+    <b>③</b> 에너지 섹터 2일 연속 약세: XLE -1.24% — 섹터 로테이션 가속 시 관련주 추가 하락 가능 &nbsp;
+    <b>④</b> 어닝시즌 진입(다음주 JPM·WFC): 금융주 실적에 따라 시장 방향 전환 가능 — 가이던스 주목
+  </p>
+</div>
+</div>
+
+<div class="nb">
+<div class="stit">⚔️ 오늘 국장 대응 전략</div>
+<div class="strat" style="margin-bottom:10px;">
+  <div class="strat-mode">📊 CPI 대기 — 반도체·대형주 보유 유지, 신규 진입 신중</div>
+  <ul class="strat-list">
+    <li><span class="bullet">1</span>반도체 보유 유지: SOX 2일 연속 강세 · MU +3.63%·AMAT +3.13%·INTC +4.70% → 삼성전자·SK하이닉스·한미반도체 보유 유지. 추가 매수는 CPI 확인 후.</li>
+    <li><span class="bullet">2</span>AMZN 서프라이즈 수혜: AMZN +5.60% 세션 최대 → 쿠팡·네이버 이커머스 연관주 단기 모멘텀. 달러 약세·유가 하락 복합 수혜.</li>
+    <li><span class="bullet">3</span>CPI 양방향 준비: 오늘 3월 CPI 발표 — 디스인플레 확인 시 추가 매수, 상회 시 반도체·대형주 일부 차익실현. 포지션 70% 유지·30% 현금 확보.</li>
+    <li><span class="bullet">4</span>에너지 섹터 회피 유지: XLE 2일 연속 하락 · CVX -1.31% · 유가 반등에도 매도세 지속 — 정유·화학 단기 진입 시기상조.</li>
+    <li><span class="bullet">5</span>외국인 순매수 모니터: USD/KRW 1,474 원화 강세 지속 → 외국인 2일 연속 순매수 확인 시 삼성전자·SK하이닉스 비중 확대 적기.</li>
+  </ul>
+</div>
+</div>
+
+<div class="nb">
+<div class="stit">📅 오늘·이번 주 주요 일정</div>
+<div class="sched mb">
+  <div class="dr"><span class="dr-l">📊 4/10(금) 3월 CPI 발표 (오전 8:30 ET)</span><span class="tag r">최우선</span></div>
+  <div class="dr"><span class="dr-l">📊 4/10(금) 미시간대 소비자심리지수 (4월 예비)</span><span class="tag y">주요</span></div>
+  <div class="dr"><span class="dr-l">💼 4/14(월) JPM·WFC·BLK·C Q1 실적 발표 (어닝시즌 개막)</span><span class="tag r">대형</span></div>
+  <div class="dr"><span class="dr-l">🏭 4/16(목) TSMC Q1 실적 + 2026 가이던스</span><span class="tag r">핵심</span></div>
+  <div class="dr"><span class="dr-l">🏦 4/15(화) 3월 PPI · 소매판매</span><span class="tag y">중요</span></div>
+  <div class="dr"><span class="dr-l">⛽ 미·이란 2주 휴전 협상 진행 상황 모니터링</span><span class="tag y">지속</span></div>
+</div>
+</div>
+
+<div class="summ nb" style="margin-bottom:10px;">
+  <div class="summ-hdr">📝 핵심 3줄 요약 (Yahoo Finance 실데이터 기준)</div>
+  <div class="summ-body">
+    <div class="summ-item"><div class="summ-n">1</div><div class="summ-t">S&P500 +0.62%(5일 연속↑)·DOW +0.58%(48,186·48K 돌파)·NASDAQ +0.83%·SOX +2.10%. VIX 19.49(-7.37%) 20선 하회 근접. CPI 대기 속 완만한 Risk-On 지속, 전일 폭등 이후 차익실현 없이 추가 상승.</div></div>
+    <div class="summ-item"><div class="summ-n">2</div><div class="summ-t">AMZN +5.60% 세션 최대 빅캡 서프라이즈 · MU +3.63%·AMAT +3.13%·INTC +4.70% 반도체 2일 연속 강세 · META +2.61% · 에너지(XLE -1.24%)·헬스케어(-0.23%) 약세. USD/KRW 1,474 원화 강세 2일째.</div></div>
+    <div class="summ-item"><div class="summ-n">3</div><div class="summ-t">전략: 반도체·대형주 보유 유지, 신규 진입은 CPI 확인 후. AMZN 서프라이즈→이커머스 연관주 주목. 에너지 회피. 외국인 순매수 2일째 확인 시 삼성전자·SK하이닉스 비중 확대. 오늘 CPI가 분수령 — 양방향 준비.</div></div>
+  </div>
+</div>
+
+<div class="ftr">
+  <p>⚠️ 본 자료는 Yahoo Finance 공개 데이터를 기반으로 AI가 자동 생성한 투자 참고용 모닝 브리핑입니다. 투자 권유·조언이 아니며 투자 판단의 최종 책임은 투자자 본인에게 있습니다.</p>
+  <p>생성: 2026.04.10 · 데이터 기준: 2026.04.09 미국 시장 종가 (Yahoo Finance 실데이터)</p>
+</div>
+
+</div><!-- end page 3 -->
+</body>
+</html>
