@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>미국 시장 모닝 브리핑 | 2026.05.15</title>
+<style>
+  @page { size: A4 portrait; margin: 10mm 12mm; }
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+
+  :root {
+    --red: #dc2626; --red-bg: #fef2f2; --red-light: #fee2e2;
+    --blue: #2563eb; --blue-bg: #eff6ff; --blue-light: #dbeafe;
+    --green: #16a34a; --green-bg: #f0fdf4;
+    --amber: #d97706; --amber-bg: #fffbeb;
+    --slate: #334155; --slate2: #64748b; --slate3: #94a3b8;
+    --slate4: #cbd5e1; --slate5: #e2e8f0; --slate6: #f1f5f9;
+    --white: #ffffff; --ink: #0f172a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+  body { font-family: 'Noto Sans KR', -apple-system, sans-serif; color: var(--ink); background: var(--white); font-size: 9pt; line-height: 1.5; }
+  .page { width: 186mm; max-width: 186mm; margin: 0 auto; }
+  .page-break { page-break-before: always; }
+  .nb { page-break-inside: avoid; break-inside: avoid; }
+  @media screen {
+    body { background: #e2e8f0; padding: 24px 0; }
+    .page { background: #fff; padding: 10mm 12mm; box-shadow: 0 4px 20px rgba(0,0,0,0.12); border-radius: 6px; margin-bottom: 20px; }
+  }
+  @media print { .page { width: 100%; max-width: 100%; padding: 0; } }
+
+  .hdr { background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%) !important; border-radius: 8px; padding: 14px 18px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; color: #fff; }
+  .hdr h1 { font-size: 15pt; font-weight: 900; letter-spacing: -0.8px; }
+  .hdr .sub { font-size: 7.5pt; color: #94a3b8; margin-top: 2px; font-weight: 400; }
+  .hdr .dt { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); padding: 5px 14px; border-radius: 20px; font-size: 8pt; font-weight: 700; }
+
+  .hero { border-radius: 8px; padding: 12px 16px; margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
+  .hero.positive { background: linear-gradient(135deg, #fef2f2 0%, #fff1f2 100%) !important; border: 1.5px solid #fca5a5; }
+  .hero.positive .hero-icon { background: var(--red); }
+  .hero.positive .hero-text { color: #991b1b; }
+  .hero.positive .hero-text b { color: var(--red); }
+  .hero.negative { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%) !important; border: 1.5px solid #93c5fd; }
+  .hero.negative .hero-icon { background: var(--blue); }
+  .hero.negative .hero-text { color: #1e3a8a; }
+  .hero.negative .hero-text b { color: var(--blue); }
+  .hero.mixed { background: linear-gradient(135deg, #fffbeb 0%, #fefce8 100%) !important; border: 1.5px solid #fde68a; }
+  .hero.mixed .hero-icon { background: var(--amber); }
+  .hero.mixed .hero-text { color: #92400e; }
+  .hero.mixed .hero-text b { color: var(--amber); }
+  .hero-icon { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; color: #fff; }
+  .hero-text { font-size: 8.5pt; line-height: 1.6; }
+
+  .kpi-row { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; margin-bottom: 12px; }
+  .kpi { text-align: center; padding: 8px 4px; border-radius: 6px; border: 1px solid var(--slate5); }
+  .kpi.neg { background: var(--blue-bg); border-color: var(--blue-light); }
+  .kpi.pos { background: var(--red-bg); border-color: var(--red-light); }
+  .kpi.neu { background: var(--slate6); }
+  .kpi-lb { font-size: 6.5pt; font-weight: 700; color: var(--slate3); text-transform: uppercase; letter-spacing: 0.5px; }
+  .kpi-v { font-size: 13pt; font-weight: 900; margin-top: 2px; }
+  .kpi-c { font-size: 7pt; font-weight: 700; margin-top: 2px; }
+  .c-up { color: var(--red); } .c-dn { color: var(--blue); } .c-am { color: var(--amber); } .c-gr { color: var(--green); }
+
+  .top2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+
+  .sent { border: 1px solid var(--slate5); border-radius: 8px; padding: 12px 14px; background: var(--white); }
+  .sent-hdr { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .sent-badge { font-size: 11pt; font-weight: 900; padding: 4px 12px; border-radius: 16px; }
+  .sent-badge.fear { color: var(--amber); background: var(--amber-bg); border: 1px solid #fde68a; }
+  .sent-badge.extreme-fear { color: var(--blue); background: var(--blue-bg); border: 1px solid var(--blue-light); }
+  .sent-badge.greed { color: var(--red); background: var(--red-bg); border: 1px solid var(--red-light); }
+  .sent-badge.neutral { color: var(--slate2); background: var(--slate6); border: 1px solid var(--slate5); }
+  .sent-mode { font-size: 7.5pt; font-weight: 700; color: var(--green); background: var(--green-bg); border: 1px solid #bbf7d0; padding: 3px 10px; border-radius: 12px; }
+  .gauge-wrap { position: relative; margin: 4px 0; }
+  .gauge-lbl { display: flex; justify-content: space-between; font-size: 6pt; color: var(--slate3); margin-top: 2px; }
+
+  .idx-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .ix { border-radius: 6px; padding: 8px 10px; border: 1px solid var(--slate5); position: relative; }
+  .ix.up { background: var(--red-bg); border-color: var(--red-light); }
+  .ix.dn { background: var(--blue-bg); border-color: var(--blue-light); }
+  .ix-n { font-size: 7pt; font-weight: 700; color: var(--slate2); }
+  .ix-v { font-size: 12pt; font-weight: 900; margin-top: 2px; }
+  .ix-c { font-size: 7.5pt; font-weight: 700; margin-top: 1px; }
+  .ix-t { display: inline-block; font-size: 6.5pt; padding: 1px 6px; border-radius: 8px; margin-top: 4px; font-weight: 700; }
+  .ix-t.t-up { background: rgba(220,38,38,0.1); color: var(--red); }
+  .ix-t.t-dn { background: rgba(37,99,235,0.1); color: var(--blue); }
+  .ix-t.t-warn { background: rgba(217,119,6,0.1); color: var(--amber); }
+
+  .g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .mb { margin-bottom: 12px; }
+  .dcard { border: 1px solid var(--slate5); border-radius: 6px; padding: 8px 10px; background: var(--white); }
+  .dcard-t { font-size: 7.5pt; font-weight: 800; color: var(--slate); margin-bottom: 6px; border-bottom: 1px solid var(--slate5); padding-bottom: 4px; }
+  .dr { display: flex; justify-content: space-between; align-items: center; font-size: 7.5pt; padding: 3px 0; }
+  .dr-l { color: var(--slate2); }
+  .dr-r { font-weight: 700; }
+
+  .stit { font-size: 9.5pt; font-weight: 800; margin-bottom: 6px; padding-bottom: 4px; border-bottom: 1.5px solid var(--slate); color: var(--slate); }
+
+  .sec-chart { background: var(--white); border: 1px solid var(--slate5); border-radius: 6px; padding: 8px 10px; }
+  .sec-r { display: grid; grid-template-columns: 95px 1fr 50px; gap: 6px; align-items: center; margin-bottom: 3px; }
+  .sec-nm { font-size: 7pt; font-weight: 700; color: var(--slate); }
+  .sec-vis { position: relative; height: 12px; background: var(--slate6); border-radius: 3px; display: flex; }
+  .sec-bar-c { flex: 1; position: relative; height: 100%; }
+  .sec-bar-c.left { display: flex; justify-content: flex-end; }
+  .sec-bar-c.right { display: flex; justify-content: flex-start; }
+  .sb { height: 100%; }
+  .sb.up { background: var(--red); border-radius: 0 3px 3px 0; }
+  .sb.dn { background: var(--blue); border-radius: 3px 0 0 3px; }
+  .mid { position: absolute; left: 50%; top: -2px; bottom: -2px; width: 1px; background: var(--slate3); transform: translateX(-50%); z-index: 2; }
+  .sec-v { font-size: 7pt; font-weight: 800; text-align: right; }
+
+  .tbl { width: 100%; border-collapse: collapse; font-size: 7.5pt; }
+  .tbl th { background: var(--slate6); color: var(--slate); padding: 5px 6px; text-align: left; font-weight: 800; border-bottom: 1.5px solid var(--slate4); font-size: 7pt; }
+  .tbl td { padding: 4px 6px; border-bottom: 1px solid var(--slate5); vertical-align: top; }
+  .tk { display: inline-block; font-size: 7pt; font-weight: 800; padding: 1px 5px; border-radius: 3px; background: var(--slate6); color: var(--slate); }
+  .co { font-size: 6.5pt; color: var(--slate3); margin-top: 1px; }
+  .nt { font-size: 7pt; color: var(--slate2); line-height: 1.45; }
+  .pct-pill { display: inline-block; font-size: 7pt; font-weight: 800; padding: 1px 5px; border-radius: 3px; }
+  .pct-pill.up { background: var(--red-bg); color: var(--red); }
+  .pct-pill.dn { background: var(--blue-bg); color: var(--blue); }
+
+  .kr-card { border: 1px solid var(--slate5); border-radius: 6px; padding: 8px 10px; background: var(--white); }
+  .kr-hdr { font-size: 8pt; font-weight: 800; color: var(--slate); margin-bottom: 6px; padding-bottom: 4px; border-bottom: 1px solid var(--slate5); }
+  .kr-body { display: flex; flex-direction: column; gap: 4px; }
+  .kr-r { display: grid; grid-template-columns: 70px 1fr 60px; gap: 6px; align-items: start; font-size: 7pt; padding: 3px 0; border-bottom: 1px dashed var(--slate5); }
+  .kr-r:last-child { border-bottom: none; }
+  .kr-sec { font-weight: 800; color: var(--slate); }
+  .kr-desc { color: var(--slate2); line-height: 1.5; }
+  .kr-impact { font-size: 6.5pt; font-weight: 800; text-align: right; padding: 1px 4px; border-radius: 3px; align-self: center; }
+
+  .ins { border-radius: 8px; padding: 10px 12px; margin-bottom: 8px; background: var(--white); border-left: 4px solid; }
+  .ins.i-red { border-left-color: var(--red); background: var(--red-bg); }
+  .ins.i-blue { border-left-color: var(--blue); background: var(--blue-bg); }
+  .ins.i-amber { border-left-color: var(--amber); background: var(--amber-bg); }
+  .ins.i-green { border-left-color: var(--green); background: var(--green-bg); }
+  .ins-tag { display: inline-block; font-size: 6.5pt; font-weight: 800; padding: 2px 7px; border-radius: 8px; margin-bottom: 4px; }
+  .ins h3 { font-size: 8pt; font-weight: 800; color: var(--slate); margin-bottom: 4px; line-height: 1.4; }
+  .ins p { font-size: 7.5pt; color: var(--slate2); line-height: 1.55; }
+
+  .strat { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%) !important; border: 1.5px solid #fbbf24; border-radius: 8px; padding: 10px 12px; }
+  .strat-mode { display: inline-block; font-size: 8pt; font-weight: 800; padding: 3px 10px; border-radius: 12px; background: var(--amber); color: #fff; margin-bottom: 6px; }
+  .strat-list { list-style: none; padding: 0; }
+  .strat-list li { display: flex; gap: 8px; padding: 4px 0; font-size: 7.5pt; line-height: 1.5; color: #78350f; border-bottom: 1px dashed rgba(120,53,15,0.2); }
+  .strat-list li:last-child { border-bottom: none; }
+  .bullet { flex-shrink: 0; width: 18px; height: 18px; border-radius: 50%; background: var(--amber); color: #fff; font-size: 7pt; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; }
+
+  .sched { background: var(--white); border: 1px solid var(--slate5); border-radius: 6px; padding: 6px 10px; }
+  .sched .dr { padding: 3px 0; border-bottom: 1px dashed var(--slate5); }
+  .sched .dr:last-child { border-bottom: none; }
+  .tag { display: inline-block; font-size: 6pt; padding: 1px 5px; border-radius: 3px; margin-left: 4px; font-weight: 800; }
+  .tag.r { background: var(--red); color: #fff; }
+  .tag.g { background: var(--green); color: #fff; }
+  .tag.b { background: var(--blue); color: #fff; }
+  .tag.y { background: var(--amber); color: #fff; }
+
+  .summ { background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%) !important; border: 1.5px solid var(--green); border-radius: 8px; padding: 10px 12px; }
+  .summ-hdr { display: inline-block; font-size: 8pt; font-weight: 800; padding: 3px 10px; border-radius: 12px; background: var(--green); color: #fff; margin-bottom: 6px; }
+  .summ-body { display: flex; flex-direction: column; gap: 4px; }
+  .summ-item { display: flex; gap: 8px; font-size: 7.5pt; line-height: 1.5; color: #14532d; }
+  .summ-n { flex-shrink: 0; width: 18px; height: 18px; border-radius: 50%; background: var(--green); color: #fff; font-size: 7pt; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; }
+  .summ-t { flex: 1; }
+
+  .ftr { margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--slate5); font-size: 6.5pt; color: var(--slate3); text-align: center; line-height: 1.6; }
+  .ftr b { color: var(--slate2); }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="page">
+
+<div class="hdr nb">
+  <div>
+    <h1>🇺🇸 미국 시장 모닝 브리핑</h1>
+    <div class="sub">5/14(목) 마감 — DOW 50K 재돌파 · S&amp;P/NASDAQ 동반 ATH 신고가 · Cisco 어닝 폭발 + Trump-Xi 정상회담 동행 효과</div>
+  </div>
+  <div class="dt">2026.05.15 (금)</div>
+</div>
+
+<div class="hero positive nb">
+  <div class="hero-icon">🚀</div>
+  <div class="hero-text">
+    <b>「Networking Supercycle · AI Trade Roars Back」</b> — 4대 지수 동반 신고가·DOW 50K 재돌파(+370pts)·Cisco AI 오더 가이드 $5B→$9B 大上向 +13%+α·Broadcom +5.52%·NVIDIA +4.39%·TSMC +4.48%·Coinbase +5.06%·ARM +3.30% AI/네트워킹/암호화폐 트리오 폭발 · 단, QCOM -6.14%(3일 누적 -25%)·SNDK -4.46%·INTC -3.62%·MU -3.44% 일부 칩 추가 약세 차별화 — 「AI 인프라 광역 강세 · 메모리 차익실현」 양극화 명확.
+  </div>
+</div>
+
+<div class="kpi-row nb">
+  <div class="kpi pos"><div class="kpi-lb">S&amp;P 500</div><div class="kpi-v">7,501.24</div><div class="kpi-c c-up">+0.77%</div></div>
+  <div class="kpi pos"><div class="kpi-lb">NASDAQ</div><div class="kpi-v">26,635</div><div class="kpi-c c-up">+0.88%</div></div>
+  <div class="kpi neg"><div class="kpi-lb">VIX</div><div class="kpi-v">17.26</div><div class="kpi-c c-dn">-3.41%</div></div>
+  <div class="kpi pos"><div class="kpi-lb">USD/KRW</div><div class="kpi-v">1,493.7</div><div class="kpi-c c-am">+0.05%</div></div>
+  <div class="kpi pos"><div class="kpi-lb">WTI</div><div class="kpi-v">$102.02</div><div class="kpi-c c-up">+0.99%</div></div>
+  <div class="kpi neg"><div class="kpi-lb">GOLD</div><div class="kpi-v">$4,657</div><div class="kpi-c c-dn">-0.87%</div></div>
+</div>
+
+<div class="top2 nb">
+  <div class="sent">
+    <div class="sent-hdr">
+      <span class="sent-badge greed">탐욕 72</span>
+      <span class="sent-mode">Risk-On 모드 확장</span>
+    </div>
+    <div class="gauge-wrap">
+      <svg viewBox="0 0 200 70" width="100%" height="60">
+        <defs>
+          <linearGradient id="gg" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#2563eb"/>
+            <stop offset="25%" stop-color="#3b82f6"/>
+            <stop offset="50%" stop-color="#facc15"/>
+            <stop offset="75%" stop-color="#fb923c"/>
+            <stop offset="100%" stop-color="#dc2626"/>
+          </linearGradient>
+        </defs>
+        <path d="M 20 60 A 80 80 0 0 1 180 60" stroke="url(#gg)" stroke-width="14" fill="none" stroke-linecap="round"/>
+        <polygon points="195,18 202,8 188,8" fill="#0f172a"/>
+        <text x="195" y="50" text-anchor="middle" font-size="9" font-weight="800" fill="#0f172a">72</text>
+      </svg>
+      <div class="gauge-lbl"><span>0 극공포</span><span>25</span><span>50 중립</span><span>75</span><span>100 극탐욕</span></div>
+    </div>
+    <div style="margin-top:10px; font-size:7.5pt; color:var(--slate2); line-height:1.6;">
+      <b>VIX 17.26(-3.41% 추가 안정 · 17선 하향 이탈)·NDX/S&P/DOW 4대 지수 동반 신고가 갱신·DOW 50K 재돌파</b> — Risk-On 모드 「확장」 단계 진입. 핵심 트리거: ① <b>Cisco Q3 어닝 폭발</b> Rev $15.84B vs $15.56B 비트·EPS $1.06 vs $1.04·<b>AI 인프라/하이퍼스케일러 오더 FY 가이드 $5B → $9B 大上向(+80%)</b> + DC 스위칭 오더 +40% YoY·CEO Robbins 「Networking Supercycle」 선언, +13~17% 어닝 직후 폭등 ② <b>Trump-Xi 베이징 정상회담 D-1(5/14~15)</b> — Jensen Huang(NVDA)·Tim Cook(AAPL)·Elon Musk(TSLA) 빅테크 CEO 동행, 中 첨단 반도체 수출 완화 기대 ③ <b>Broadcom +5.52% $439.79·TSMC +4.48% $417.72·NVDA +4.39% $235.74 ATH·Coinbase +5.06% $212·BTC +2.67% $81,393</b> AI/네트워킹/암호화폐 트리오 폭발. 단, QCOM 3일 누적 -25%·SNDK -4.46%·MU -3.44%·INTC -3.62% 칩 차익실현 양극화.
+    </div>
+  </div>
+  <div>
+    <div class="idx-grid">
+      <div class="ix up"><div class="ix-n">S&amp;P500</div><div class="ix-v">7,501.24</div><div class="ix-c c-up">+56.99 (+0.77%)</div><span class="ix-t t-up">사상최고 갱신</span></div>
+      <div class="ix up"><div class="ix-n">NASDAQ</div><div class="ix-v">26,635.22</div><div class="ix-c c-up">+232.88 (+0.88%)</div><span class="ix-t t-up">ATH 신기록</span></div>
+      <div class="ix up"><div class="ix-n">DOW</div><div class="ix-v">50,063.46</div><div class="ix-c c-up">+370.26 (+0.75%)</div><span class="ix-t t-up">50K 재돌파</span></div>
+      <div class="ix up"><div class="ix-n">RUSSELL2000</div><div class="ix-v">2,863.09</div><div class="ix-c c-up">+19.16 (+0.67%)</div><span class="ix-t t-up">소형주 동조</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="g3 mb nb">
+  <div class="dcard">
+    <div class="dcard-t">📊 채권금리</div>
+    <div class="dr"><span class="dr-l">10Y 美 국채</span><span class="dr-r c-dn">4.46% (-2bp)</span></div>
+    <div class="dr"><span class="dr-l">5Y</span><span class="dr-r c-dn">4.12% (-1bp)</span></div>
+    <div class="dr"><span class="dr-l">30Y</span><span class="dr-r c-dn">5.01% (-4bp)</span></div>
+    <div class="dr"><span class="dr-l">13W T-Bill</span><span class="dr-r">3.59% (-1bp)</span></div>
+    <div class="dr"><span class="dr-l">금리 톤</span><span class="dr-r c-gr">소매판매 둔화 · 금리 소폭 완화</span></div>
+  </div>
+  <div class="dcard">
+    <div class="dcard-t">💱 환율</div>
+    <div class="dr"><span class="dr-l">DXY 달러인덱스</span><span class="dr-r c-up">98.88 (+0.41%)</span></div>
+    <div class="dr"><span class="dr-l">USD/KRW</span><span class="dr-r c-up">1,493.71 (+0.05%)</span></div>
+    <div class="dr"><span class="dr-l">USD/JPY</span><span class="dr-r c-up">158.12 (+0.20%)</span></div>
+    <div class="dr"><span class="dr-l">EUR/USD</span><span class="dr-r c-dn">1.168 (-0.34%)</span></div>
+    <div class="dr"><span class="dr-l">원화 톤</span><span class="dr-r c-am">1,500 임박 박스 4일째</span></div>
+  </div>
+  <div class="dcard">
+    <div class="dcard-t">🛢️ 원자재 · 코인</div>
+    <div class="dr"><span class="dr-l">WTI 원유</span><span class="dr-r c-up">$102.02 (+0.99%)</span></div>
+    <div class="dr"><span class="dr-l">금</span><span class="dr-r c-dn">$4,656.70 (-0.87%)</span></div>
+    <div class="dr"><span class="dr-l">은</span><span class="dr-r c-dn">$84.01 (-5.48%)</span></div>
+    <div class="dr"><span class="dr-l">BTC</span><span class="dr-r c-up">$81,393 (+2.67%)</span></div>
+    <div class="dr"><span class="dr-l">ETH</span><span class="dr-r c-up">$2,296 (+1.73%)</span></div>
+  </div>
+</div>
+
+<div class="nb">
+  <div class="stit">📊 섹터별 등락률 (5/14 종가, XLK +1.50% 기술 1위·XLE +0.76%·XLF +0.59%·XLI +0.51%·XLU +0.51%·XLP +0.31%·XLC +0.30% / XLB -0.75%·XLRE -0.68%·XLV -0.05%·XLY -0.04% 「Tech-Led 광역 랠리 · 금융 반등 · 소재/부동산 차익」)</div>
+  <div class="sec-chart">
+    <div class="sec-r"><div class="sec-nm">기술 (XLK)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:50%;"></div></div></div><div class="sec-v c-up">+1.50%</div></div>
+    <div class="sec-r"><div class="sec-nm">에너지 (XLE)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:26%;"></div></div></div><div class="sec-v c-up">+0.76%</div></div>
+    <div class="sec-r"><div class="sec-nm">금융 (XLF)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:20%;"></div></div></div><div class="sec-v c-up">+0.59%</div></div>
+    <div class="sec-r"><div class="sec-nm">산업재 (XLI)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:17%;"></div></div></div><div class="sec-v c-up">+0.51%</div></div>
+    <div class="sec-r"><div class="sec-nm">유틸리티 (XLU)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:17%;"></div></div></div><div class="sec-v c-up">+0.51%</div></div>
+    <div class="sec-r"><div class="sec-nm">필수소비 (XLP)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:10%;"></div></div></div><div class="sec-v c-up">+0.31%</div></div>
+    <div class="sec-r"><div class="sec-nm">커뮤니케이션 (XLC)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:10%;"></div></div></div><div class="sec-v c-up">+0.30%</div></div>
+    <div class="sec-r"><div class="sec-nm">반도체 (SOX)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:15%;"></div></div></div><div class="sec-v c-up">+0.46%</div></div>
+    <div class="sec-r"><div class="sec-nm">임의소비 (XLY)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"><div class="sb dn" style="width:2%;"></div></div><div class="sec-bar-c right"></div></div><div class="sec-v c-dn">-0.04%</div></div>
+    <div class="sec-r"><div class="sec-nm">헬스케어 (XLV)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"><div class="sb dn" style="width:2%;"></div></div><div class="sec-bar-c right"></div></div><div class="sec-v c-dn">-0.05%</div></div>
+    <div class="sec-r"><div class="sec-nm">부동산 (XLRE)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"><div class="sb dn" style="width:23%;"></div></div><div class="sec-bar-c right"></div></div><div class="sec-v c-dn">-0.68%</div></div>
+    <div class="sec-r"><div class="sec-nm">소재 (XLB)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"><div class="sb dn" style="width:25%;"></div></div><div class="sec-bar-c right"></div></div><div class="sec-v c-dn">-0.75%</div></div>
+  </div>
+</div>
+
+</div>
+
+<!-- PAGE 2 -->
+<div class="page page-break">
+
+<div class="stit nb">💻 주요 기술주 동향 (5/14 종가)</div>
+<table class="tbl mb nb">
+  <thead>
+    <tr><th style="width:90px;">티커</th><th>기업</th><th style="width:90px;">종가($)</th><th style="width:90px;">등락률</th><th>주요 원인</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><span class="tk">AVGO</span><div class="co">Broadcom</div></td><td>브로드컴</td><td>439.79</td><td><span class="pct-pill up">+5.52%</span></td><td class="nt">$416 → $439 큰 폭 강세 — Cisco 「Networking Supercycle」 + Meta-Broadcom AI 칩 동맹·TSMC 2nm CoWoS-L 1H27 양산 가이드 동시 호재. FY26 AI 반도체 매출 $30B+ 가시화, ASIC 시장 점유 1위. 시총 $2T 임박</td></tr>
+    <tr><td><span class="tk">COIN</span><div class="co">Coinbase</div></td><td>코인베이스</td><td>212.01</td><td><span class="pct-pill up">+5.06%</span></td><td class="nt">$201 → $212 폭등 — BTC +2.67% $81,393 회복·ETH +1.73% 동조 + 美·中 정상회담 우호 무드로 위험자산 광역 랠리. 「AI Trade Roars Back」 단독 모멘텀</td></tr>
+    <tr><td><span class="tk">TSM</span><div class="co">TSMC ADR</div></td><td>TSMC</td><td>417.72</td><td><span class="pct-pill up">+4.48%</span></td><td class="nt">$399 → $417 큰 폭 회복 — Q1 FY26 매출 $33.7B·전년比 +25%·매출가이드 비트·총이익률 62% + Meta-Broadcom 2nm CoWoS-L 1H27 양산 → TSMC 인크리멘털 수주 확정. 전일 +0.63% 미온 회복에서 강한 갭업</td></tr>
+    <tr><td><span class="tk">NVDA</span><div class="co">NVIDIA</div></td><td>엔비디아</td><td>235.74</td><td><span class="pct-pill up">+4.39%</span></td><td class="nt">$225 → $235 ATH 신고가 갱신 — Huang CEO Trump-Xi 베이징 정상회담 동행 + 中 첨단 칩 수출 완화 기대 가시화. 인트라데이 고가 $236.54·저가 $229.12. 5/20 Q1 어닝 D-6, 컨센 Rev $70-78B·EPS +97% YoY 「explosive earnings」</td></tr>
+    <tr><td><span class="tk">ARM</span><div class="co">ARM Holdings</div></td><td>ARM</td><td>228.50</td><td><span class="pct-pill up">+3.30%</span></td><td class="nt">$221 → $228 회복 — 자체 AI DC CPU·Meta/OpenAI 고객 확정·2026 후반 양산 펀더멘털 재부각. 「Edge AI · DC 듀얼 모멘텀」 회복</td></tr>
+    <tr><td><span class="tk">SMCI</span><div class="co">Super Micro</div></td><td>슈퍼마이크로</td><td>33.03</td><td><span class="pct-pill up">+3.22%</span></td><td class="nt">$32 → $33 회복 — Cisco AI 인프라 가이드 大上向에 동조 강세. AI 서버 ODM 광역 강세</td></tr>
+    <tr><td><span class="tk">ORCL</span><div class="co">Oracle</div></td><td>오라클</td><td>195.61</td><td><span class="pct-pill up">+3.08%</span></td><td class="nt">$189 → $195 강세 — OCI Capex·OpenAI $300B 파트너십 모멘텀 재부각, AI 인프라 광역 랠리 수혜</td></tr>
+    <tr><td><span class="tk">PLTR</span><div class="co">Palantir</div></td><td>팔란티어</td><td>133.73</td><td><span class="pct-pill up">+2.83%</span></td><td class="nt">$130 → $133 회복 — AI/방산 SW 펀더멘털 유효, 차익실현 후 반등</td></tr>
+    <tr><td><span class="tk">MRVL</span><div class="co">Marvell</div></td><td>마벨</td><td>182.58</td><td><span class="pct-pill up">+2.60%</span></td><td class="nt">$178 → $182 강세 — 네트워킹/ASIC 호조에 Broadcom과 동조 강세</td></tr>
+    <tr><td><span class="tk">DELL</span><div class="co">Dell Tech.</div></td><td>델</td><td>247.89</td><td><span class="pct-pill up">+1.65%</span></td><td class="nt">$244 → $247 강세 — Cisco AI 인프라 가이드 大上向에 동조, AI 서버 ODM 호조</td></tr>
+    <tr><td><span class="tk">MSFT</span><div class="co">Microsoft</div></td><td>마이크로소프트</td><td>409.43</td><td><span class="pct-pill up">+1.04%</span></td><td class="nt">$405 → $409 회복 — 전일 -0.63% 약세 후 V자, Azure Capex 우려 흡수. AI Capex Top 4 멤버 + Trump-Xi 정상회담 동행 효과</td></tr>
+    <tr><td><span class="tk">AMD</span><div class="co">Adv. Micro Devices</div></td><td>AMD</td><td>449.70</td><td><span class="pct-pill up">+0.94%</span></td><td class="nt">$445 → $449 강세 — MI350/MI450 양산 펀더멘털 + AI 인프라 광역 강세 동조. 전일 -0.62% 약보합 후 회복</td></tr>
+    <tr><td><span class="tk">META</span><div class="co">Meta Platforms</div></td><td>메타</td><td>618.43</td><td><span class="pct-pill up">+0.29%</span></td><td class="nt">$616 → $618 ATH 추가 갱신 — Meta-Broadcom 2nm AI 칩 동맹 확인 + 광고 매출 견조</td></tr>
+    <tr><td><span class="tk">ASML</span><div class="co">ASML Holding</div></td><td>ASML</td><td>1,584.51</td><td><span class="pct-pill up">+0.19%</span></td><td class="nt">$1,581 → $1,584 미세 상승 — Goldman TP €1,600 상향 후 박스, EUV/High-NA 펀더멘털 유효</td></tr>
+    <tr><td><span class="tk">AAPL</span><div class="co">Apple</div></td><td>애플</td><td>298.21</td><td><span class="pct-pill dn">-0.22%</span></td><td class="nt">$298 → $298 박스 — Tim Cook CEO 베이징 정상회담 동행에도 단기 차익실현, $300 임박 박스 지속</td></tr>
+    <tr><td><span class="tk">GOOGL</span><div class="co">Alphabet</div></td><td>알파벳</td><td>401.07</td><td><span class="pct-pill dn">-0.38%</span></td><td class="nt">$402 → $401 약보합 — $400 사수, 전일 +3.94% V자 후 소폭 차익실현</td></tr>
+    <tr><td><span class="tk">TSLA</span><div class="co">Tesla</div></td><td>테슬라</td><td>443.30</td><td><span class="pct-pill dn">-0.44%</span></td><td class="nt">$445 → $443 약보합 — Musk Trump-Xi 정상회담 동행에도 ATH 갱신 후 소폭 차익실현. Robotaxi 12州 펀더멘털 유효</td></tr>
+    <tr><td><span class="tk">NFLX</span><div class="co">Netflix</div></td><td>넷플릭스</td><td>86.94</td><td><span class="pct-pill dn">-0.71%</span></td><td class="nt">$87 약세 — 콘텐츠 비용 우려 + 차익실현</td></tr>
+    <tr><td><span class="tk">AMZN</span><div class="co">Amazon</div></td><td>아마존</td><td>267.22</td><td><span class="pct-pill dn">-1.08%</span></td><td class="nt">$270 → $267 약세 — AWS Capex 부담 + 4월 소매판매 둔화 우려 동조</td></tr>
+    <tr><td><span class="tk">MU</span><div class="co">Micron</div></td><td>마이크론</td><td>776.01</td><td><span class="pct-pill dn">-3.44%</span></td><td class="nt">$803 → $776 큰 폭 차익실현 — 전일 ATH +4.83% 신기록 후 차익실현. HBM3E sold out 펀더멘털은 유효이나 단기 과열 조정. SOX +0.46% 전체 강세에서 단독 약세</td></tr>
+    <tr><td><span class="tk">INTC</span><div class="co">Intel</div></td><td>인텔</td><td>115.93</td><td><span class="pct-pill dn">-3.62%</span></td><td class="nt">$120 → $115 약세 지속 — 5/12 -6.82% 폭락 후 추가 약세, Apple-Intel 딜 모멘텀 흡수. 美 파운드리 펀더멘털은 유효이나 단기 부진</td></tr>
+    <tr><td><span class="tk">SNDK</span><div class="co">SanDisk</div></td><td>샌디스크</td><td>1,382.72</td><td><span class="pct-pill dn">-4.46%</span></td><td class="nt">$1,447 → $1,382 큰 폭 약세 — NAND 슈퍼사이클 펀더멘털 유효이나 차익실현 가속. 「The Motley Fool: Govt killing golden AI goose」 우려 잔존</td></tr>
+    <tr><td><span class="tk">QCOM</span><div class="co">Qualcomm</div></td><td>퀄컴</td><td>200.08</td><td><span class="pct-pill dn">-6.14%</span></td><td class="nt">$213 → $200 큰 폭 추가 약세 — 5/12 -11.46% 이래 3일 누적 -25% 폭락. 韓 AI세 우려 + Q3 가이드 + 데이터센터 진입 가시화 지연 트리플. $200선 위태</td></tr>
+  </tbody>
+</table>
+
+<div class="g2 mb nb">
+  <div>
+    <div class="stit">🚀 주목할 종목 (상승)</div>
+    <table class="tbl">
+      <thead><tr><th>티커</th><th>종가</th><th>등락률</th><th>핵심</th></tr></thead>
+      <tbody>
+        <tr><td class="tk">CSCO*</td><td>+α</td><td><span class="pct-pill up">+15.00%</span></td><td class="nt">AI 인프라 오더 FY 가이드 $5B→$9B 大上向, 「Networking Supercycle」 선언, Q3 +12% YoY</td></tr>
+        <tr><td class="tk">AVGO</td><td>439.79</td><td><span class="pct-pill up">+5.52%</span></td><td class="nt">Meta-Broadcom 2nm CoWoS-L 1H27 양산, ASIC 시장 점유 1위, 시총 $2T 임박</td></tr>
+        <tr><td class="tk">COIN</td><td>212.01</td><td><span class="pct-pill up">+5.06%</span></td><td class="nt">BTC +2.67% $81K 회복, ETH +1.73% 동조, 위험자산 광역 랠리</td></tr>
+        <tr><td class="tk">TSM</td><td>417.72</td><td><span class="pct-pill up">+4.48%</span></td><td class="nt">Q1 매출 $33.7B·+25% YoY·GM 62%, Meta-Broadcom 2nm 수주, Trump-Xi 호재</td></tr>
+        <tr><td class="tk">NVDA</td><td>235.74</td><td><span class="pct-pill up">+4.39%</span></td><td class="nt">ATH 신고가, Huang Trump-Xi 동행·中 칩 수출 완화 기대, 5/20 어닝 D-6</td></tr>
+        <tr><td class="tk">ARM</td><td>228.50</td><td><span class="pct-pill up">+3.30%</span></td><td class="nt">자체 AI DC CPU·Meta/OpenAI 고객 확정·2026 후반 양산</td></tr>
+      </tbody>
+    </table>
+    <div style="font-size:6.5pt; color:var(--slate3); margin-top:4px;">* CSCO 어닝 직후 +13~17% 폭등, yfinance 시점 차이로 별도 표기</div>
+  </div>
+  <div>
+    <div class="stit">⚠️ 주목할 종목 (하락)</div>
+    <table class="tbl">
+      <thead><tr><th>티커</th><th>종가</th><th>등락률</th><th>핵심</th></tr></thead>
+      <tbody>
+        <tr><td class="tk">QCOM</td><td>200.08</td><td><span class="pct-pill dn">-6.14%</span></td><td class="nt">5/12 이후 3일 누적 -25%, 韓 AI세 + Q3 가이드 + DC 진입 지연, $200선 위태</td></tr>
+        <tr><td class="tk">SNDK</td><td>1,382.72</td><td><span class="pct-pill dn">-4.46%</span></td><td class="nt">NAND 슈퍼사이클 펀더멘털 유효이나 차익실현 가속, 「Govt killing AI goose」 잔존</td></tr>
+        <tr><td class="tk">INTC</td><td>115.93</td><td><span class="pct-pill dn">-3.62%</span></td><td class="nt">5/12 -6.82% 후 추가 약세, Apple-Intel 딜 모멘텀 흡수, $115 이탈</td></tr>
+        <tr><td class="tk">MU</td><td>776.01</td><td><span class="pct-pill dn">-3.44%</span></td><td class="nt">전일 ATH +4.83% 후 차익실현, HBM3E sold out 펀더멘털은 유효</td></tr>
+        <tr><td class="tk">AMZN</td><td>267.22</td><td><span class="pct-pill dn">-1.08%</span></td><td class="nt">AWS Capex 부담 + 4월 소매판매 둔화 우려 동조</td></tr>
+        <tr><td class="tk">NFLX</td><td>86.94</td><td><span class="pct-pill dn">-0.71%</span></td><td class="nt">콘텐츠 비용 우려 + 차익실현</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="stit nb">🇰🇷 한국 시장 영향 매핑 (5/15(금) 영업일 — 네트워킹/AI/암호화폐 강세 + 메모리 차익실현 양극화 + 환율 1,500 박스 + 금융 회복)</div>
+<div class="g2 mb nb">
+  <div class="kr-card">
+    <div class="kr-hdr">반도체·IT (AVGO +5.52%·TSMC +4.48%·NVDA +4.39%·CSCO +15% / QCOM -6.14%·SNDK -4.46%·MU -3.44%·INTC -3.62%)</div>
+    <div class="kr-body">
+      <div class="kr-r"><div class="kr-sec">네트워킹·ASIC</div><div class="kr-desc">CSCO 어닝 폭발(AI 가이드 $5B→$9B)·AVGO +5.52% Meta 2nm 동맹·MRVL +2.60% → <b>이수페타시스(MLB 기판)·심텍·대덕전자(AVGO/Meta ASIC PCB 수혜)·티엘비·KH바텍 강매수</b>. DC 스위칭 +40% YoY「Networking Supercycle」 = AI 인프라 광역 강세 사이클 진입.</div><div class="kr-impact c-up">강매수</div></div>
+      <div class="kr-r"><div class="kr-sec">파운드리·메모리</div><div class="kr-desc">TSMC +4.48% $417 V자(Q1 +25% YoY·GM 62%) → <b>삼성전자(파운드리)·SK하이닉스 갭업 강세</b>. 단, MU -3.44%·SNDK -4.46% 메모리 차익실현 = SK하이닉스·삼성전자 「전일 강세분 일부 환원」 가능성. 펀더멘털(HBM3E sold out)은 유효, 단기 매물 소화 후 재진입.</div><div class="kr-impact c-am">갭업 후 차익</div></div>
+      <div class="kr-r"><div class="kr-sec">SoC·후공정·장비</div><div class="kr-desc">QCOM -6.14% 3일 누적 -25% → <b>삼성전자(스냅드래곤 위탁)·LG이노텍·삼성전기 약세 압력</b>. ASML +0.19% 박스·AMAT 5/14 (장 후) 어닝 결과 분기점 → <b>한미반도체·이오테크닉스·HPSP·원익IPS·코미코 변동성</b>. NVDA +4.39% ATH·5/20 어닝 D-5 = AI 후공정 호조 유지.</div><div class="kr-impact c-am">SoC 약세·장비 변동</div></div>
+    </div>
+  </div>
+  <div class="kr-card">
+    <div class="kr-hdr">기타 섹터 (BTC +2.67%·WTI +0.99%·금융 회복·환율 1,493 박스·Silver -5.48% 폭락)</div>
+    <div class="kr-body">
+      <div class="kr-r"><div class="kr-sec">암호화폐·핀테크</div><div class="kr-desc">COIN +5.06%·BTC +2.67% $81K·ETH +1.73% → <b>두나무(비상장)·갤럭시아머니트리·우리기술투자·다날·SBI인베스트먼트 갭업 매수</b>. Trump-Xi 우호 무드 + AI Risk-On 회귀 = 위험자산 광역 랠리. 韓 가상자산법 모멘텀과 연계.</div><div class="kr-impact c-up">강매수</div></div>
+      <div class="kr-r"><div class="kr-sec">정유·조선·방산</div><div class="kr-desc">WTI +0.99% $102 「$100 재돌파」 — Trump-Xi 회담 직전 호르무즈 우려 잔존 + Iran 공급 risk → <b>S-Oil·GS·SK이노베이션 강매수 회복</b>. HD현대중공업·삼성중공업·한화에어로·LIG넥스원 호재 유지. <b>단, Silver -5.48% $84 폭락 → 고려아연·LS·풍산 큰 폭 차익실현 압력</b>(전일 +3.54% 폭등 후 반락).</div><div class="kr-impact c-up">정유 강세·금속 차익</div></div>
+      <div class="kr-r"><div class="kr-sec">금융·자동차</div><div class="kr-desc">XLF +0.59% 회복(JPM 등 전일 -1.52%에서 반등) → <b>KB·신한·하나·우리금융 일부 매수 환원</b>. 10Y 4.46%(-2bp) 소폭 완화 + 4월 소매판매 약간 둔화. TSLA -0.44% 미온 약세나 Musk Trump-Xi 동행 호재 → <b>현대차·기아·LG에너지솔루션 보합 매수</b>.</div><div class="kr-impact c-up">금융 회복</div></div>
+      <div class="kr-r"><div class="kr-sec">AI/인터넷·소비</div><div class="kr-desc">GOOGL -0.38% 박스·META +0.29% ATH 추가 → <b>네이버·카카오·하이브 보합·NCSoft 매수 유지</b>. 환율 1,493 박스 = 수입 인플레 압력 지속 → <b>아모레퍼시픽·LG생활건강·이마트 보수</b>. 항공(대한항공)은 WTI +0.99% + 환율 1,500 임박 = 더블 역풍 「보수 유지」.</div><div class="kr-impact c-am">보합·일부 보수</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="g2 nb">
+  <div>
+    <div class="stit">🌍 매크로 · 지정학</div>
+    <div class="dcard" style="margin-bottom:6px;">
+      <div class="dcard-t">🤝 Trump-Xi 베이징 정상회담 5/14~15 — 빅테크 CEO 동행 · 中 첨단 칩 수출 완화 기대</div>
+      <div class="nt">Trump·Xi 5/14~15 베이징 정상회담 진행 중. <b>Jensen Huang(NVDA)·Tim Cook(AAPL)·Elon Musk(TSLA) 빅테크 CEO 동행</b> = 「中 첨단 칩 수출 완화」 가능성 부각. NVDA +4.39% $235 ATH 신고가·TSMC +4.48% $417 큰 폭 회복. 의제: ① 中 美 농산품/산업재 $1T 추가 구매(보잉·대두) ② Taiwan ③ 희토류 ④ 반도체 수출 규제 완화 ⑤ Iran 전쟁. Xi 「美·中 관계는 세계에서 가장 결과를 좌우하는 관계」 + Taiwan에 강한 경고 발언 동시. 5/15(금) 결과 발표가 1주 변동성 핵심 — 한국 반도체/AI/네트워킹 「추가 강세」 분기점.</div>
+    </div>
+    <div class="dcard">
+      <div class="dcard-t">⛽ WTI $102 「$100 재돌파」 — Iran 호르무즈 우려 잔존 · Saudi Aramco 손실 경고 지속</div>
+      <div class="nt">WTI +0.99% $102.02 — $100 재돌파. Trump-Xi 회담 직전 호르무즈 우려 잔존 + 美 이란 oil 매수 中 은행 추가 제재 가능성 + Saudi Aramco 「주당 1억 배럴 손실」 경고 지속. IEA: 글로벌 oil 시장 「10월까지 유의미한 공급 부족」 — 이란-이스라엘 전쟁 5/28 종전 가정에도 부족 영역. <b>Silver -5.48% $84 폭락</b> = 전일 +3.54% 폭등 후 큰 폭 반락, 「인플레 헷지」 과열 매물 소화. Gold -0.87% $4,656 동조 약세. 한국 정유주(S-Oil·GS) 강매수 회복 + Silver/금속주(고려아연·LS·풍산) 차익실현.</div>
+    </div>
+  </div>
+  <div>
+    <div class="stit">🏛️ 연준 · 경제지표</div>
+    <div class="dcard" style="margin-bottom:6px;">
+      <div class="dcard-t">📊 4월 소매판매 약간 둔화 + 주간 실업청구 정상화 — 인플레 우려 일부 완화</div>
+      <div class="nt">5/14 발표 4월 소매판매: 컨센보다 약간 둔화 — 5/13 발표된 4월 PPI +6% YoY 「2022년 이래 최고」 충격 이후 「인플레는 끈적이나 소비 둔화 동반」 시그널. 주간 실업청구도 정상 영역 유지. 10Y 4.46%(-2bp)·30Y 5.01%(-4bp)로 소폭 완화. 단, <b>인플레 끈적 + 노동 견조 + 소비 미약 둔화 = 스태그플레이션 단초」</b> 우려는 잠복. CME Group: 연말 Fed 인상 odds 32%로 미세 하향(전일 35%).</div>
+    </div>
+    <div class="dcard">
+      <div class="dcard-t">💼 Powell 임기 만료 D-Day(5/15) + Cisco 「Networking Supercycle」 + AMAT 어닝 결과 대기</div>
+      <div class="nt">Jerome Powell 의장 5/15 임기 만료 D-Day. Senate 본회의 Warsh 인준 표결 임박 — Warsh 매파(인플레 강경) 톤이 향후 12개월 통화정책 분기점. <b>Cisco CEO Chuck Robbins 「Networking Supercycle」 선언</b>: AI 인프라 오더 가이드 $5B → $9B 大上向(+80%)·DC 스위칭 +40% YoY = AI Capex 「제3차 가속」 시그널. AMAT 5/14 (장 후) Q2 어닝 결과 5/15 시간외/5/16 반영 예정 — EUV/High-NA·메모리 장비 가이드 톤 핵심.</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- PAGE 3 -->
+<div class="page page-break">
+
+<div class="stit nb">📈 분석 · 인사이트</div>
+<div class="g2 mb">
+  <div>
+    <div class="ins i-red nb">
+      <span class="ins-tag" style="background:var(--red-bg); color:var(--red);">4대 지수 ATH 동반 · DOW 50K 재돌파 · Cisco Networking Supercycle</span>
+      <h3>「AI Trade Roars Back」 — DOW가 50K 재돌파하며 광역 Risk-On 확장, Cisco 어닝 폭발로 「Networking Supercycle」 시그널 가속</h3>
+      <p>5/14(목) 마감 — <b>S&amp;P +0.77% 7,501.24·NDX +0.88% 26,635·DOW +0.75% 50,063 「50K 재돌파」·R2K +0.67% 2,863 — 4대 지수 동반 신고가/강세</b>. 핵심: <b>Cisco Q3 어닝 폭발</b> Rev $15.84B vs $15.56B·EPS $1.06 vs $1.04 비트 + <b>AI 인프라/하이퍼스케일러 오더 FY 가이드 $5B → $9B 大上向(+80%)</b>·DC 스위칭 오더 +40% YoY·CEO Robbins 「Networking Supercycle」 공식 선언, 어닝 직후 +13~17% 폭등. 트리플 트리거: ① <b>Trump-Xi 베이징 정상회담</b> — Huang(NVDA)/Cook(AAPL)/Musk(TSLA) 빅테크 CEO 동행, 中 첨단 칩 수출 완화 기대 ② <b>NVDA +4.39% $235 ATH·TSMC +4.48% $417·AVGO +5.52% $439·COIN +5.06%·BTC +2.67% $81K</b> AI/네트워킹/암호화폐 트리오 폭발 ③ <b>Meta-Broadcom 2nm AI 칩 동맹·CoWoS-L 1H27 양산</b> 가시화 = TSMC 인크리멘털 수주. VIX 17.26(-3.41%) 17선 하향 이탈. 단, <b>QCOM -6.14% 3일 누적 -25%·SNDK -4.46%·MU -3.44%·INTC -3.62%</b> 일부 칩 차익실현 양극화. 한국 매핑: 네트워킹(이수페타시스·심텍)·AI(SK하이닉스·삼성)·암호화폐(두나무 계열)·정유 강매수 + 메모리/SoC 일부 차익.</p>
+    </div>
+    <div class="ins i-amber nb">
+      <span class="ins-tag" style="background:var(--amber-bg); color:var(--amber);">QCOM 3일 누적 -25% · 메모리 차익실현 · Silver -5.48% 폭락</span>
+      <h3>「AI Concentration · Memory Profit-Taking」 — 광역 Risk-On에 가려진 종목 양극화, AI 인프라 강세 vs 메모리/SoC 매물 소화 명확</h3>
+      <p>5/14 핵심 패러독스: <b>지수 ATH인데 일부 메모리/SoC 큰 폭 차익실현</b>. ① <b>QCOM -6.14% $200 「3일 누적 -25% 폭락」</b> — 5/12 -11.46% 이후 추가 매물, 韓 AI세 + Q3 가이드 + 데이터센터 진입 가시화 지연 + 차익실현 4중 트리플. $200선 위태 = 단기 추가 하방 리스크. ② <b>SNDK -4.46% $1,382·MU -3.44% $776·INTC -3.62% $115</b> — 메모리/IDM 동반 차익실현, 단 펀더멘털(HBM3E sold out·DRAM 15년 최대 공급 부족)은 유효 = 「단기 과열 조정」 신호. ③ <b>Silver -5.48% $84 폭락</b> — 전일 +3.54% 폭등 후 큰 폭 반락, 「인플레 헷지」 과열 매물 + Trump-Xi 우호 무드로 안전자산 매도. ④ <b>AI 인프라 광역 강세: AVGO·TSMC·NVDA·CSCO 트리플 강세 명확</b> — 네트워킹/ASIC/파운드리 사이클이 메모리 단기 조정 흡수. 결론: <b>5/15 한국은 「네트워킹/ASIC/암호화폐 강매수 + 메모리/SoC 일부 차익실현 + 정유 강매수 + 환율 1,500 박스 헷지」</b> 양극화 명확. NVDA 5/20 어닝까지 70% 비중 + 30% 헷지 유지.</p>
+    </div>
+  </div>
+  <div>
+    <div class="ins i-blue nb">
+      <span class="ins-tag" style="background:var(--blue-bg); color:var(--blue);">Cisco AI 가이드 $5B→$9B · Broadcom 2nm·Marvell·SMCI 동반 강세</span>
+      <h3>「Networking Supercycle 사이클 진입 · 韓 PCB·기판·후공정 광역 수혜」 — Cisco/Broadcom 동맹 + Meta/TSMC 2nm = AI Capex 제3차 가속</h3>
+      <p>5/14 가장 큰 시그널: <b>Cisco CEO Chuck Robbins 「Networking Supercycle」 공식 선언</b> + AI 인프라 오더 가이드 $5B → $9B(+80%)·DC 스위칭 +40% YoY·전체 제품 오더 +35% YoY. 동시에 <b>Broadcom +5.52% Meta-Broadcom 2nm CoWoS-L 1H27 양산 가이드</b> + Marvell +2.60%·SMCI +3.22%·Dell +1.65% 동조 강세. 의미: ① <b>AI Capex Top 4(Amazon/Microsoft/Alphabet/Meta) $600B 2026 도달 + 네트워킹 ASIC/스위칭 「전력선」 동반 가속</b> = 단순 GPU(NVDA) → DC 스위칭/광 모듈/HBM/Optical 광역 확장. ② <b>AI 인프라 SCM이 「Front-End(NVDA/AMD GPU) → Mid-Front(TSMC 2nm + Broadcom ASIC + HBM) → Back-End(Cisco 네트워킹 + SMCI/DELL 서버 + 광 모듈)」 풀스택 가속</b> 진입. ③ 한국 매핑: <b>이수페타시스·심텍·대덕전자(MLB/ASIC PCB)·티엘비·KH바텍·LX세미콘·LG이노텍 광역 강매수</b>. SK하이닉스·삼성전자(HBM)는 변동성 영역이나 펀더멘털 유지. <b>5/15 (Trump-Xi 회담 결과 발표일)</b>가 1주 추가 분기점 — 中 첨단 칩 수출 완화 시 NVDA/TSMC 「추가 강세」 단계, 결렬 시 일부 차익실현.</p>
+    </div>
+    <div class="ins i-amber nb">
+      <span class="ins-tag" style="background:var(--amber-bg); color:var(--amber);">USD/KRW 1,493 박스 4일째 · 환율 1,500 임박 잔존 · 4월 소매판매 약간 둔화</span>
+      <h3>「환율 1,500 박스 헷지 유지 + 소비 둔화 단초」 — 5/15 KOSPI 광역 강세 환원에 환율/소비 매크로 리스크 잠복</h3>
+      <p>① <b>환율: USD/KRW 1,493.71(+0.05%) 「1,500 임박 박스 4일째」</b> — DXY +0.41% + Hot PPI 잔존 + 韓 AI세 노이즈 잔존. 수출주(반도체/자동차/배터리) 환율 효과는 유지이나 항공/소비재 더블 역풍 지속. <b>5/15 Powell 임기 만료 + Trump-Xi 회담 결과</b>가 환율 분기점 — 우호 시 1,485 회귀, 결렬 시 1,500 돌파 위험. ② <b>4월 소매판매 약간 둔화</b> — 「인플레 끈적 + 소비 둔화 동반」 = 스태그플레이션 단초 우려 잠복. 단, AI 인프라/네트워킹 펀더멘털이 「실적 사이클」 압도. ③ <b>10Y 4.46%(-2bp) 소폭 완화 · 금융 회복 XLF +0.59%</b> — 전일 -1.14% 약세 일부 회복, KB·신한·하나·우리금융 매수 환원 가능. ④ <b>리스크 잠복: Silver -5.48% 폭락·QCOM 3일 -25% 폭락·SNDK -4.46% 등 「개별 종목 변동성 정점」</b> = 광역 ATH 갱신 속 양극화 리스크. 결론: 5/15 한국 시장은 <b>「네트워킹/AI 강매수 + 메모리/SoC 일부 차익 + 정유 강세 + 환율 헷지」</b> 양극 전략 명확. 단, 1,500 임박 + Powell 임기 만료 더블 트리거 = 30% 헷지 유지 권장.</p>
+    </div>
+  </div>
+</div>
+
+<div class="strat nb">
+  <div class="strat-mode">🚀 전략 모드: 5/15 KOSPI 네트워킹·AI·암호화폐 강매수 + 정유 회복 + 메모리/SoC 차익실현 + 환율 1,500 박스 헷지</div>
+  <ul class="strat-list">
+    <li><span class="bullet">1</span><span><b>네트워킹·AI 인프라 풀스택 강매수 — Cisco「Networking Supercycle」 + AVGO +5.52% Meta 2nm + NVDA +4.39% ATH + TSMC +4.48%</b>. AI 인프라 오더 가이드 $5B → $9B(+80%) 大上向, DC 스위칭 +40% YoY, 전체 제품 오더 +35% YoY. <b>이수페타시스·심텍·대덕전자·티엘비(MLB/ASIC PCB) 강매수 + KH바텍·LX세미콘·LG이노텍(광 모듈/패키지) 매수 + SK하이닉스·삼성전자(HBM) 갭업 강세</b>. 한미반도체·이오테크닉스·HPSP·원익IPS(후공정)는 AMAT 5/14 어닝 결과 확인 후 분할 매수. NVDA 5/20 어닝 D-5 = AI 인프라 광역 강세 가속.</span></li>
+    <li><span class="bullet">2</span><span><b>암호화폐·핀테크 강매수 — COIN +5.06%·BTC +2.67% $81K·ETH +1.73% 트리오 폭등</b>. Trump-Xi 우호 무드 + AI Risk-On 회귀 = 위험자산 광역 랠리. <b>두나무(비상장 익스포저)·갤럭시아머니트리·우리기술투자·다날·SBI인베스트먼트 갭업 매수</b>. 韓 가상자산법 모멘텀과 연계, BTC $85K 돌파 시 추가 강세. 단, 변동성 영역으로 비중 5~10% 제한 권장.</span></li>
+    <li><span class="bullet">3</span><span><b>정유·조선·방산 회복 매수 — WTI +0.99% $102 「$100 재돌파」</b>. Trump-Xi 회담 직전 호르무즈 우려 잔존 + Iran oil 제재 가능성. <b>S-Oil·GS·SK이노베이션 매수 환원 + HD현대중공업·삼성중공업·한화에어로·LIG넥스원 호재 유지</b>. 단, <b>Silver -5.48% $84 폭락 → 고려아연·LS·풍산 큰 폭 차익실현 압력</b>(전일 +3.54% 폭등 후 반락). 5/15 Trump-Xi 결과에 따라 정유 추가 강세 or 일부 차익 분기.</span></li>
+    <li><span class="bullet">4</span><span><b>메모리·SoC 일부 차익실현 + 양극화 대응 — QCOM -6.14% 3일 -25%·SNDK -4.46%·MU -3.44%·INTC -3.62%</b>. <b>삼성전자(스냅드래곤 위탁)·LG이노텍·삼성전기 약세 압력 + SK하이닉스/삼성전자 메모리 「전일 강세 일부 환원」 가능</b>. 단, HBM3E sold out 펀더멘털 유지 = 단기 매물 소화 후 재진입. <b>NVDA 5/20 어닝까지 SK하이닉스 60% 비중 + 40% 헷지</b>, 차익실현 후 5/16~17 추가 진입 권장.</span></li>
+    <li><span class="bullet">5</span><span><b>환율 1,500 박스 헷지 유지 + 소비/항공 보수 — USD/KRW 1,493.71 「1,500 임박 박스 4일째」</b>. Powell 임기 만료(5/15) + Trump-Xi 회담 결과 트리거. <b>항공(대한항공) WTI+환율 더블 역풍·아모레퍼시픽·LG생활건강·이마트 수입 인플레 부담</b>. 통화 헷지 ETF·달러 자산 비중 10% 추가 권장. KB·신한·하나·우리금융은 XLF +0.59% 회복에 매수 환원 가능, 10Y 4.46%(-2bp) 소폭 완화 동조.</span></li>
+  </ul>
+</div>
+
+<div class="g2 nb" style="margin-top:10px;">
+  <div>
+    <div class="stit">📅 오늘 일정 (5/15 금요일)</div>
+    <div class="sched">
+      <div class="dr"><span class="dr-l">🇰🇷 KOSPI 5/15 영업일 (네트워킹/AI/암호화폐 강세) <span class="tag r">최중요</span></span><span class="dr-r">09:00 KST</span></div>
+      <div class="dr"><span class="dr-l">🤝 Trump-Xi 베이징 정상회담 결과 발표 <span class="tag r">최중요</span></span><span class="dr-r">D-Day</span></div>
+      <div class="dr"><span class="dr-l">💼 Powell Fed 의장 임기 만료 <span class="tag r">변동성</span></span><span class="dr-r">D-Day</span></div>
+      <div class="dr"><span class="dr-l">📊 5월 NY 제조업지수 <span class="tag b">매크로</span></span><span class="dr-r">21:30 KST</span></div>
+      <div class="dr"><span class="dr-l">📊 5월 산업생산 <span class="tag b">매크로</span></span><span class="dr-r">22:15 KST</span></div>
+      <div class="dr"><span class="dr-l">📊 5월 미시간 소비심리(예비) <span class="tag b">매크로</span></span><span class="dr-r">23:00 KST</span></div>
+      <div class="dr"><span class="dr-l">📊 AMAT Q2 어닝 결과 반영(5/14 장 후) <span class="tag g">실적</span></span><span class="dr-r">시간외</span></div>
+      <div class="dr"><span class="dr-l">📊 Senate Warsh Fed 의장 인준 표결 <span class="tag r">정책</span></span><span class="dr-r">금주</span></div>
+      <div class="dr"><span class="dr-l">📊 NVDA Q1 어닝 (5/20) <span class="tag g">실적</span></span><span class="dr-r">D-5</span></div>
+    </div>
+  </div>
+  <div>
+    <div class="stit">⚠️ 리스크 체크</div>
+    <div class="ins i-amber" style="margin-bottom:6px;">
+      <span class="ins-tag" style="background:var(--amber-bg); color:var(--amber);">QCOM 3일 누적 -25% · 메모리 차익실현 · Silver -5.48% 폭락</span>
+      <h3>「AI Concentration 양극화」 - 광역 ATH 속 종목 변동성 정점 · 환율 1,500 임박 잔존</h3>
+      <p>① <b>QCOM 5/12~14 3일 누적 -25% 폭락·$200선 위태</b> — 韓 AI세 + Q3 가이드 + 데이터센터 진입 지연 + 차익실현 4중 트리거. 단일 종목 변동성 정점 = 추가 메모리/SoC 동조 약세 가능. ② <b>Silver -5.48% $84 폭락</b> — 전일 +3.54% 폭등 후 큰 폭 반락. 「인플레 헷지」 과열 매물 + Trump-Xi 우호 무드. Gold -0.87% 동조. 한국 고려아연·LS·풍산 큰 폭 차익실현 압력. ③ <b>USD/KRW 1,493 「1,500 임박 박스 4일째」</b> — Powell 임기 만료 + Trump-Xi 결과 더블 트리거. 결렬 시 1,500 돌파 위험. ④ <b>4월 소매판매 약간 둔화 + Hot PPI(5/13) = 스태그플레이션 단초」 우려 잠복</b>. 결론: 광역 ATH 갱신이나 종목 양극화 + 매크로 리스크 잠복 = 70% 비중 + 30% 헷지 유지.</p>
+    </div>
+    <div class="ins i-blue">
+      <span class="ins-tag" style="background:var(--blue-bg); color:var(--blue);">Trump-Xi 결과 D-Day · Powell 임기 만료 · NVDA 어닝 D-5</span>
+      <h3>5/15~20 1주 「트리플 트리거」 변동성 정점 — Trump-Xi 결과·Powell 임기 만료·NVDA 어닝 동시 영역</h3>
+      <p>5/15(금) 단일 24h 변동성 정점: <b>Trump-Xi 베이징 정상회담 결과 발표 D-Day + Powell Fed 의장 임기 만료 D-Day + AMAT 어닝 결과 시간외 반영</b> 3중 트리거. ① <b>Trump-Xi 우호 시</b>: NVDA/TSMC 추가 강세·中 첨단 칩 수출 완화 + 농산품/산업재 $1T 추가 구매 발표 = 한국 반도체/AI/조선 「추가 강세」 / <b>결렬 시</b>: 중국 보복 + 호르무즈 우려 + 환율 1,500 돌파 위험 = 큰 폭 차익실현. ② <b>Powell 임기 만료 D-Day + Warsh 인준 임박</b> — Warsh 매파(인플레 강경) 톤 확정 시 「Hot PPI + 매파 후임」 더블 충격 가능. ③ <b>NVDA 5/20 어닝 D-5 (컨센 Rev $70-78B·EPS +97% YoY)</b> = 1주 후 AI 인프라 「최종 분기점」. 70% 비중 + 30% 헷지 잔류 + 5/15 결과 확인 후 동적 조정 권장.</p>
+    </div>
+  </div>
+</div>
+
+<div class="summ nb" style="margin-top:10px;">
+  <div class="summ-hdr">📌 핵심 3줄 요약</div>
+  <div class="summ-body">
+    <div class="summ-item"><div class="summ-n">1</div><div class="summ-t"><b>5/14(목) 마감 — 「AI Trade Roars Back · Networking Supercycle 진입」 4대 지수 동반 신고가·DOW 50K 재돌파 S&P +0.77% 7,501.24·NDX +0.88% 26,635.22·DOW +0.75% 50,063.46·R2K +0.67% 2,863.09·SOX +0.46% 12,073.78</b>. Cisco 어닝 폭발(Rev/EPS 비트·AI 가이드 $5B→$9B 大上向 +80%·DC 스위칭 +40% YoY·「Networking Supercycle」 선언) + Trump-Xi 베이징 정상회담(Huang/Cook/Musk 빅테크 CEO 동행·中 첨단 칩 수출 완화 기대) + Meta-Broadcom 2nm CoWoS-L 1H27 양산 가시화 트리플 트리거. VIX 17.26(-3.41%) 17선 하향 이탈. 10Y 4.46%(-2bp)·DXY 98.88(+0.41%)·USD/KRW 1,493.71(+0.05% 1,500 임박 박스 4일째)·WTI $102.02(+0.99% $100 재돌파)·Silver -5.48% $84 폭락·Gold -0.87% $4,656·BTC +2.67% $81,393.</div></div>
+    <div class="summ-item"><div class="summ-n">2</div><div class="summ-t"><b>개별 종목 양극화 — 상승: AVGO +5.52% $439(Meta 2nm·시총 $2T 임박)·COIN +5.06% $212(BTC 회복)·TSMC +4.48% $417(Q1 +25% YoY)·NVDA +4.39% $235 ATH(Huang 정상회담 동행·5/20 어닝 D-5)·ARM +3.30% $228·SMCI +3.22%·ORCL +3.08% $195·PLTR +2.83% $133·MRVL +2.60%·DELL +1.65%·MSFT +1.04% $409·AMD +0.94% $449·META +0.29% $618 ATH</b>. <b>하락: QCOM -6.14% $200 「3일 누적 -25% 폭락 위태」·SNDK -4.46% $1,382·INTC -3.62% $115·MU -3.44% $776·AMZN -1.08% $267·NFLX -0.71%·TSLA -0.44% $443·GOOGL -0.38% $401·AAPL -0.22% $298</b>. AI 인프라 광역 강세 vs 메모리/SoC 차익실현 명확한 양극화.</div></div>
+    <div class="summ-item"><div class="summ-n">3</div><div class="summ-t">한국 시장 영향 — <b>5/15(금) KOSPI 네트워킹/AI/암호화폐 강매수 + 정유 회복 + 메모리/SoC 일부 차익 + 환율 1,500 박스 헷지</b>. <b>강매수: 이수페타시스·심텍·대덕전자·티엘비·KH바텍·LX세미콘(AI 네트워킹/ASIC PCB) + SK하이닉스·삼성전자(HBM 갭업 후 변동) + LG이노텍·삼성전기(TSMC V자·NVDA ATH) + S-Oil·GS·SK이노베이션(WTI $102 재돌파) + HD현대중공업·삼성중공업·한화에어로·LIG넥스원(방산/조선) + 두나무계열·갤럭시아머니트리(BTC 회복)</b>. <b>차익실현/보수: 삼성전자(스냅드래곤 QCOM -6.14%)·LG이노텍 일부·고려아연·LS·풍산(Silver -5.48% 폭락)·대한항공(WTI+환율 더블 역풍)·아모레퍼시픽·LG생활건강·이마트(수입 인플레)·KOSPI 메모리 차익 일부</b>. <b>NVDA 5/20 어닝 D-5까지 70% 비중 + 30% 헷지 잔류 권장</b> + 5/15 Trump-Xi 결과·Powell 임기 만료·Warsh 인준 트리플 트리거 핵심.</div></div>
+  </div>
+</div>
+
+<div class="ftr nb">
+  <p><b>출처</b>: Yahoo Finance(yfinance API, 종가 기준) · CNBC · TheStreet · 24/7 Wall St · Bloomberg · Reuters · CNBC Cisco Earnings · Morningstar · FX Leaders · Trading Economics · Federal Reserve · TrendForce · Al Jazeera</p>
+  <p>본 자료는 정보 제공 목적이며 투자 권유가 아닙니다. 투자 결정의 책임은 본인에게 있습니다.</p>
+  <p>생성: 2026-05-15 07:00 KST · 미국 시장 모닝 브리핑 (5/14 종가 기준)</p>
+</div>
+
+</div>
+
+</body>
+</html>
