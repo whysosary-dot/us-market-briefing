@@ -23,12 +23,12 @@
   }
   * { box-sizing: border-box; margin: 0; padding: 0; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
   body { font-family: 'Noto Sans KR', -apple-system, sans-serif; color: var(--ink); background: var(--white); font-size: 13.5pt; line-height: 1.5; }
-  .page { width: 186mm; max-width: 186mm; margin: 0 auto; }
+  .page { width: 100%; max-width: 100%; margin: 0 auto; }
   .page-break { page-break-before: always; }
   .nb { page-break-inside: avoid; break-inside: avoid; }
   @media screen {
-    body { background: #e2e8f0; padding: 5px 0; }
-    .page { background: #fff; padding: 2mm 2.4mm; box-shadow: 0 4px 20px rgba(0,0,0,0.12); border-radius: 6px; margin-bottom: 4px; }
+    body { background: #e2e8f0; padding: 0; margin: 0; }
+    .page { background: #fff; padding: 4px 6px; box-shadow: 0 4px 20px rgba(0,0,0,0.12); border-radius: 6px; margin-bottom: 4px; width: 100%; max-width: 100%; }
   }
   @media print { .page { width: 100%; max-width: 100%; padding: 0; } }
 
@@ -176,16 +176,16 @@
   .c-gn { color: var(--green); }
   .c-am { color: var(--amber); }
 
-  /* ===== 📱 태블릿/데스크탑 (≥768px) — 화면 폭 100% 유지, 컬럼 레이아웃 유지 ===== */
+  /* ===== 📱 태블릿/데스크탑/아이패드 (≥768px) — 화면 폭 100% + 극소 여백 ===== */
   @media screen and (min-width: 768px) {
-    body { padding: 3px 0; }
-    .page { width: 100% !important; max-width: 100% !important; padding: 2.8mm 3.2mm !important; border-radius: 8px; }
+    body { padding: 0 !important; margin: 0 !important; }
+    .page { width: 100% !important; max-width: 100% !important; padding: 6px 8px !important; border-radius: 8px; margin-left: 0 !important; margin-right: 0 !important; }
   }
 
   /* ===== 📱 모바일 반응형 (max-width: 767px) ===== */
   @media screen and (max-width: 767px) {
-    body { font-size: 19.5px; line-height: 1.55; padding: 2px 0; background: #f1f5f9; }
-    .page { width: 100% !important; max-width: 100% !important; padding: 3px 2px !important; margin-bottom: 3px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+    body { font-size: 19.5px; line-height: 1.55; padding: 0 !important; margin: 0 !important; background: #f1f5f9; }
+    .page { width: 100% !important; max-width: 100% !important; padding: 4px 4px !important; margin: 0 0 2px 0 !important; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
     .page-break { page-break-before: auto; }
 
     /* 헤더 */
@@ -284,7 +284,7 @@
 
   /* ===== 📱 매우 좁은 화면 (max-width: 420px) — 추가 압축 ===== */
   @media screen and (max-width: 420px) {
-    .page { padding: 2px 2px !important; }
+    .page { padding: 3px 3px !important; margin: 0 !important; }
     .kpi-row { grid-template-columns: repeat(2, 1fr); }
     .idx-grid { grid-template-columns: 1fr; }
     .ix-v { font-size: 27px; }
