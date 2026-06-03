@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>미국 시장 모닝 브리핑 | 2026.06.04</title>
+<style>
+  @page { size: A4 portrait; margin: 2mm 2.4mm; }
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+
+  :root {
+    --red: #dc2626; --red-bg: #fef2f2; --red-light: #fee2e2;
+    --blue: #2563eb; --blue-bg: #eff6ff; --blue-light: #dbeafe;
+    --green: #16a34a; --green-bg: #f0fdf4;
+    --amber: #d97706; --amber-bg: #fffbeb;
+    --slate: #334155; --slate2: #64748b; --slate3: #94a3b8;
+    --slate4: #cbd5e1; --slate5: #e2e8f0; --slate6: #f1f5f9;
+    --white: #ffffff; --ink: #0f172a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+  body { font-family: 'Noto Sans KR', -apple-system, sans-serif; color: var(--ink); background: var(--white); font-size: 13.5pt; line-height: 1.5; }
+  .page { width: 100%; max-width: 100%; margin: 0 auto; }
+  .page-break { page-break-before: always; }
+  .nb { page-break-inside: avoid; break-inside: avoid; }
+  @media screen {
+    body { background: #e2e8f0; padding: 0; margin: 0; }
+    .page { background: #fff; padding: 4px 6px; box-shadow: 0 4px 20px rgba(0,0,0,0.12); border-radius: 6px; margin-bottom: 4px; width: 100%; max-width: 100%; }
+  }
+  @media print { .page { width: 100%; max-width: 100%; padding: 0; } }
+
+  .hdr { background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%) !important; border-radius: 8px; padding: 14px 18px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; color: #fff; }
+  .hdr h1 { font-size: 22.5pt; font-weight: 900; letter-spacing: -0.8px; }
+  .hdr .sub { font-size: 11.25pt; color: #94a3b8; margin-top: 2px; font-weight: 400; }
+  .hdr .dt { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); padding: 5px 14px; border-radius: 20px; font-size: 12pt; font-weight: 700; }
+
+  .hero { border-radius: 8px; padding: 12px 16px; margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
+  .hero.positive { background: linear-gradient(135deg, #fef2f2 0%, #fff1f2 100%) !important; border: 1.5px solid #fca5a5; }
+  .hero.positive .hero-icon { background: var(--red); }
+  .hero.positive .hero-text { color: #991b1b; }
+  .hero.positive .hero-text b { color: var(--red); }
+  .hero.negative { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%) !important; border: 1.5px solid #93c5fd; }
+  .hero.negative .hero-icon { background: var(--blue); }
+  .hero.negative .hero-text { color: #1e3a8a; }
+  .hero.negative .hero-text b { color: var(--blue); }
+  .hero.mixed { background: linear-gradient(135deg, #fffbeb 0%, #fefce8 100%) !important; border: 1.5px solid #fde68a; }
+  .hero.mixed .hero-icon { background: var(--amber); }
+  .hero.mixed .hero-text { color: #92400e; }
+  .hero.mixed .hero-text b { color: var(--amber); }
+  .hero-icon { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; color: #fff; }
+  .hero-text { font-size: 12.75pt; line-height: 1.6; }
+
+  .kpi-row { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; margin-bottom: 12px; }
+  .kpi { text-align: center; padding: 8px 4px; border-radius: 6px; border: 1px solid var(--slate5); }
+  .kpi.neg { background: var(--blue-bg); border-color: var(--blue-light); }
+  .kpi.pos { background: var(--red-bg); border-color: var(--red-light); }
+  .kpi.neu { background: var(--slate6); }
+  .kpi-lb { font-size: 9.75pt; font-weight: 700; color: var(--slate3); text-transform: uppercase; letter-spacing: 0.5px; }
+  .kpi-v { font-size: 19.5pt; font-weight: 900; margin-top: 2px; }
+
+  .top2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+
+  .sent { border: 1px solid var(--slate5); border-radius: 8px; padding: 12px 14px; background: var(--white); }
+  .sent-hdr { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .sent-badge { font-size: 16.5pt; font-weight: 900; padding: 4px 12px; border-radius: 16px; }
+  .sent-badge.fear { color: var(--amber); background: var(--amber-bg); border: 1px solid #fde68a; }
+  .sent-badge.extreme-fear { color: var(--blue); background: var(--blue-bg); border: 1px solid var(--blue-light); }
+  .sent-badge.greed { color: var(--red); background: var(--red-bg); border: 1px solid var(--red-light); }
+  .sent-badge.neutral { color: var(--slate2); background: var(--slate6); border: 1px solid var(--slate5); }
+  .sent-mode { font-size: 11.25pt; font-weight: 700; color: var(--green); background: var(--green-bg); border: 1px solid #bbf7d0; padding: 3px 10px; border-radius: 12px; }
+  .gauge-wrap { margin-top: 6px; }
+  .gauge-lbl { display: flex; justify-content: space-between; font-size: 9pt; color: var(--slate3); margin-top: 4px; font-weight: 500; }
+
+  .idx-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .ix { border: 1px solid var(--slate5); border-radius: 6px; padding: 8px 10px; position: relative; overflow: hidden; }
+  .ix::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+  .ix.dn::after { background: var(--blue); }
+  .ix.up::after { background: var(--red); }
+  .ix-n { font-size: 9.75pt; color: var(--slate3); font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; }
+  .ix-v { font-size: 21pt; font-weight: 900; margin: 1px 0; }
+  .ix-c { font-size: 12pt; font-weight: 700; }
+  .ix-t { font-size: 9.75pt; display: inline-block; padding: 1px 5px; border-radius: 3px; font-weight: 700; margin-top: 2px; }
+  .t-dn { background: var(--blue-bg); color: var(--blue); }
+  .t-up { background: var(--red-bg); color: var(--red); }
+  .t-warn { background: var(--amber-bg); color: var(--amber); }
+
+  .stit { font-size: 15pt; font-weight: 900; color: var(--ink); margin-bottom: 6px; padding-bottom: 4px; border-bottom: 2.5px solid var(--ink); display: flex; align-items: center; gap: 6px; }
+
+  .g3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .mb { margin-bottom: 10px; }
+
+  .dcard { border: 1px solid var(--slate5); border-radius: 6px; padding: 8px 10px; background: var(--white); }
+  .dcard-t { font-size: 10.5pt; font-weight: 700; color: var(--slate3); text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 5px; }
+  .dr { display: flex; justify-content: space-between; align-items: center; padding: 3px 0; }
+  .dr + .dr { border-top: 1px solid var(--slate6); }
+  .dr-l { font-size: 11.25pt; color: var(--slate2); }
+  .dr-r { font-size: 11.25pt; font-weight: 700; }
+
+  .sec-chart { border: 1px solid var(--slate5); border-radius: 6px; padding: 10px 12px; }
+  .sec-r { display: flex; align-items: center; gap: 6px; padding: 4px 0; }
+  .sec-r + .sec-r { border-top: 1px solid var(--slate6); }
+  .sec-nm { flex: 0 0 80px; font-size: 11.25pt; color: var(--slate2); font-weight: 500; }
+  .sec-vis { flex: 1; display: flex; align-items: center; height: 16px; position: relative; }
+  .sec-vis .mid { position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: var(--slate4); }
+  .sec-bar-c { width: 50%; display: flex; align-items: center; height: 100%; }
+  .sec-bar-c.left { justify-content: flex-end; }
+  .sec-bar-c.right { justify-content: flex-start; }
+  .sb { height: 12px; border-radius: 2px; min-width: 2px; }
+  .sb.up { background: linear-gradient(90deg, #fca5a5, var(--red)) !important; border-radius: 2px 0 0 2px; }
+  .sb.dn { background: linear-gradient(90deg, var(--blue), #93c5fd) !important; border-radius: 0 2px 2px 0; }
+  .sec-v { flex: 0 0 42px; text-align: right; font-size: 12pt; font-weight: 800; }
+
+  .tbl { width: 100%; border-collapse: collapse; border: 1px solid var(--slate5); border-radius: 6px; overflow: hidden; }
+  .tbl th { font-size: 9.75pt; font-weight: 700; color: var(--slate3); text-transform: uppercase; letter-spacing: 0.4px; padding: 6px 8px; text-align: left; background: var(--slate6); border-bottom: 1.5px solid var(--slate5); }
+  .tbl td { padding: 5px 8px; font-size: 12pt; border-bottom: 1px solid var(--slate6); }
+  .tbl tr:last-child td { border-bottom: none; }
+  .tbl tr:nth-child(even) td { background: #fafbfc; }
+  .tk { font-weight: 900; font-size: 13.5pt; letter-spacing: 0.3px; }
+  .co { color: var(--slate3); font-size: 9.75pt; font-weight: 500; }
+  .nt { color: var(--slate2); font-size: 10.5pt; line-height: 1.5; }
+  .pct-pill { display: inline-block; padding: 2px 7px; border-radius: 4px; font-weight: 800; font-size: 12.75pt; }
+  .pct-pill.dn { background: var(--blue-bg); color: var(--blue); }
+  .pct-pill.up { background: var(--red-bg); color: var(--red); }
+
+  .ins { border-radius: 6px; padding: 10px 12px; margin-bottom: 6px; border: 1px solid var(--slate5); position: relative; overflow: hidden; }
+  .ins::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; }
+  .ins.i-blue::before { background: var(--blue); }
+  .ins.i-red::before { background: var(--red); }
+  .ins.i-green::before { background: var(--green); }
+  .ins.i-amber::before { background: var(--amber); }
+  .ins-tag { display: inline-block; font-size: 9pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 2px 7px; border-radius: 3px; margin-bottom: 4px; }
+  .ins h3 { font-size: 13.5pt; font-weight: 800; margin-bottom: 3px; line-height: 1.4; }
+  .ins p { font-size: 11.25pt; color: var(--slate2); line-height: 1.65; }
+
+  .strat { border: 2px solid var(--red); border-radius: 8px; padding: 12px 14px; background: linear-gradient(135deg, var(--red-bg) 0%, #fff 100%) !important; }
+  .strat-mode { display: inline-block; background: var(--red); color: #fff; padding: 5px 16px; border-radius: 6px; font-size: 16.5pt; font-weight: 900; margin-bottom: 10px; letter-spacing: -0.3px; }
+  .strat-list { list-style: none; }
+  .strat-list li { padding: 4px 0; font-size: 12pt; color: var(--slate2); display: flex; gap: 6px; align-items: flex-start; }
+  .strat-list li + li { border-top: 1px solid var(--red-light); }
+  .strat-list .bullet { display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; border-radius: 50%; background: var(--red); color: #fff; font-size: 9.75pt; font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+
+  .summ { border: 2px solid var(--red); border-radius: 8px; overflow: hidden; }
+  .summ-hdr { background: var(--red); color: #fff; padding: 6px 14px; font-size: 13.5pt; font-weight: 800; }
+  .summ-body { padding: 10px 14px; background: var(--red-bg); }
+  .summ-item { display: flex; gap: 10px; padding: 6px 0; align-items: flex-start; }
+  .summ-item + .summ-item { border-top: 1px solid var(--red-light); }
+  .summ-n { width: 24px; height: 24px; border-radius: 50%; background: var(--red); color: #fff; font-size: 15pt; font-weight: 900; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .summ-t { font-size: 12.75pt; font-weight: 600; line-height: 1.65; color: var(--ink); }
+
+  .sched { border: 1px solid var(--slate5); border-radius: 6px; padding: 8px 10px; }
+  .sched .dr-l { font-size: 12pt; }
+  .tag { display: inline-block; font-size: 9pt; font-weight: 700; padding: 2px 6px; border-radius: 8px; }
+  .tag.r { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-light); }
+  .tag.b { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-light); }
+  .tag.y { background: var(--amber-bg); color: var(--amber); border: 1px solid #fde68a; }
+  .tag.g { background: var(--green-bg); color: var(--green); border: 1px solid #bbf7d0; }
+
+  .kr-card { border: 1px solid var(--slate5); border-radius: 6px; overflow: hidden; }
+  .kr-card .kr-hdr { background: var(--slate6); padding: 5px 10px; font-size: 10.5pt; font-weight: 700; color: var(--slate2); text-transform: uppercase; }
+  .kr-card .kr-body { padding: 6px 10px; }
+  .kr-r { display: grid; grid-template-columns: 70px 1fr auto; gap: 6px; align-items: center; padding: 4px 0; }
+  .kr-r + .kr-r { border-top: 1px solid var(--slate6); }
+  .kr-sec { font-size: 12pt; font-weight: 800; color: var(--ink); }
+  .kr-desc { font-size: 10.5pt; color: var(--slate2); }
+  .kr-impact { font-size: 11.25pt; font-weight: 800; text-align: right; }
+
+  .ftr { text-align: center; padding: 10px 0; margin-top: 8px; border-top: 1.5px solid var(--slate5); }
+  .ftr p { font-size: 9.75pt; color: var(--slate3); line-height: 1.7; }
+
+  .c-up { color: var(--red); }
+  .c-dn { color: var(--blue); }
+  .c-gn { color: var(--green); }
+  .c-am { color: var(--amber); }
+
+  /* ===== 📱 태블릿/데스크탑/아이패드 (≥768px) — 화면 폭 100% + 극소 여백 ===== */
+  @media screen and (min-width: 768px) {
+    body { padding: 0 !important; margin: 0 !important; }
+    .page { width: 100% !important; max-width: 100% !important; padding: 6px 8px !important; border-radius: 8px; margin-left: 0 !important; margin-right: 0 !important; }
+  }
+
+  /* ===== 📱 모바일 반응형 (max-width: 767px) ===== */
+  @media screen and (max-width: 767px) {
+    body { font-size: 19.5px; line-height: 1.55; padding: 0 !important; margin: 0 !important; background: #f1f5f9; }
+    .page { width: 100% !important; max-width: 100% !important; padding: 4px 4px !important; margin: 0 0 2px 0 !important; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+    .page-break { page-break-before: auto; }
+
+    .hdr { padding: 12px 14px; flex-direction: column; align-items: flex-start; gap: 8px; }
+    .hdr h1 { font-size: 25.5px; line-height: 1.3; }
+    .hdr .sub { font-size: 16.5px; line-height: 1.5; }
+    .hdr .dt { font-size: 16.5px; padding: 4px 12px; align-self: flex-start; }
+
+    .hero { flex-direction: row; align-items: flex-start; padding: 12px 14px; gap: 10px; }
+    .hero-icon { width: 32px; height: 32px; font-size: 24px; }
+    .hero-text { font-size: 18.75px; line-height: 1.65; }
+
+    .kpi-row { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+    .kpi { padding: 8px 4px; }
+    .kpi-lb { font-size: 13.5px; }
+    .kpi-v { font-size: 22.5px; }
+
+    .top2 { grid-template-columns: 1fr; gap: 10px; }
+    .g3 { grid-template-columns: 1fr; gap: 8px; }
+    .g2 { grid-template-columns: 1fr; gap: 8px; }
+
+    .idx-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
+    .ix { padding: 8px 10px; }
+    .ix-n { font-size: 13.5px; }
+    .ix-v { font-size: 24px; }
+    .ix-c { font-size: 16.5px; }
+    .ix-t { font-size: 13.5px; }
+
+    .sent { padding: 12px 14px; }
+    .sent-badge { font-size: 19.5px; }
+    .sent-mode { font-size: 15px; }
+    .gauge-lbl { font-size: 12px; }
+
+    .dcard { padding: 10px 12px; }
+    .dcard-t { font-size: 15px; }
+    .dr { padding: 4px 0; }
+    .dr-l, .dr-r { font-size: 16.5px; }
+
+    .stit { font-size: 19.5px; padding-bottom: 5px; margin-bottom: 8px; }
+
+    .sec-chart { padding: 10px 10px; }
+    .sec-nm { flex: 0 0 88px; font-size: 15px; }
+    .sec-v { flex: 0 0 50px; font-size: 16.5px; }
+
+    .tbl { font-size: 16.5px; }
+    .tbl th { font-size: 13.5px; padding: 6px 6px; }
+    .tbl td { padding: 6px 6px; font-size: 16.5px; }
+    .tk { font-size: 18px; }
+    .co { font-size: 13.5px; }
+    .nt { font-size: 15.75px; line-height: 1.55; }
+    .pct-pill { font-size: 16.5px; padding: 2px 6px; }
+
+    .ins { padding: 12px 14px; margin-bottom: 8px; }
+    .ins h3 { font-size: 19.5px; line-height: 1.45; }
+    .ins p { font-size: 17.25px; line-height: 1.7; }
+    .ins-tag { font-size: 13.5px; }
+
+    .kr-card .kr-hdr { font-size: 15px; padding: 6px 10px; line-height: 1.5; }
+    .kr-r { grid-template-columns: 80px 1fr; row-gap: 4px; }
+    .kr-r .kr-impact { grid-column: 1 / -1; text-align: left; padding-top: 2px; }
+    .kr-sec { font-size: 16.5px; }
+    .kr-desc { font-size: 15.75px; line-height: 1.6; }
+    .kr-impact { font-size: 15.75px; }
+
+    .strat { padding: 12px 14px; }
+    .strat-mode { font-size: 19.5px; padding: 6px 14px; }
+    .strat-list li { font-size: 17.25px; padding: 6px 0; line-height: 1.7; }
+    .strat-list .bullet { width: 18px; height: 18px; font-size: 13.5px; }
+
+    .sched .dr-l { font-size: 16.5px; line-height: 1.6; }
+    .sched .dr-r { font-size: 15.75px; }
+    .tag { font-size: 13.5px; }
+
+    .summ-hdr { font-size: 18px; padding: 7px 14px; }
+    .summ-body { padding: 10px 12px; }
+    .summ-t { font-size: 18px; line-height: 1.7; }
+    .summ-n { width: 22px; height: 22px; font-size: 18px; }
+
+    .ftr p { font-size: 14.25px; line-height: 1.65; }
+  }
+
+  /* ===== 📱 매우 좁은 화면 (max-width: 420px) — 추가 압축 ===== */
+  @media screen and (max-width: 420px) {
+    .page { padding: 3px 3px !important; margin: 0 !important; }
+    .kpi-row { grid-template-columns: repeat(2, 1fr); }
+    .idx-grid { grid-template-columns: 1fr; }
+    .ix-v { font-size: 27px; }
+    .hero-text { font-size: 18px; }
+    .tbl th { font-size: 12.75px; padding: 5px 4px; }
+    .tbl td { padding: 5px 4px; font-size: 15.75px; }
+    .tk { font-size: 16.5px; }
+    .nt { font-size: 15px; }
+    .pct-pill { font-size: 15.75px; padding: 2px 5px; }
+  }
+</style>
+</head>
+<body>
+<!-- PAGE 1 -->
+<div class="page">
+
+<div class="hdr nb">
+  <div>
+    <h1>🇺🇸 미국 시장 모닝 브리핑</h1>
+    <div class="sub">6/3(수) 마감 — Gulf Risk-Off·Iran 미사일 공격·유가 급등·4대 지수 동반 하락·반도체 단독 강세·AVGO AI 매출 폭증 시간외 강세·환율 1,500선 돌파 · 출처: CNBC·Reuters·Bloomberg·Yahoo Finance·Al Jazeera·SEC</div>
+  </div>
+  <div class="dt">2026. 6. 4 (목)</div>
+</div>
+
+<div class="hero negative nb">
+  <div class="hero-icon">🛢️</div>
+  <div class="hero-text">
+    <b>Gulf Risk-Off Day — Iran 미사일 쿠웨이트·바레인 공격으로 호르무즈 리스크 재점화 + 유가 광역 급등 + 4대 지수 동반 하락. 다만 반도체는 단독 강세, 장 마감 후 AVGO AI 매출 폭증·가이던스 상향으로 시간외 강세 전환.</b>
+    <b>광역 톤 양극화 — 4대 지수 동반 하락·DOW 600p 급락·소형주 광역 매도 vs 반도체/메모리/장비 단독 강세·바이오/에너지 견조. 채권금리 상승·VIX 반등·달러 강세·금 차익. 휴장중 선물 약세·유가 강세 지속.</b>
+    <b>한국 시장 영향: KOSPI 「섹터 로테이션 데이」 — 반도체·메모리·장비 광역 강매수 vs SaaS/AI 응용 단기 차익, 정유·조선 강세 vs 항공·여행 약세, 환율 1,533 1,500선 돌파로 외국인 자금이탈 경계 + KOSPI 시초 약세 출발 가능.</b>
+  </div>
+</div>
+
+<div class="kpi-row nb">
+  <div class="kpi neg"><div class="kpi-lb">S&amp;P 500</div><div class="kpi-v c-dn">7,554</div></div>
+  <div class="kpi neg"><div class="kpi-lb">DOW</div><div class="kpi-v c-dn">50,687</div></div>
+  <div class="kpi pos"><div class="kpi-lb">VIX</div><div class="kpi-v c-up">16.06</div></div>
+  <div class="kpi neu"><div class="kpi-lb">10Y 금리</div><div class="kpi-v c-up">4.49%</div></div>
+  <div class="kpi pos"><div class="kpi-lb">WTI 종가</div><div class="kpi-v c-up">$96.20</div></div>
+  <div class="kpi pos"><div class="kpi-lb">USD/KRW</div><div class="kpi-v c-up">1,533</div></div>
+</div>
+
+<div class="top2 nb">
+  <div class="sent">
+    <div class="sent-hdr">
+      <div class="sent-badge fear">탐욕 후퇴 (54)</div>
+      <div class="sent-mode" style="color:var(--amber); background:var(--amber-bg); border:1px solid #fde68a;">Iran 미사일 · 유가 급등 · 4대 지수 동반 하락 · 반도체 단독 강세 · AVGO 시간외 강세</div>
+    </div>
+    <div class="gauge-wrap">
+      <svg width="100%" height="56" viewBox="0 0 280 56">
+        <defs>
+          <linearGradient id="g1" x1="0" x2="1">
+            <stop offset="0%" stop-color="#2563eb"/>
+            <stop offset="25%" stop-color="#60a5fa"/>
+            <stop offset="50%" stop-color="#fbbf24"/>
+            <stop offset="75%" stop-color="#fb923c"/>
+            <stop offset="100%" stop-color="#dc2626"/>
+          </linearGradient>
+        </defs>
+        <rect x="10" y="22" width="260" height="10" rx="5" fill="url(#g1)"/>
+        <polygon points="151,18 158,8 144,8" fill="#0f172a"/>
+        <text x="151" y="50" text-anchor="middle" font-size="9" font-weight="800" fill="#0f172a">54</text>
+      </svg>
+      <div class="gauge-lbl"><span>0 극공포</span><span>25</span><span>50 중립</span><span>75</span><span>100 극탐욕</span></div>
+    </div>
+    <div style="margin-top:10px; font-size: 11.25pt; color:var(--slate2); line-height:1.6;">
+      <b>Iran 미사일 / 유가 급등 / 4대 지수 동반 하락 / 반도체 단독 강세 / AVGO AI 매출 폭증</b>
+    </div>
+  </div>
+  <div>
+    <div class="idx-grid">
+      <div class="ix dn"><div class="ix-n">S&amp;P 500</div><div class="ix-v">7,553.68</div><div class="ix-c c-dn">-56.10 (-0.74%)</div><span class="ix-t t-dn">신고가 차익·7,600선 이탈</span></div>
+      <div class="ix dn"><div class="ix-n">NASDAQ</div><div class="ix-v">26,853.98</div><div class="ix-c c-dn">-239.92 (-0.89%)</div><span class="ix-t t-dn">SaaS 광역 매도</span></div>
+      <div class="ix dn"><div class="ix-n">DOW</div><div class="ix-v">50,687.07</div><div class="ix-c c-dn">-620.72 (-1.21%)</div><span class="ix-t t-dn">600p 급락·51K 이탈</span></div>
+      <div class="ix dn"><div class="ix-n">RUSSELL 2000</div><div class="ix-v">2,893.51</div><div class="ix-c c-dn">-38.45 (-1.31%)</div><span class="ix-t t-dn">소형주 광역 매도</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="g3 mb nb">
+  <div class="dcard">
+    <div class="dcard-t">📊 채권금리 (6/3 종가)</div>
+    <div class="dr"><span class="dr-l">10Y 美 국채</span><span class="dr-r c-up">4.49% (+3.6bp)</span></div>
+    <div class="dr"><span class="dr-l">30Y</span><span class="dr-r c-up">4.99% (+2.3bp)</span></div>
+    <div class="dr"><span class="dr-l">5Y</span><span class="dr-r c-up">4.21% (+3.7bp)</span></div>
+    <div class="dr"><span class="dr-l">2-10 스프레드</span><span class="dr-r">+87bp 확대</span></div>
+    <div class="dr"><span class="dr-l">금리 톤</span><span class="dr-r c-am">유가 급등 · 인플레 재점화 우려</span></div>
+  </div>
+  <div class="dcard">
+    <div class="dcard-t">💱 환율 (6/3 종가)</div>
+    <div class="dr"><span class="dr-l">DXY 달러인덱스</span><span class="dr-r c-up">99.53 (+0.32%)</span></div>
+    <div class="dr"><span class="dr-l">USD/KRW</span><span class="dr-r c-up">1,533.12 (+1.45%)</span></div>
+    <div class="dr"><span class="dr-l">USD/JPY</span><span class="dr-r c-up">160.42 (+0.35%)</span></div>
+    <div class="dr"><span class="dr-l">EUR/USD</span><span class="dr-r c-dn">1.152 (-0.43%)</span></div>
+    <div class="dr"><span class="dr-l">원화 톤</span><span class="dr-r c-am">★1,500선 돌파·외국인 자금이탈 경계</span></div>
+  </div>
+  <div class="dcard">
+    <div class="dcard-t">🛢️ 원자재 · 코인 (6/3 종가)</div>
+    <div class="dr"><span class="dr-l">WTI 선물</span><span class="dr-r c-up">$96.20 (+2.60%)</span></div>
+    <div class="dr"><span class="dr-l">Brent 선물</span><span class="dr-r c-up">$98.42 (+2.45%)</span></div>
+    <div class="dr"><span class="dr-l">금</span><span class="dr-r c-dn">$4,462 (-0.58%)</span></div>
+    <div class="dr"><span class="dr-l">은</span><span class="dr-r c-dn">$74.85 (-0.78%)</span></div>
+    <div class="dr"><span class="dr-l">BTC</span><span class="dr-r c-dn">$65,425 (-1.92%)</span></div>
+  </div>
+</div>
+
+<div class="nb">
+  <div class="stit">📊 섹터별 등락률 (6/3 종가 · 바이오/반도체/에너지 단독 강세·방산/커뮤니케이션/금융 광역 매도)</div>
+  <div class="sec-chart">
+    <div class="sec-r"><div class="sec-nm">바이오 (IBB)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:80%;"></div></div></div><div class="sec-v c-up">+1.97%</div></div>
+    <div class="sec-r"><div class="sec-nm">바이오 ETF (XBI)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:68%;"></div></div></div><div class="sec-v c-up">+1.62%</div></div>
+    <div class="sec-r"><div class="sec-nm">반도체 (SOX)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:60%;"></div></div></div><div class="sec-v c-up">+1.39%</div></div>
+    <div class="sec-r"><div class="sec-nm">에너지 E&amp;P (XOP)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:56%;"></div></div></div><div class="sec-v c-up">+1.35%</div></div>
+    <div class="sec-r"><div class="sec-nm">에너지 (XLE)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:54%;"></div></div></div><div class="sec-v c-up">+1.29%</div></div>
+    <div class="sec-r"><div class="sec-nm">헬스케어 (XLV)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:32%;"></div></div></div><div class="sec-v c-up">+0.79%</div></div>
+    <div class="sec-r"><div class="sec-nm">필수소비 (XLP)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:16%;"></div></div></div><div class="sec-v c-up">+0.40%</div></div>
+    <div class="sec-r"><div class="sec-nm">소재 (XLB)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:8%;"></div></div></div><div class="sec-v c-up">+0.21%</div></div>
+    <div class="sec-r"><div class="sec-nm">부동산 (XLRE)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:3%;"></div></div></div><div class="sec-v c-up">+0.05%</div></div>
+    <div class="sec-r"><div class="sec-nm">산업재 (XLI)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"><div class="sb dn" style="width:4%;"></div></div><div class="sec-bar-c right"></div></div><div class="sec-v c-dn">-0.08%</div></div>
+    <div class="sec-r"><div class="sec-nm">유틸리티 (XLU)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"><div class="sb dn" style="width:18%;"></div></div><div class="sec-bar-c right"></div></div><div class="sec-v c-dn">-0.43%</div></div>
+    <div class="sec-r"><div class="sec-nm">운송 (IYT)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"><div class="sb dn" style="width:20%;"></div></div><div class="sec-bar-c right"></div></div><div class="sec-v c-dn">-0.50%</div></div>
+    <div class="sec-r"><div class="sec-nm">임의소비 (XLY)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"><div class="sb dn" style="width:30%;"></div></div><div class="sec-bar-c right"></div></div><div class="sec-v c-dn">-0.73%</div></div>
+    <div class="sec-r"><div class="sec-nm">기술 (XLK)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"><div class="sb dn" style="width:40%;"></div></div><div class="sec-bar-c right"></div></div><div class="sec-v c-dn">-1.00%</div></div>
+    <div class="sec-r"><div class="sec-nm">금융 (XLF)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"><div class="sb dn" style="width:46%;"></div></div><div class="sec-bar-c right"></div></div><div class="sec-v c-dn">-1.15%</div></div>
+    <div class="sec-r"><div class="sec-nm">커뮤니케이션 (XLC)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"><div class="sb dn" style="width:54%;"></div></div><div class="sec-bar-c right"></div></div><div class="sec-v c-dn">-1.31%</div></div>
+    <div class="sec-r"><div class="sec-nm">방산 (ITA)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"><div class="sb dn" style="width:62%;"></div></div><div class="sec-bar-c right"></div></div><div class="sec-v c-dn">-1.51%</div></div>
+  </div>
+</div>
+
+</div>
+
+<!-- PAGE 2 -->
+<div class="page page-break">
+
+<div class="stit nb">💻 주요 기술주 동향 (6/3 종가 · SNDK/INTC/AMD/META 폭등·반도체 광역 매수 vs SaaS/AI 광역 매도·ORCL/CRM/PLTR 급락)</div>
+<table class="tbl mb nb">
+  <thead>
+    <tr><th style="width:90px;">티커</th><th>기업</th><th style="width:90px;">종가($)</th><th style="width:90px;">등락률</th><th>핵심</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><span class="tk">SNDK</span><div class="co">SanDisk</div></td><td>샌디스크</td><td>1,831.50</td><td><span class="pct-pill up">+6.71%</span></td><td class="nt"><b>NAND 슈퍼사이클 재가속·BofA TP 상향·AI Inference 스토리지 신규 모멘텀</b></td></tr>
+    <tr><td><span class="tk">INTC</span><div class="co">Intel</div></td><td>112.71</td><td><span class="pct-pill up">+4.43%</span></td><td class="nt"><b>18A 파운드리 첫 양산 시그널·MSFT/AMZN 외주 채택 시그널 + 美 정부 지원 read-through</b></td></tr>
+    <tr><td><span class="tk">META</span><div class="co">Meta Platforms</div></td><td>622.98</td><td><span class="pct-pill up">+4.24%</span></td><td class="nt"><b>광고 AI 효율성·Llama 4 통합 광고 매출 가이드 + XLC 매도 속 단독 강세 차별화</b></td></tr>
+    <tr><td><span class="tk">AMD</span><div class="co">Adv. Micro Devices</div></td><td>542.52</td><td><span class="pct-pill up">+4.02%</span></td><td class="nt"><b>MI400 양산 가속·OpenAI 채택·DC 점유 회복 모멘텀 광역 매수</b></td></tr>
+    <tr><td><span class="tk">QCOM</span><div class="co">Qualcomm</div></td><td>250.01</td><td><span class="pct-pill up">+3.81%</span></td><td class="nt">엣지 AI/스마트폰 모뎀 광역 강세·중국 5G 확장 + Auto 매출 가속</td></tr>
+    <tr><td><span class="tk">ARM</span><div class="co">ARM Holdings</div></td><td>411.83</td><td><span class="pct-pill up">+2.26%</span></td><td class="nt">v9 라이선스 매출 가속·커스텀 ASIC 광역 채택</td></tr>
+    <tr><td><span class="tk">AMAT</span><div class="co">Applied Materials</div></td><td>500.77</td><td><span class="pct-pill up">+2.19%</span></td><td class="nt">HBM/3D NAND 장비 광역 강세·SOX 견인 동조</td></tr>
+    <tr><td><span class="tk">XOM</span><div class="co">ExxonMobil</div></td><td>152.53</td><td><span class="pct-pill up">+1.99%</span></td><td class="nt">WTI $96 급등·중동 리스크 헷지·정유 마진 개선</td></tr>
+    <tr><td><span class="tk">MU</span><div class="co">Micron</div></td><td>1,079.57</td><td><span class="pct-pill up">+1.45%</span></td><td class="nt">HBM4 양산 본격·AI ASIC 메모리 수혜 지속</td></tr>
+    <tr><td><span class="tk">ASML</span><div class="co">ASML Holding</div></td><td>1,726.36</td><td><span class="pct-pill up">+1.23%</span></td><td class="nt">EUV 광역 강세·NVDA Rubin 양산 + ASIC 채택 가속</td></tr>
+    <tr><td><span class="tk">TSLA</span><div class="co">Tesla</div></td><td>423.70</td><td><span class="pct-pill up">-0.01%</span></td><td class="nt">보합 — Robotaxi 확장 모멘텀 vs 4대 지수 동반 하락 상쇄</td></tr>
+    <tr><td><span class="tk">AAPL</span><div class="co">Apple</div></td><td>310.26</td><td><span class="pct-pill dn">-1.57%</span></td><td class="nt">WWDC 6/8-12 D-5·Apple Intelligence 발표 베팅 차익 + 지수 동반 하락</td></tr>
+    <tr><td><span class="tk">NFLX</span><div class="co">Netflix</div></td><td>81.52</td><td><span class="pct-pill dn">-2.17%</span></td><td class="nt">광고 모멘텀 지속에도 XLC 매도 동조</td></tr>
+    <tr><td><span class="tk">TSM</span><div class="co">TSMC ADR</div></td><td>436.69</td><td><span class="pct-pill dn">-2.24%</span></td><td class="nt">INTC 18A 외주 시그널 read-through·NVDA 약세 동조 단기 차익</td></tr>
+    <tr><td><span class="tk">AMZN</span><div class="co">Amazon</div></td><td>250.02</td><td><span class="pct-pill dn">-2.53%</span></td><td class="nt">XLY 약세·AWS Capex 부담·INTC 외주 시그널은 호재</td></tr>
+    <tr><td><span class="tk">MSFT</span><div class="co">Microsoft</div></td><td>427.34</td><td><span class="pct-pill dn">-3.17%</span></td><td class="nt">Capex 부담 동조·INTC 외주 채택 시그널은 read-through</td></tr>
+    <tr><td><span class="tk">NVDA</span><div class="co">NVIDIA</div></td><td>214.75</td><td><span class="pct-pill dn">-3.62%</span></td><td class="nt"><b>AMD/QCOM 광역 강세는 ASIC 경쟁 시그널·Rubin 단기 차익 + AI 응용 매도 동조</b></td></tr>
+    <tr><td><span class="tk">CRM</span><div class="co">Salesforce</div></td><td>190.61</td><td><span class="pct-pill dn">-5.09%</span></td><td class="nt"><b>Agentforce 가이드 둔화 우려·BMO TP 하향·SaaS 광역 매도</b></td></tr>
+    <tr><td><span class="tk">ORCL</span><div class="co">Oracle</div></td><td>230.33</td><td><span class="pct-pill dn">-5.83%</span></td><td class="nt"><b>OpenAI Stargate Texas 확장 백지화·NVDA 서버 주문 취소 보도·6/10 어닝 D-7 우려</b></td></tr>
+    <tr><td><span class="tk">PLTR</span><div class="co">Palantir</div></td><td>142.20</td><td><span class="pct-pill dn">-6.55%</span></td><td class="nt"><b>밸류에이션 부담(87x P/S)·AI 응용 광역 차익·고밸류 매도 1순위</b></td></tr>
+  </tbody>
+</table>
+
+<div class="g2 mb nb">
+  <div>
+    <div class="stit">🚀 주목할 종목 (상승)</div>
+    <table class="tbl">
+      <thead><tr><th>티커</th><th>종가</th><th>등락률</th><th>핵심</th></tr></thead>
+      <tbody>
+        <tr><td class="tk">SNDK</td><td>1,831.50</td><td><span class="pct-pill up">+6.71%</span></td><td class="nt">NAND 슈퍼사이클 재가속·BofA TP 상향</td></tr>
+        <tr><td class="tk">INTC</td><td>112.71</td><td><span class="pct-pill up">+4.43%</span></td><td class="nt">18A 첫 양산·MSFT/AMZN 외주 시그널</td></tr>
+        <tr><td class="tk">META</td><td>622.98</td><td><span class="pct-pill up">+4.24%</span></td><td class="nt">광고 AI·Llama 4·XLC 매도 속 단독 강세</td></tr>
+        <tr><td class="tk">AMD</td><td>542.52</td><td><span class="pct-pill up">+4.02%</span></td><td class="nt">MI400 양산·OpenAI 채택·DC 점유 회복</td></tr>
+        <tr><td class="tk">QCOM</td><td>250.01</td><td><span class="pct-pill up">+3.81%</span></td><td class="nt">엣지 AI 광역 강세·중국 5G 확장</td></tr>
+        <tr><td class="tk">XOM</td><td>152.53</td><td><span class="pct-pill up">+1.99%</span></td><td class="nt">WTI $96·중동 헷지·정유 마진 개선</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <div class="stit">⚠️ 주목할 종목 (하락)</div>
+    <table class="tbl">
+      <thead><tr><th>티커</th><th>종가</th><th>등락률</th><th>핵심</th></tr></thead>
+      <tbody>
+        <tr><td class="tk">PLTR</td><td>142.20</td><td><span class="pct-pill dn">-6.55%</span></td><td class="nt">87x P/S 밸류 부담·AI 응용 차익 1순위</td></tr>
+        <tr><td class="tk">ORCL</td><td>230.33</td><td><span class="pct-pill dn">-5.83%</span></td><td class="nt">Stargate Texas 백지화·6/10 어닝 D-7</td></tr>
+        <tr><td class="tk">CRM</td><td>190.61</td><td><span class="pct-pill dn">-5.09%</span></td><td class="nt">Agentforce 가이드 둔화·BMO TP 하향</td></tr>
+        <tr><td class="tk">NVDA</td><td>214.75</td><td><span class="pct-pill dn">-3.62%</span></td><td class="nt">ASIC 경쟁·Rubin 차익·AI 응용 매도 동조</td></tr>
+        <tr><td class="tk">UAL</td><td>105.14</td><td><span class="pct-pill dn">-3.38%</span></td><td class="nt">유가 $96·항공 광역 매도·연료비 부담</td></tr>
+        <tr><td class="tk">MSFT</td><td>427.34</td><td><span class="pct-pill dn">-3.17%</span></td><td class="nt">Capex 부담·SaaS 동조·INTC 외주 read-through</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="stit nb">🇰🇷 한국 시장 영향 매핑 (6/4(목) 영업일 — Iran 미사일·유가 $96·환율 1,533 돌파·반도체 단독 강세 vs SaaS 매도·항공/소형주 약세)</div>
+<div class="g2 mb nb">
+  <div class="kr-card">
+    <div class="kr-hdr">반도체·메모리·장비 단독 강매수 (SOX +1.39% + SNDK/INTC/AMD/QCOM/AMAT 광역 강세)</div>
+    <div class="kr-body">
+      <div class="kr-r"><div class="kr-sec">메모리·HBM</div><div class="kr-desc">SNDK +6.71% NAND 슈퍼사이클 재가속·MU +1.45%·AMAT +2.19% 장비 동조 = <b>SK하이닉스·삼성전자·삼성SDI 강매수</b>. AVGO 시간외 강세(AI 매출 폭증) read-through로 HBM 수요 가속 narrative 재확인.</div><div class="kr-impact c-up">강매수</div></div>
+      <div class="kr-r"><div class="kr-sec">반도체 장비·후공정</div><div class="kr-desc">AMAT +2.19%·ASML +1.23%·INTC +4.43% 18A 양산 시그널 = <b>한미반도체·HPSP·이오테크닉스·원익IPS·동진쎄미켐 매수</b>. 파운드리 경쟁 가속 + MSFT/AMZN 외주 시그널 = K-장비 후공정 광역 수혜.</div><div class="kr-impact c-up">매수</div></div>
+      <div class="kr-r"><div class="kr-sec">정유·조선·중동</div><div class="kr-desc">WTI $96.20(+2.60%)·XOM/CVX 동반 강세·Iran 호르무즈 리스크 재점화 = <b>S-Oil·GS·SK이노 매수</b> + <b>HD현대중공업·삼성중공업·한화오션 매수</b>(LNG/유조선 단기 강세 + 중동 발주 모멘텀).</div><div class="kr-impact c-up">매수</div></div>
+    </div>
+  </div>
+  <div class="kr-card">
+    <div class="kr-hdr">기타 섹터 (환율 1,533 돌파·SaaS/AI 응용 매도·항공/소형주 약세·외국인 자금이탈 경계)</div>
+    <div class="kr-body">
+      <div class="kr-r"><div class="kr-sec">SaaS·AI 응용</div><div class="kr-desc">ORCL -5.83%·CRM -5.09%·PLTR -6.55%·NVDA -3.62% AI 응용 광역 매도 = <b>네이버·카카오·삼성SDS·더존비즈온 분할 차익</b>. AI 인프라(메모리/장비) vs AI 응용(SaaS) 양극화 가속.</div><div class="kr-impact c-dn">단기 차익</div></div>
+      <div class="kr-r"><div class="kr-sec">항공·여행·화학</div><div class="kr-desc">UAL -3.38%·DAL -1.55% 유가 부담 매도 = <b>대한항공·진에어·하나투어 매도</b>. WTI $96 부담 = <b>LG화학·롯데케미칼·금호석유 매도</b>(원료비 급등).</div><div class="kr-impact c-dn">매도</div></div>
+      <div class="kr-r"><div class="kr-sec">방산·자동차</div><div class="kr-desc">ITA -1.51% 단기 차익에도 Iran 호르무즈 리스크 잔존 = <b>한화에어로·LIG넥스원 매수 유지</b>(중장기 지정학 헷지). 자동차: TSLA 보합·환율 1,533 = <b>현대차·기아 환율 수혜 vs 외국인 수급 양면</b>.</div><div class="kr-impact c-am">혼조</div></div>
+      <div class="kr-r"><div class="kr-sec">바이오·금융·환율</div><div class="kr-desc">IBB +1.97%·XBI +1.62% 광역 강세 = <b>셀트리온·삼성바이오·SK바이오팜 분할 매수</b>. 금융 XLF -1.15% 약세·KB/신한 관망. <b>★환율 1,533 1,500선 돌파 = 외국인 자금이탈 경계·KODEX 인버스 헷지 강화</b>.</div><div class="kr-impact c-am">혼조·헷지</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="g2 nb">
+  <div>
+    <div class="stit">🌍 매크로 · 지정학</div>
+    <div class="dcard" style="margin-bottom:6px;">
+      <div class="dcard-t">📊 6/4 ADP·6/6 NFP·6/3 ISM 서비스 미스 + 인플레 재점화 우려</div>
+      <div class="nt"><b>6/3 매크로 = ISM 서비스 미스 + 유가 급등 인플레 우려 + 채권 매도</b>. ① <b>5월 ISM 서비스 50.8(컨센 51.5 미스)</b> — 서비스 경기 둔화 시그널 ② <b>10Y 4.49%(+3.6bp) 상승·30Y 4.99%(+2.3bp)·VIX 16.06(+1.84%) 반등</b> — 유가 급등 인플레 재점화 우려 ③ <b>금주 6/4 ADP(컨센 +95K)·6/6 5월 NFP(컨센 +96K·실업 4.3%)</b> 어닝 외 최대 분기점 ④ <b>6/17~18 FOMC D-2주 인하 odds 18%로 후퇴</b>(유가 급등·금리 상승 = 매파 부담) ⑤ <b>WTI $96.20(+2.60%) 호르무즈 리스크·금 $4,462(-0.58%) 차익</b>. 한국 영향: <b>환율 1,533 1,500선 돌파·외국인 자금이탈 경계 가속·시초 약세 출발 가능</b>.</div>
+    </div>
+    <div class="dcard">
+      <div class="dcard-t">⚔️ Iran 미사일 공격 (쿠웨이트·바레인) — 호르무즈 리스크 재점화</div>
+      <div class="nt"><b>중동 광역 변동성 재점화</b>. ① <b>Iran 미사일 쿠웨이트 T1 공항 공습</b> — 공항 1동 손상·항공편 중단·미·바레인 방공망 일부 요격 ② <b>美軍 호르무즈 인근 유조선 강제 정선·Iran 드론 격추</b>·해상로 리스크 가속 ③ <b>WTI $96.20·Brent $98+ 급등·OPEC+ 증산 시그널 무력화</b> ④ <b>러-우 평화협상 정체·Trump 추가 제재 압박</b> ⑤ <b>美中 90일 휴전 D-25일</b>·관세 노이즈 재점화 우려. 한국 영향: <b>정유 매수·조선(LNG/유조선) 매수·항공/화학 매도 + 방산 단기 차익에도 중장기 매수 유지</b>.</div>
+    </div>
+  </div>
+  <div>
+    <div class="stit">🏛️ 종목 이슈 · 신규 모멘텀</div>
+    <div class="dcard" style="margin-bottom:6px;">
+      <div class="dcard-t">⚡ AVGO Q2 어닝 — AI 매출 +143% YoY $10.8B·Q3 가이드 +200% $16B·시간외 강세</div>
+      <div class="nt">6/3 장 마감 후 핵심 트리거 = <b>「Broadcom AI 매출 폭증 + Q3 가이드 사상 최대 상향」</b>. ① <b>Q2 AI 반도체 매출 $10.8B(+143% YoY)</b>·커스텀 ASIC + AI 네트워킹 광역 성장 ② <b>Q2 전체 매출 $22.2B(+48% YoY) 신기록·영업이익/FCF 신기록</b> ③ <b>★Q3 AI 매출 가이드 $16.0B(+200% YoY)·전체 매출 $29.4B(+84% YoY)</b> ④ <b>시간외 AVGO +6~9% 강세·SOX +1.39% 견인 지속</b> ⑤ <b>CRWD Q1 ARR +32%·FY27 가이드 +520bp 상향</b>(보안 SaaS 차별화). 한국 매핑: <b>SK하이닉스·삼성전자(HBM 수요 가속) + 한미반도체·HPSP·이오테크닉스(ASIC 후공정) 강매수 + 이수페타시스·심텍(AI 서버 PCB) 매수 + LS일렉·효성중공업(데이터센터 전력) 매수</b>.</div>
+    </div>
+    <div class="dcard">
+      <div class="dcard-t">💥 Oracle Stargate 백지화 + INTC 18A 양산 = AI 인프라 양극화</div>
+      <div class="nt">6/3 양극화 트리거: ① <b>★Oracle/OpenAI Stargate Texas 데이터센터 확장 백지화 보도</b>(Bloomberg)·ORCL -5.83% ② <b>Oracle, NVDA 서버 주문 SMCI 통해 일부 취소·AI capex 축소 시그널</b> ③ <b>★INTC +4.43% 폭등·18A 첫 양산 시그널 + MSFT/AMZN 외주 채택 가능성</b> 보도 ④ <b>NVDA -3.62%·TSM -2.24% read-through 단기 차익</b>(INTC 외주 경쟁 우려) ⑤ <b>PLTR -6.55%·CRM -5.09% AI 응용 광역 매도</b> 87x P/S 밸류 부담 ⑥ <b>다만 AVGO 가이드 +200% = AI 인프라 매수 narrative 유효</b>. 한국 매핑: <b>SK하이닉스/삼성전자 매수 유지(HBM)·네이버/카카오/삼성SDS 단기 차익(SaaS 동조)·이수페타시스/심텍 매수 유지</b>.</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- PAGE 3 -->
+<div class="page page-break">
+
+<div class="stit nb">📈 분석 · 인사이트</div>
+<div class="g2 mb">
+  <div>
+    <div class="ins i-blue nb">
+      <span class="ins-tag" style="background:var(--blue-bg); color:var(--blue);">4대 지수 동반 하락·DOW -1.21%·R2K -1.31%·유가 +2.60%·VIX 반등·환율 1,533</span>
+      <h3>「Gulf Risk-Off Day — Iran 미사일 공격 + 유가 $96 + 4대 지수 동반 하락 + 반도체 단독 강세」: 섹터 양극화 본격화</h3>
+      <p>6/3 마감 핵심 = <b>「Iran 호르무즈 리스크 + 유가 광역 급등 + 4대 지수 동반 하락 vs 반도체 단독 강세」</b>. ① <b>S&amp;P 7,553.68(-0.74%)·NDX 26,853.98(-0.89%)·DOW 50,687.07(-1.21%) 600p 급락·R2K 2,893.51(-1.31%) 광역 매도</b> ② <b>Iran 미사일 쿠웨이트 T1 공항 공습 + 바레인 요격 + 美軍 호르무즈 유조선 정선</b> = 중동 리스크 재점화 ③ <b>WTI $96.20(+2.60%)·Brent $98+·SOX +1.39% 단독 견인</b> ④ <b>10Y 4.49%(+3.6bp) 상승·VIX 16.06(+1.84%) 반등·DXY 99.53(+0.32%)</b> ⑤ <b>USD/KRW 1,533.12(+1.45%) 1,500선 돌파</b>·외국인 자금이탈 경계. <b>핵심 시사점</b>: ① <b>지정학 헷지 트레이드 = 정유/조선/방산 매수</b> ② <b>AI 인프라(메모리/장비) vs AI 응용(SaaS) 광역 양극화</b> ③ <b>장 마감 후 AVGO Q2 어닝 폭증 + Q3 가이드 +200% = 시간외 강세 → SOX 6/4 추가 강세 가능</b>. 한국: <b>「반도체·정유·조선」 매수 vs 「SaaS·항공·화학」 매도 + 환율 1,533 시초 부담</b>.</p>
+    </div>
+    <div class="ins i-amber nb">
+      <span class="ins-tag" style="background:var(--amber-bg); color:var(--amber);">AVGO AI 매출 +143%·Q3 +200%·INTC 18A 양산·ORCL Stargate 백지화·AI 양극화</span>
+      <h3>「AI Infrastructure 2.0 vs SaaS Sell-off — AVGO 폭증 + INTC 18A 양산 + ORCL/PLTR/CRM 급락」: AI 양극화 본격화</h3>
+      <p>6/3 양극화 핵심 = <b>「AI 인프라 매수 + AI 응용/SaaS 광역 매도」</b>. ① <b>AVGO Q2 AI 매출 $10.8B(+143% YoY)·Q3 가이드 $16B(+200%)</b>·시간외 폭등 ② <b>INTC +4.43%·18A 첫 양산 + MSFT/AMZN 외주 시그널</b> = 파운드리 양극화 ③ <b>SNDK +6.71% NAND 슈퍼사이클·MU +1.45%·AMAT +2.19% 장비 강세</b> ④ <b>ORCL -5.83% Stargate Texas 백지화·CRM -5.09% Agentforce 가이드 둔화·PLTR -6.55% 87x P/S 매도</b> ⑤ <b>NVDA -3.62% ASIC 경쟁 부담·TSM -2.24% INTC 18A read-through</b> ⑥ <b>META +4.24% 광고 AI/Llama 4 단독 강세 차별화</b>. <b>한국 시사점</b>: ① <b>SK하이닉스·삼성전자(HBM 수요 가속·AVGO Q3 +200% read-through) 강매수</b> ② <b>한미반도체·HPSP·이오테크닉스·원익IPS·동진쎄미켐(장비/후공정) 매수</b> ③ <b>이수페타시스·심텍·코리아써키트(AI 서버 PCB) 매수 유지</b> ④ <b>네이버·카카오·삼성SDS·더존비즈온(SaaS 동조) 단기 차익</b>.</p>
+    </div>
+  </div>
+  <div>
+    <div class="ins i-red nb">
+      <span class="ins-tag" style="background:var(--red-bg); color:var(--red);">Iran 미사일·WTI $96·정유/조선 강세·항공 매도·중동 리스크 재점화</span>
+      <h3>「Geopolitical Risk Trade — Iran 쿠웨이트/바레인 공습 + 유가 광역 급등 + 정유/조선 강세 + 항공/화학 매도」: 한국 지정학 헷지 트레이드 본격화</h3>
+      <p>6/3 지정학 트리거 = <b>「Iran 미사일 쿠웨이트 T1 공항 + 美軍 호르무즈 유조선 강제 정선」</b>. ① <b>WTI $96.20(+2.60%) 6주 최고·Brent $98+ 급등</b>·OPEC+ 증산 시그널 무력화 ② <b>XLE +1.29%·XOP +1.35%·XOM +1.99%·CVX +1.15% 에너지 광역 매수</b> ③ <b>UAL -3.38%·DAL -1.55% 항공 연료비 부담 매도</b> ④ <b>ITA -1.51% 방산 단기 차익에도 중장기 매수 narrative 유효</b> ⑤ <b>금 $4,462(-0.58%) 차익·달러 DXY +0.32% 강세 = 안전자산 차별화</b>. <b>한국 매핑</b>: ① <b>정유: S-Oil·GS·SK이노 매수</b>(WTI $96 마진 개선) ② <b>조선: HD현대중공업·삼성중공업·한화오션 매수</b>(LNG 운반선 + 유조선 단기 강세 + 중동 발주) ③ <b>방산: 한화에어로·LIG넥스원·풍산 매수 유지</b>(중장기 헷지) ④ <b>항공: 대한항공·진에어·티웨이 매도</b>(연료비 부담) ⑤ <b>화학: LG화학·롯데케미칼·금호석유 매도</b>(원료비 급등).</p>
+    </div>
+    <div class="ins i-green nb">
+      <span class="ins-tag" style="background:var(--green-bg); color:var(--green);">반도체·정유·조선 광역 매수 + SaaS 차익 + 항공/화학 매도 + 환율 1,533 헷지</span>
+      <h3>「Korea Sector Rotation Day — 반도체/정유/조선 강매수 + SaaS/항공/화학 매도 + 환율 1,533 외국인 자금이탈 경계」: KOSPI 시초 약세·로테이션 트레이드</h3>
+      <p>6/4(목) KOSPI 「섹터 로테이션 + 외국인 자금이탈 경계 데이」 — <b>「AVGO Q3 +200% + INTC 18A + Iran 미사일 + 환율 1,533」</b> 4중 트리거. ① <b>반도체·메모리·장비 광역 매수</b> — SK하이닉스(HBM 수요 가속)·삼성전자(파운드리/메모리)·한미반도체·HPSP·이오테크닉스·원익IPS·동진쎄미켐(AVGO Q3 +200% + INTC 18A read-through) ② <b>AI 서버 PCB 매수 유지</b> — 이수페타시스·심텍·코리아써키트 ③ <b>데이터센터 전력 매수</b> — LS일렉트릭·효성중공업·HD현대일렉트릭 ④ <b>정유 매수</b> — S-Oil·GS·SK이노(WTI $96 마진 개선) ⑤ <b>조선 강매수</b> — HD현대중공업·삼성중공업·한화오션(LNG/유조선 + 중동 발주) ⑥ <b>방산 매수 유지</b> — 한화에어로·LIG넥스원·풍산(중장기 헷지) ⑦ <b>SaaS/AI 응용 단기 차익</b> — 네이버·카카오·삼성SDS·더존비즈온(ORCL/CRM/PLTR 동조) ⑧ <b>항공/화학 매도</b> — 대한항공·진에어·LG화학·롯데케미칼(유가 부담) ⑨ <b>★환율 1,533 1,500선 돌파 = KODEX 인버스/달러 ETF 헷지 5% 추가</b>. 비중 70%·헷지 20%·현금 10%. <b>금일 시초 약세 출발·6/4 ADP·6/6 NFP 분기점</b>.</p>
+    </div>
+  </div>
+</div>
+
+<div class="strat nb">
+  <div class="strat-mode">🎯 전략 모드: Risk-Off 섹터 로테이션 · 반도체/정유/조선 강매수 · SaaS/항공/화학 매도 · 환율 1,533 외국인 자금이탈 경계 · 변동성 대비</div>
+  <ul class="strat-list">
+    <li><span class="bullet">1</span><span><b>반도체·메모리·장비 트라이앵글 강매수 — AVGO Q3 +200% 가이드 시간외 폭등·SNDK +6.71%·INTC +4.43%·AMD +4.02%·SOX +1.39% 단독 견인</b>. <b>최우선 매수</b>: SK하이닉스(HBM4 양산 + AVGO read-through)·삼성전자(메모리/파운드리 듀얼·INTC 18A 경쟁). 후공정/장비: 한미반도체·HPSP·이오테크닉스·원익IPS·동진쎄미켐. 비중 65%·시초 약세 시 분할 매수(10:00 KST 이후).</span></li>
+    <li><span class="bullet">2</span><span><b>정유·조선·방산 지정학 헷지 강매수 — WTI $96.20(+2.60%)·Iran 쿠웨이트/바레인 미사일·호르무즈 리스크 재점화</b>. ① <b>정유 매수</b>: S-Oil·GS·SK이노(마진 개선). ② <b>★조선 강매수</b>: HD현대중공업·삼성중공업·한화오션(LNG/유조선 단기 강세 + 중동 발주 가능성). ③ <b>방산 매수 유지</b>: 한화에어로·LIG넥스원·풍산(ITA -1.51% 단기 차익 = 분할 매수 기회). 비중 50%·시초 강세 추격 자제.</span></li>
+    <li><span class="bullet">3</span><span><b>SaaS·AI 응용·항공·화학 분할 매도 — ORCL -5.83%·CRM -5.09%·PLTR -6.55%·UAL -3.38%</b>. ① <b>SaaS 단기 차익</b>: 네이버·카카오·삼성SDS·더존비즈온 비중 30%(AI 양극화 가속·고밸류 부담 단기 매도). ② <b>항공 매도</b>: 대한항공·진에어·티웨이(연료비 부담). ③ <b>화학 매도</b>: LG화학·롯데케미칼·금호석유(원료비 급등). ④ <b>현금화 후 반도체/정유/조선 로테이션</b>.</span></li>
+    <li><span class="bullet">4</span><span><b>★환율 1,533 1,500선 돌파 — 외국인 자금이탈 경계·KODEX 인버스/달러 ETF 헷지 5% 추가</b>. ① <b>달러 ETF</b>: KODEX 미국달러선물·TIGER 미국달러선물 비중 8~10% ② <b>KODEX 인버스</b>: 변동성 헷지 5% ③ <b>자동차 분할 보류</b>: 현대차·기아(환율 수혜 vs 외국인 수급 양면 — 시초 추격 자제) ④ <b>2차전지 관망</b>: LG에너지솔루션·삼성SDI·에코프로(TSLA 보합·중립).</span></li>
+    <li><span class="bullet">5</span><span><b>매크로 풀세트 분기점 진입 — 6/4 ADP·6/6 NFP·6/8 WWDC·6/10 ORCL·6/17~18 FOMC</b>. ① <b>금일 6/4 ADP 고용(컨센 +95K)</b> NFP 사전 시그널 ② <b>6/6(금) 5월 NFP(+96K·실업 4.3%)</b> 최대 분기점·유가 급등 인플레 우려에 인하 odds 18%로 후퇴 ③ <b>6/8-12 WWDC</b> Apple Intelligence 발표 ④ <b>6/10 ORCL Q4 어닝</b> Stargate 백지화 후 첫 어닝 ⑤ <b>6/17~18 FOMC</b> 매파 가능성 증가. 비중 70%·헷지 20%·현금 10%.</span></li>
+  </ul>
+</div>
+
+<div class="g2 nb" style="margin-top:10px;">
+  <div>
+    <div class="stit">📅 오늘 일정 (6/4 목요일)</div>
+    <div class="sched">
+      <div class="dr"><span class="dr-l">🇰🇷 KOSPI 6/4 「섹터 로테이션 데이」·시초 약세 출발 가능 <span class="tag r">최중요</span></span><span class="dr-r">09:00 KST</span></div>
+      <div class="dr"><span class="dr-l">🇰🇷 USD/KRW 1,533 1,500선 돌파·외국인 자금이탈 경계 <span class="tag y">주의</span></span><span class="dr-r">09:00 KST</span></div>
+      <div class="dr"><span class="dr-l">💥 AVGO 시간외 강세 — AI 매출 +143%·Q3 가이드 +200% read-through <span class="tag r">트리거</span></span><span class="dr-r">전일 마감 후</span></div>
+      <div class="dr"><span class="dr-l">🇺🇸 美 정규장 — AVGO 시간외 +6~9% read-through·SOX 후속 강세 가능 <span class="tag b">증시</span></span><span class="dr-r">22:30 KST</span></div>
+      <div class="dr"><span class="dr-l">📊 5월 ADP 민간고용 (컨센 +95K) — NFP 사전 시그널 <span class="tag r">최중요</span></span><span class="dr-r">금일 21:15</span></div>
+      <div class="dr"><span class="dr-l">📊 신규 실업수당청구 (컨센 220K) <span class="tag b">매크로</span></span><span class="dr-r">금일 21:30</span></div>
+      <div class="dr"><span class="dr-l">💻 LULU/DOCU Q1 어닝 — 소비/B2B SaaS 가이드 <span class="tag g">어닝</span></span><span class="dr-r">금일</span></div>
+      <div class="dr"><span class="dr-l">⚔️ Iran 호르무즈 모니터링 — 추가 공습/유조선 정선 변수 <span class="tag y">지정학</span></span><span class="dr-r">지속</span></div>
+      <div class="dr"><span class="dr-l">📊 6/6(금) 5월 NFP(컨센 +96K·실업 4.3%) — 최대 분기점 <span class="tag r">최중요</span></span><span class="dr-r">D-2</span></div>
+      <div class="dr"><span class="dr-l">📱 WWDC 6/8-12 — Apple Intelligence 발표 <span class="tag y">이벤트</span></span><span class="dr-r">D-4~8</span></div>
+      <div class="dr"><span class="dr-l">💼 6/10(수) ORCL Q4 어닝 — Stargate 백지화 후 첫 어닝 <span class="tag r">트리거</span></span><span class="dr-r">D-6</span></div>
+      <div class="dr"><span class="dr-l">🏛️ 6/17~18 FOMC — 유가 급등 매파 부담·인하 odds 18%로 후퇴 <span class="tag g">통화</span></span><span class="dr-r">D-13~14</span></div>
+    </div>
+  </div>
+  <div>
+    <div class="stit">⚠️ 리스크 체크</div>
+    <div class="ins i-blue" style="margin-bottom:6px;">
+      <span class="ins-tag" style="background:var(--blue-bg); color:var(--blue);">환율 1,533 돌파·외국인 자금이탈·호르무즈 리스크·NFP 분기점·인하 후퇴</span>
+      <h3>「FX/Geopolitical/Macro Triple Risk — 환율 1,500선 돌파 + Iran 호르무즈 + NFP 분기점 + 인하 odds 18%로 후퇴」</h3>
+      <p>리스크 1순위 — <b>환율 1,533 돌파·호르무즈 추가 공습·NFP 변동성·매파 부담</b>. ① <b>★USD/KRW 1,533.12(+1.45%) 1,500선 돌파</b> = 외국인 자금이탈 가속·KOSPI 시초 약세 출발 가능 ② <b>Iran 추가 미사일/호르무즈 유조선 정선 시 WTI $100 돌파 위험</b> = 인플레 재점화 + 항공/화학 추가 매도 ③ <b>6/4 ADP + 6/6 NFP 강세 시 채권 매도·10Y 4.6%+ 위험·금리 인플레 시그널 가속</b> ④ <b>유가 급등 + 노동 견조 시 인하 odds 18%로 후퇴 → 0%로 추가 후퇴 위험</b>·6/17 FOMC 매파 가능 ⑤ <b>VIX 16.06 반등·DXY 99.53 강세 = 위험회피 시그널</b> ⑥ <b>SOX 단독 강세는 시장 폭 약화 시그널</b>. <b>대응</b>: ① 비중 70% 유지·헷지 20%·현금 10%(필요시 25%) ② <b>KODEX 인버스/달러 ETF 5% 추가</b>(환율 1,540 돌파 시 10% 헷지) ③ 반도체/조선 매수 유지하되 시초 추격 자제 ④ 항공/화학/SaaS 분할 매도 후 현금화.</p>
+    </div>
+    <div class="ins i-amber">
+      <span class="ins-tag" style="background:var(--amber-bg); color:var(--amber);">AVGO 시간외 차익 위험·INTC 18A 의구심·SaaS 추가 매도·NDX -0.89% 광역 약세</span>
+      <h3>「AVGO After-Hours Volatility + INTC 18A Skepticism — 시간외 강세 후 갭다운 위험 + AI 응용 추가 매도 + ORCL 6/10 어닝 우려」</h3>
+      <p>리스크 2순위 — <b>AVGO 시간외 차익·INTC 18A 의구심·SaaS 추가 매도·ORCL 어닝 D-6</b>. ① <b>AVGO 시간외 +6~9% 폭등 후 정규장 갭다운 위험</b>·역사적 +5% 이상 갭업 후 평균 -3~5% 되돌림 ② <b>INTC +4.43% 18A 양산 시그널은 실제 양산 확인 전 의구심 잔존</b>·MSFT/AMZN 외주 미확정 ③ <b>NDX -0.89% 광역 약세·SaaS 동조 매도 지속 시 ORCL/CRM/PLTR 추가 매도 위험</b>(PLTR 87x P/S 부담) ④ <b>6/10 ORCL Q4 어닝 D-6</b> Stargate 백지화 후 첫 어닝 = 클라우드 가이드 컨센 +46~50% 미스 가능 ⑤ <b>WWDC 6/8 AAPL Apple Intelligence</b> 미스 시 단기 차익 ⑥ <b>중동 호르무즈 추가 변수·Lebanon 휴전 정체</b>. <b>대응</b>: ① 반도체 매수 분할 진입·시초 추격 자제 ② SK하이닉스 비중 8% 이내·한미반도체/HPSP 비중 6% 이내 ③ <b>AVGO 정규장 결과 확인 후 SOX/HBM 재평가</b> ④ SaaS 추가 매도 시 네이버/카카오 단계적 차익 ⑤ 6/10 ORCL 어닝 전 SaaS 비중 25% 미만.</p>
+    </div>
+  </div>
+</div>
+
+<div class="summ nb" style="margin-top:10px;">
+  <div class="summ-hdr">📌 핵심 3줄 요약</div>
+  <div class="summ-body">
+    <div class="summ-item"><div class="summ-n">1</div><div class="summ-t"><b>6/3(수) 마감 — 「Gulf Risk-Off Day·4대 지수 동반 하락·DOW -1.21% 600p 급락·Iran 미사일 쿠웨이트/바레인 공습·WTI $96.20 광역 급등·반도체 단독 강세·AVGO AI 매출 +143% 시간외 폭등」</b>. S&amp;P 7,553.68(-0.74%)·NDX 26,853.98(-0.89%)·DOW 50,687.07(-1.21%) 51K 이탈·R2K 2,893.51(-1.31%) 광역 매도. VIX 16.06(+1.84%) 반등·10Y 4.49%(+3.6bp) 상승·DXY 99.53(+0.32%)·USD/KRW 1,533.12(+1.45%) 1,500선 돌파. WTI $96.20(+2.60%)·Brent $98+·금 $4,462(-0.58%) 차익. 반도체 단독: SNDK +6.71%·INTC +4.43%·META +4.24%·AMD +4.02%·QCOM +3.81%·SOX +1.39% vs PLTR -6.55%·ORCL -5.83%·CRM -5.09%·NVDA -3.62%·MSFT -3.17%·UAL -3.38% AI 응용/항공 광역 매도.</div></div>
+    <div class="summ-item"><div class="summ-n">2</div><div class="summ-t"><b>6/4(목) 美 정규장 — AVGO 시간외 폭등 read-through·ADP/실업수당 매크로 + 차주 NFP/WWDC/ORCL/FOMC 풀세트</b>. 트리거: ① <b>★AVGO Q2 AI 매출 $10.8B(+143% YoY)·Q3 가이드 $16B(+200%) 사상 최대·시간외 +6~9% 강세</b> ② <b>Iran 미사일 쿠웨이트 T1 공항 + 바레인 요격 + 美軍 호르무즈 유조선 정선</b>·중동 리스크 재점화 ③ <b>5월 ISM 서비스 50.8 미스(컨센 51.5)</b> 서비스 경기 둔화 ④ <b>금일 6/4 ADP(컨센 +95K)·신규 실업수당 + LULU/DOCU 어닝</b> ⑤ <b>6/6 5월 NFP(+96K·실업 4.3%)·6/8-12 WWDC·6/10 ORCL Q4 어닝·6/17~18 FOMC 인하 odds 18% 후퇴</b>.</div></div>
+    <div class="summ-item"><div class="summ-n">3</div><div class="summ-t">한국 시장 영향 — <b>6/4(목) KOSPI 「섹터 로테이션 데이」 — 반도체/정유/조선 강매수 vs SaaS/항공/화학 매도·환율 1,533 1,500선 돌파·외국인 자금이탈 경계·시초 약세 출발 가능</b>. 반도체·메모리·장비 강매수: SK하이닉스(HBM·AVGO Q3 +200% read-through)·삼성전자(파운드리/메모리·INTC 18A 경쟁)·한미반도체·HPSP·이오테크닉스·원익IPS·동진쎄미켐. AI 서버 PCB 매수: 이수페타시스·심텍·코리아써키트. 데이터센터 전력: LS일렉트릭·효성중공업·HD현대일렉트릭. <b>정유 매수</b>: S-Oil·GS·SK이노(WTI $96 마진 개선). <b>★조선 강매수</b>: HD현대중공업·삼성중공업·한화오션(LNG/유조선 + 중동 발주). 방산 매수 유지: 한화에어로·LIG넥스원·풍산. <b>SaaS 단기 차익</b>: 네이버·카카오·삼성SDS·더존비즈온(ORCL/CRM/PLTR 동조). <b>항공/화학 매도</b>: 대한항공·진에어·LG화학·롯데케미칼(유가 부담). <b>★환율 1,533 = KODEX 인버스/달러 ETF 헷지 5% 추가</b>·1,540 돌파 시 10%. <b>금일 ADP·6/6 NFP·6/17 FOMC = 변동성 분기점</b>. 비중 70%·헷지 20%·현금 10%.</div></div>
+  </div>
+</div>
+
+<div class="ftr nb">
+  <p><b>출처</b>: CNBC · Reuters · Bloomberg · Yahoo Finance(yfinance API, 종가 기준) · CNN Business · TheStreet · Trading Economics · FRED · CME Group · Kitco · Schwab · The Motley Fool · MarketBeat · Al Jazeera(Iran/Gulf) · Sherwood News · SEC EDGAR(Broadcom 8-K AVGO Q2, CrowdStrike 8-K Q1)</p>
+  <p>본 자료는 정보 제공 목적이며 투자 권유가 아닙니다. 투자 결정의 책임은 본인에게 있습니다.</p>
+  <p>생성: 2026-06-04 07:00 KST · 미국 시장 모닝 브리핑 (6/3 수요일 마감 종가 기준)</p>
+</div>
+
+</div>
+
+</body>
+</html>
