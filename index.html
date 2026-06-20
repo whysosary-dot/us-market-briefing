@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" href="apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -164,7 +167,7 @@ const list = document.getElementById('briefing-list');
 b.forEach(item => {
   const a = document.createElement('a');
   a.className = 'item' + (item.n ? ' new' : '');
-  a.href = `briefings/us-market-briefing-${item.d}.html`;
+  a.href = `briefings/us-market-briefing-${item.d}.html?v=${item.d.replace(/-/g,'')}`;
   a.innerHTML = `
     <div>
       <div class="item-date">${item.label}</div>
