@@ -1,0 +1,112 @@
+
+<!-- PAGE 2 -->
+<div class="page page-break">
+
+<div class="stit nb">💻 주요 기술주 동향 (7/20 종가 · 메모리·스토리지 광역 반등 vs 애플·오라클·테슬라 약세)</div>
+<table class="tbl mb nb">
+  <thead>
+    <tr><th style="width:80px;">티커</th><th>기업</th><th style="width:85px;">종가($)</th><th style="width:80px;">일간</th><th>핵심</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><span class="tk">SNDK</span><div class="co">SanDisk</div></td><td>샌디스크</td><td>1,390.95</td><td><span class="pct-pill up">+2.67%</span></td><td class="nt"><b>★★★낸드 낙폭 과대 인식·이틀 연속 반등으로 투매 진정</b></td></tr>
+    <tr><td><span class="tk">MSFT</span><div class="co">Microsoft</div></td><td>마이크로소프트</td><td>402.29</td><td><span class="pct-pill up">+2.15%</span></td><td class="nt"><b>★★★칩→소프트웨어 로테이션 수혜·다음 주 실적 기대 선반영</b></td></tr>
+    <tr><td><span class="tk">INTC</span><div class="co">Intel</div></td><td>인텔</td><td>97.06</td><td><span class="pct-pill up">+2.13%</span></td><td class="nt"><b>★★이번 주 실적 앞두고 기대 반등·파운드리 분수령</b></td></tr>
+    <tr><td><span class="tk">AVGO</span><div class="co">Broadcom</div></td><td>브로드컴</td><td>378.16</td><td><span class="pct-pill up">+1.98%</span></td><td class="nt"><b>★맞춤형 AI 칩 저가 매수 유입</b></td></tr>
+    <tr><td><span class="tk">MU</span><div class="co">Micron</div></td><td>마이크론</td><td>865.46</td><td><span class="pct-pill up">+1.94%</span></td><td class="nt"><b>★★★메모리 사이클 공포 일단 진정·국내 메모리 직결</b></td></tr>
+    <tr><td><span class="tk">AMD</span><div class="co">Adv. Micro Devices</div></td><td>AMD</td><td>503.57</td><td><span class="pct-pill up">+1.58%</span></td><td class="nt">$500선 회복·AI GPU 진영 동반 반등</td></tr>
+    <tr><td><span class="tk">GOOGL</span><div class="co">Alphabet</div></td><td>알파벳</td><td>351.99</td><td><span class="pct-pill up">+1.51%</span></td><td class="nt"><b>★★★내일 실적·클라우드 성장과 자본지출 가이던스가 최대 관건</b></td></tr>
+    <tr><td><span class="tk">AMZN</span><div class="co">Amazon</div></td><td>아마존</td><td>249.99</td><td><span class="pct-pill up">+1.12%</span></td><td class="nt">하이퍼스케일러 반등 동참</td></tr>
+    <tr><td><span class="tk">TSM</span><div class="co">TSMC ADR</div></td><td>TSMC</td><td>402.30</td><td><span class="pct-pill up">+0.99%</span></td><td class="nt"><b>★$400선 회복·파운드리 심리 개선</b></td></tr>
+    <tr><td><span class="tk">ARM</span><div class="co">Arm Holdings</div></td><td>ARM</td><td>269.61</td><td><span class="pct-pill up">+0.91%</span></td><td class="nt">설계 IP 반등폭은 제한적</td></tr>
+    <tr><td><span class="tk">NVDA</span><div class="co">NVIDIA</div></td><td>엔비디아</td><td>203.28</td><td><span class="pct-pill up">+0.23%</span></td><td class="nt"><b>★★대장주는 반등 폭 미미·리더십 공백 지속</b></td></tr>
+    <tr><td><span class="tk">META</span><div class="co">Meta Platforms</div></td><td>메타</td><td>645.85</td><td><span class="pct-pill flt">-0.02%</span></td><td class="nt">보합·자본지출 논쟁 관망</td></tr>
+    <tr><td><span class="tk">ASML</span><div class="co">ASML Holding</div></td><td>ASML</td><td>1,739.02</td><td><span class="pct-pill dn">-0.49%</span></td><td class="nt"><b>★장비는 반등에서 소외·설비투자 눈높이 조정</b></td></tr>
+    <tr><td><span class="tk">AMAT</span><div class="co">Applied Materials</div></td><td>어플라이드</td><td>525.70</td><td><span class="pct-pill dn">-0.75%</span></td><td class="nt">장비주 차별화·국내 장비주에 시사점</td></tr>
+    <tr><td><span class="tk">LRCX</span><div class="co">Lam Research</div></td><td>램리서치</td><td>306.76</td><td><span class="pct-pill dn">-2.09%</span></td><td class="nt"><b>★★칩 반등에도 장비는 역행·설비투자 회의 지속</b></td></tr>
+    <tr><td><span class="tk">AAPL</span><div class="co">Apple</div></td><td>애플</td><td>326.59</td><td><span class="pct-pill dn">-2.14%</span></td><td class="nt"><b>★★★지난주 독주 되돌림·시총 1위 방어전</b></td></tr>
+    <tr><td><span class="tk">TSLA</span><div class="co">Tesla</div></td><td>테슬라</td><td>369.57</td><td><span class="pct-pill dn">-2.96%</span></td><td class="nt"><b>★★★내일 실적 앞두고 경계 매물·경기소비 약세 주도</b></td></tr>
+    <tr><td><span class="tk">ORCL</span><div class="co">Oracle</div></td><td>오라클</td><td>121.38</td><td><span class="pct-pill dn">-3.98%</span></td><td class="nt"><b>★★★52주 신저가·신용등급 강등·AI 인프라 베팅 회의론 정면</b></td></tr>
+  </tbody>
+</table>
+
+<div class="g2 mb nb">
+  <div>
+    <div class="stit">📈 반등 상위 (메모리·스토리지·소프트웨어)</div>
+    <table class="tbl">
+      <thead><tr><th>티커</th><th>일간</th><th>핵심</th></tr></thead>
+      <tbody>
+        <tr><td class="tk">샌디스크 SNDK</td><td><span class="pct-pill up">+2.67%</span></td><td class="nt">★★★낸드 투매 진정·낙폭 과대 인식</td></tr>
+        <tr><td class="tk">엘레반스 ELV</td><td><span class="pct-pill up">+2.44%</span></td><td class="nt">★헬스케어 약세 속 보험주만 반등</td></tr>
+        <tr><td class="tk">마이크로소프트 MSFT</td><td><span class="pct-pill up">+2.15%</span></td><td class="nt">★★★칩→소프트웨어 로테이션 대표주</td></tr>
+        <tr><td class="tk">웨스턴디지털 WDC</td><td><span class="pct-pill up">+2.14%</span></td><td class="nt">★★스토리지 이틀 연속 반등</td></tr>
+        <tr><td class="tk">인텔 INTC</td><td><span class="pct-pill up">+2.13%</span></td><td class="nt">★★이번 주 실적 기대·파운드리 분수령</td></tr>
+        <tr><td class="tk">코인베이스 COIN</td><td><span class="pct-pill up">+2.11%</span></td><td class="nt">★크립토 강세 연동</td></tr>
+        <tr><td class="tk">팔란티어 PLTR</td><td><span class="pct-pill up">+1.87%</span></td><td class="nt">★소프트웨어 진영 동반 강세</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <div class="stit">📉 하락 상위 (헬스케어·AI 인프라·경기소비)</div>
+    <table class="tbl">
+      <thead><tr><th>티커</th><th>일간</th><th>핵심</th></tr></thead>
+      <tbody>
+        <tr><td class="tk">오라클 ORCL</td><td><span class="pct-pill dn">-3.98%</span></td><td class="nt">★★★52주 신저가·신용등급 강등·AI 베팅 회의</td></tr>
+        <tr><td class="tk">스페이스X SPCX</td><td><span class="pct-pill dn">-3.34%</span></td><td class="nt">★★시험비행 연기·IPO 이후 조정 지속</td></tr>
+        <tr><td class="tk">테슬라 TSLA</td><td><span class="pct-pill dn">-2.96%</span></td><td class="nt">★★★실적 직전 경계 매물</td></tr>
+        <tr><td class="tk">일라이릴리 LLY</td><td><span class="pct-pill dn">-2.73%</span></td><td class="nt">★★헬스케어 최약 섹터 주도</td></tr>
+        <tr><td class="tk">태양광 TAN</td><td><span class="pct-pill dn">-2.24%</span></td><td class="nt">★★★금리 반등 직격·전 섹터 최약</td></tr>
+        <tr><td class="tk">바이오 XBI</td><td><span class="pct-pill dn">-2.15%</span></td><td class="nt">★★★금리 상승에 바이오 광역 약세</td></tr>
+        <tr><td class="tk">애플 AAPL</td><td><span class="pct-pill dn">-2.14%</span></td><td class="nt">★★★지난주 독주분 되돌림</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="stit nb">🇰🇷 한국 시장 영향 매핑 (7/21(화) — 메모리 반등 이월 우호 vs 금리 반등·바이오 약세 부담 · 실적 이벤트 대기)</div>
+<div class="g2 mb nb">
+  <div class="kr-card">
+    <div class="kr-hdr">메모리·스토리지 광역 반등 + 소프트웨어 로테이션 + 장비주 역행 → 반도체 심리 개선이나 장비는 차별화</div>
+    <div class="kr-body">
+      <div class="kr-r"><div class="kr-sec">메모리·HBM</div><div class="kr-desc">낸드·D램 관련주가 나란히 반등하며 투매가 멈춘 흐름이 이월 = <b>★★삼성전자·SK하이닉스 우호</b>. 다만 반등 폭이 지난주 낙폭에 비해 작아 추세 전환으로 보긴 이르다.</div><div class="kr-impact c-up">★★우호</div></div>
+      <div class="kr-r"><div class="kr-sec">반도체 장비</div><div class="kr-desc">칩이 오르는 날에도 장비주는 오히려 밀리며 설비투자 눈높이 조정이 계속 = <b>★★한미반도체·이오테크닉스·HPSP 부정</b>. 칩과 장비의 디커플링이 이번 국면의 특징.</div><div class="kr-impact c-dn">★★부정</div></div>
+      <div class="kr-r"><div class="kr-sec">SW·플랫폼</div><div class="kr-desc">자금이 칩에서 소프트웨어로 옮겨가는 흐름이 뚜렷 = <b>★네이버·카카오·더존비즈온 상대 우호</b>. 반면 AI 인프라 익스포저가 큰 쪽은 신용 리스크 부각으로 부담.</div><div class="kr-impact c-up">우호</div></div>
+      <div class="kr-r"><div class="kr-sec">애플 밸류체인</div><div class="kr-desc">애플이 지난주 독주분을 되돌리며 약세 = <b>★LG이노텍 등 부품주 단기 부담</b>. 다만 되돌림 성격이라 추세 훼손으로 보긴 어렵다.</div><div class="kr-impact c-am">중립~부정</div></div>
+    </div>
+  </div>
+  <div class="kr-card">
+    <div class="kr-hdr">유가 고공 유지·금리 되돌림·변동성 고착·원화 강세 → 정유 우호 지속·성장주 할인율 부담·수급은 완충</div>
+    <div class="kr-body">
+      <div class="kr-r"><div class="kr-sec">정유·에너지</div><div class="kr-desc">유가가 높은 수준에서 고착되고 미 에너지가 이틀째 강세 = <b>★★★S-Oil·GS·SK이노베이션 수혜 지속</b>. 다만 급등세는 멈춰 추가 상승 여력은 제한적.</div><div class="kr-impact c-up">★★★우호</div></div>
+      <div class="kr-r"><div class="kr-sec">조선·방산</div><div class="kr-desc">확전은 이어지나 미 방산주가 오히려 약세로 돌아섬 = <b>★★한화에어로·LIG넥스원 단기 변동성 확대</b>. 조선은 통항 차질에 따른 운임 모멘텀이 여전히 유효.</div><div class="kr-impact c-am">★중립</div></div>
+      <div class="kr-r"><div class="kr-sec">바이오·헬스케어</div><div class="kr-desc">금리 반등에 미 바이오가 전 섹터 최약 = <b>★★★셀트리온·삼성바이오로직스·알테오젠 부정</b>. 장기금리 되돌림이 지속되면 성장주 할인율 부담이 커진다.</div><div class="kr-impact c-dn">★★★부정</div></div>
+      <div class="kr-r"><div class="kr-sec">항공·화학·수급</div><div class="kr-desc">유가는 여전히 높아 원가 부담은 유지 = <b>★★대한항공·롯데케미칼 부정</b>. 다만 원화가 강세로 돌아서고 변동성이 안정권에 머물러 외국인 수급엔 완충 요인.</div><div class="kr-impact c-am">★혼조</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="g2 nb">
+  <div>
+    <div class="stit">🌍 매크로 · 지정학</div>
+    <div class="dcard" style="margin-bottom:6px;">
+      <div class="dcard-t">⚡ 지정학 — 대이란 추가 공습·미군 추가 사망·협상 재개 제안 병존·호르무즈 통항 차질 지속</div>
+      <div class="nt"><b>지정학 핵심 = 「확전과 협상이 동시에 진행되는 이중 국면」</b>. ① <b>★★★미국이 이란에 대한 새로운 공습을 단행하고 미군 추가 사망이 확인되며 긴장이 재점화</b> ② <b>★★★동시에 중재국을 통한 협상 재개 제안이 전달됐다는 이란 측 발표가 나오며 프리미엄 확대를 억제</b> ③ <b>★★유가가 급등하지 않고 혼조로 마감한 것이 이 이중 구조를 정확히 반영</b> ④ <b>★★★시장은 지정학 위험 자체보다 「에너지 가격을 통한 물가 전이」에 초점</b> ⑤ <b>★핵심 해협 통항 차질은 해소되지 않고 유지</b>. <b>한국 시사점</b>: ① <b>★★정유는 우호 지속·추가 급등 베팅은 자제</b> ② <b>★방산은 뉴스 민감도 확대</b> ③ <b>★항공·화학 원가 부담 유지</b>.</div>
+    </div>
+    <div class="dcard">
+      <div class="dcard-t">📊 매크로 — 장기금리 반등·매파 FOMC 경계·변동성 고착·달러 강보합·이번 주 실적 러시</div>
+      <div class="nt"><b>매크로 톤 = 「금리 되돌림 + 인하 기대 후퇴 + 실적 의존도 상승」</b>. ① <b>★★★장기·중기 금리가 나란히 반등하며 지난주 안전자산 랠리를 되돌림</b> ② <b>★★★다음 주 회의를 앞두고 위원들이 블랙아웃에 들어가며 최근의 매파적 발언 톤만 남음</b> ③ <b>★★유가발 물가 우려가 겹치며 연내 인하 기대가 추가로 후퇴</b> ④ <b>★변동성은 안정권 위에서 고착돼 실적 실망 시 낙폭 증폭 구조는 유지</b> ⑤ <b>★★경제지표는 한산하고 실적이 유일한 방향키</b>. <b>한국 시사점</b>: ① <b>★★금리 반등은 바이오·성장주에 직접 부담</b> ② <b>★원화 강세와 낮은 변동성은 외국인 수급 완충</b> ③ <b>★실적 이벤트 전 방향성 베팅 자제</b>.</div>
+    </div>
+  </div>
+  <div>
+    <div class="stit">🏛️ 이번 주 이벤트 · 신규 모멘텀</div>
+    <div class="dcard" style="margin-bottom:6px;">
+      <div class="dcard-t">⚡ D-1 실적 러시 — 알파벳·테슬라(수요일 마감 후)·SK하이닉스·인텔·IBM·TXN·GM 대기</div>
+      <div class="nt">이번 주 모멘텀 핵심 = <b>「AI 자본지출 가이던스 1차 판정 + 메모리 업황 실체 검증」</b>. ① <b>★★★알파벳은 클라우드 성장 가속과 내년 자본지출 상향 여부가 AI 트레이드 전체의 방향키</b> ② <b>★★테슬라는 경기소비 약세 국면에서 수요 체력과 신규 사업 일정 지연 여부가 관건</b> ③ <b>★★★SK하이닉스 실적이 국내 메모리 업황의 실체를 가른다</b> ④ <b>★★인텔은 파운드리 논쟁 재점화 가능성</b> ⑤ <b>★소폭 미달에도 두 자릿수 급락이 나오는 민감 국면이 이어짐</b>. 한국 매핑: <b>★★★반도체 방향은 실적 확인 후 결정</b>.</div>
+    </div>
+    <div class="dcard">
+      <div class="dcard-t">📊 어제 되짚기 — 칩 반등·소프트웨어 로테이션·오라클 신저가·헬스케어 급락·금리 되돌림</div>
+      <div class="nt">어제 트리거: ① <b>★★★반도체가 사흘 만에 반등하며 지수 낙폭을 방어</b> ② <b>★★★자금이 칩에서 소프트웨어로 이동하는 흐름이 뚜렷</b> ③ <b>★★★대형 클라우드 기업이 신용등급 강등과 함께 52주 신저가로 밀리며 AI 인프라 베팅 회의론이 정면 부각</b> ④ <b>★★★금리 반등에 바이오·태양광이 전 섹터 최약</b> ⑤ <b>★★애플이 지난주 독주분을 되돌리며 다우 낙폭을 키움</b> ⑥ <b>★이란 공습 재개에도 유가는 혼조로 마감</b> ⑦ <b>★★원화는 달러 강보합 속에서도 강세</b>. 한국 매핑: <b>★★메모리 우호·바이오 부담·정유 유지</b>.</div>
+    </div>
+  </div>
+</div>
+
+</div>

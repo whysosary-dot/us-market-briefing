@@ -1,0 +1,120 @@
+
+<!-- PAGE 1 -->
+<div class="page">
+
+<div class="hdr nb">
+  <div>
+    <h1>🇺🇸 미국 시장 모닝 브리핑</h1>
+    <div class="sub">7/20(월) 마감 — 칩 반등·지수 혼조·이란 추가 공습·금리 되돌림·오라클 신저가·실적 러시 D-2</div>
+  </div>
+  <div class="dt">2026.07.21 (화) 07:00</div>
+</div>
+
+<div class="hero mixed nb">
+  <div class="hero-icon">⚖️</div>
+  <div class="hero-text">
+    <b>반도체는 돌아섰는데 지수는 따라오지 못했다 — 칩이 사흘 만에 반등에 성공했지만 이란 추가 공습·금리 되돌림·대형 소프트웨어 신용등급 강등이 지수를 눌러 혼조 마감.</b>
+    <b>4대 지수 동반 하락·다우 낙폭 최대·나스닥은 보합권 방어. 반도체와 에너지만 강세, 헬스케어·바이오·태양광이 최약. 채권금리는 반등했고 변동성은 안정, 달러는 강보합.</b>
+    <b>한국 시장 영향 — 메모리 광역 반등이 우호적 이월이나 지수 자체는 방향성 부재. 유가 고공은 정유에 유리·항공은 부담 지속, 바이오·헬스케어는 약세 이월, 실적 이벤트 대기 국면.</b>
+  </div>
+</div>
+
+<div class="kpi-row nb">
+  <div class="kpi neg"><div class="kpi-lb">S&amp;P 500</div><div class="kpi-v c-dn">-0.19%</div></div>
+  <div class="kpi neg"><div class="kpi-lb">NASDAQ</div><div class="kpi-v c-dn">-0.05%</div></div>
+  <div class="kpi pos"><div class="kpi-lb">SOX</div><div class="kpi-v c-up">+0.60%</div></div>
+  <div class="kpi neg"><div class="kpi-lb">10Y 금리</div><div class="kpi-v c-up">4.60%</div></div>
+  <div class="kpi pos"><div class="kpi-lb">WTI</div><div class="kpi-v c-dn">82.42</div></div>
+  <div class="kpi pos"><div class="kpi-lb">USD/KRW</div><div class="kpi-v c-dn">1,475</div></div>
+</div>
+
+<div class="top2 nb">
+  <div class="sent">
+    <div class="sent-hdr">
+      <div class="sent-badge fear">공포 (34)</div>
+      <div class="sent-mode">칩 반등 시도 · 이란 추가 공습 · 금리 되돌림 · 오라클 신저가 · 실적 러시 D-2</div>
+    </div>
+    <div class="gauge-wrap">
+      <svg width="100%" height="56" viewBox="0 0 280 56">
+        <defs>
+          <linearGradient id="g1" x1="0" x2="1">
+            <stop offset="0%" stop-color="#2563eb"/>
+            <stop offset="25%" stop-color="#60a5fa"/>
+            <stop offset="50%" stop-color="#fbbf24"/>
+            <stop offset="75%" stop-color="#fb923c"/>
+            <stop offset="100%" stop-color="#dc2626"/>
+          </linearGradient>
+        </defs>
+        <rect x="10" y="22" width="260" height="10" rx="5" fill="url(#g1)"/>
+        <polygon points="98,18 105,8 91,8" fill="#0f172a"/>
+        <text x="98" y="50" text-anchor="middle" font-size="9" font-weight="800" fill="#0f172a">34</text>
+      </svg>
+      <div class="gauge-lbl"><span>0 극공포</span><span>25</span><span>50 중립</span><span>75</span><span>100 극탐욕</span></div>
+    </div>
+    <div style="margin-top:10px; font-size: 11.25pt; color:var(--slate2); line-height:1.6;">
+      <b>메모리·스토리지 반등 / 이란 확전 지속·협상설 병존 / 금리 되돌림 / 소프트웨어 신용 리스크 / 실적 러시 대기</b>
+    </div>
+  </div>
+  <div>
+    <div class="idx-grid">
+      <div class="ix dn"><div class="ix-n">DOW (7/20)</div><div class="ix-v">51,839.26</div><div class="ix-c c-dn">-307.16 (-0.59%)</div><span class="ix-t t-dn">★★4대 지수 중 낙폭 최대·경기민감 약세</span></div>
+      <div class="ix dn"><div class="ix-n">S&amp;P 500 (7/20)</div><div class="ix-v">7,443.28</div><div class="ix-c c-dn">-14.41 (-0.19%)</div><span class="ix-t t-warn">★낙폭 축소·장중 반등 시도</span></div>
+      <div class="ix dn"><div class="ix-n">NASDAQ (7/20)</div><div class="ix-v">25,508.07</div><div class="ix-c c-dn">-12.17 (-0.05%)</div><span class="ix-t t-up">★★사실상 보합 방어·기술주 진정</span></div>
+      <div class="ix dn"><div class="ix-n">RUSSELL 2000 (7/20)</div><div class="ix-v">2,942.43</div><div class="ix-c c-dn">-19.79 (-0.67%)</div><span class="ix-t t-dn">★★금리 반등에 소형주 부진</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="g3 mb nb">
+  <div class="dcard">
+    <div class="dcard-t">📊 채권금리 (7/20 종가)</div>
+    <div class="dr"><span class="dr-l">10Y 美 국채</span><span class="dr-r c-up">4.600% (+6bp)</span></div>
+    <div class="dr"><span class="dr-l">5Y</span><span class="dr-r c-up">4.330% (+6bp)</span></div>
+    <div class="dr"><span class="dr-l">13주</span><span class="dr-r c-dn">3.705% (-0bp)</span></div>
+    <div class="dr"><span class="dr-l">10Y-3M 스프레드</span><span class="dr-r c-up">+90bp (확대)</span></div>
+    <div class="dr"><span class="dr-l">금리 톤</span><span class="dr-r">★★매파 FOMC 경계·베어 스티프닝</span></div>
+  </div>
+  <div class="dcard">
+    <div class="dcard-t">💱 환율</div>
+    <div class="dr"><span class="dr-l">DXY 달러인덱스</span><span class="dr-r c-up">100.96 (+0.21%)</span></div>
+    <div class="dr"><span class="dr-l">USD/KRW</span><span class="dr-r c-dn">1,475.46 (-3.39)</span></div>
+    <div class="dr"><span class="dr-l">USD/JPY</span><span class="dr-r c-up">162.47 (+0.05%)</span></div>
+    <div class="dr"><span class="dr-l">EUR/USD</span><span class="dr-r c-dn">1.1416 (-0.25%)</span></div>
+    <div class="dr"><span class="dr-l">원화 톤</span><span class="dr-r">★달러 강보합에도 원화는 강세</span></div>
+  </div>
+  <div class="dcard">
+    <div class="dcard-t">🛢️ 원자재 · 변동성 · 크립토</div>
+    <div class="dr"><span class="dr-l">WTI 선물</span><span class="dr-r c-dn">82.42 (-0.08%)</span></div>
+    <div class="dr"><span class="dr-l">브렌트</span><span class="dr-r c-up">88.92 (+0.93%)</span></div>
+    <div class="dr"><span class="dr-l">금 / 은</span><span class="dr-r c-up">4,011.80 (-0.02%) / 56.67 (+1.12%)</span></div>
+    <div class="dr"><span class="dr-l">VIX</span><span class="dr-r c-dn">18.65 (-0.64%·고착)</span></div>
+    <div class="dr"><span class="dr-l">비트코인</span><span class="dr-r c-up">65,302 (+0.94%)</span></div>
+  </div>
+</div>
+
+<div class="nb">
+  <div class="stit">📊 섹터별 등락률 (7/20 종가 · 에너지·반도체만 강세 vs 바이오·태양광·헬스케어 약세 주도)</div>
+  <div class="sec-chart">
+    <div class="sec-r"><div class="sec-nm">반도체 (SOX)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:24%;"></div></div></div><div class="sec-v c-up">+0.60%</div></div>
+    <div class="sec-r"><div class="sec-nm">에너지 (XLE)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:18%;"></div></div></div><div class="sec-v c-up">+0.45%</div></div>
+    <div class="sec-r"><div class="sec-nm">반도체ETF (SMH)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:16%;"></div></div></div><div class="sec-v c-up">+0.41%</div></div>
+    <div class="sec-r"><div class="sec-nm">항공 (JETS)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:16%;"></div></div></div><div class="sec-v c-up">+0.39%</div></div>
+    <div class="sec-r"><div class="sec-nm">소프트웨어 (IGV)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:8%;"></div></div></div><div class="sec-v c-up">+0.19%</div></div>
+    <div class="sec-r"><div class="sec-nm">커뮤니케이션 (XLC)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:6%;"></div></div></div><div class="sec-v c-up">+0.14%</div></div>
+    <div class="sec-r"><div class="sec-nm">기술 (XLK)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:3%;"></div></div></div><div class="sec-v c-up">+0.07%</div></div>
+    <div class="sec-r"><div class="sec-nm">금융 (XLF)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"><div class="sb dn" style="width:16%;"></div></div><div class="sec-bar-c right"></div></div><div class="sec-v c-dn">-0.39%</div></div>
+    <div class="sec-r"><div class="sec-nm">필수소비 (XLP)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"><div class="sb dn" style="width:16%;"></div></div><div class="sec-bar-c right"></div></div><div class="sec-v c-dn">-0.39%</div></div>
+    <div class="sec-r"><div class="sec-nm">부동산 (XLRE)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"><div class="sb dn" style="width:17%;"></div></div><div class="sec-bar-c right"></div></div><div class="sec-v c-dn">-0.42%</div></div>
+    <div class="sec-r"><div class="sec-nm">유틸리티 (XLU)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"><div class="sb dn" style="width:20%;"></div></div><div class="sec-bar-c right"></div></div><div class="sec-v c-dn">-0.51%</div></div>
+    <div class="sec-r"><div class="sec-nm">방산 (ITA)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"><div class="sb dn" style="width:25%;"></div></div><div class="sec-bar-c right"></div></div><div class="sec-v c-dn">-0.63%</div></div>
+    <div class="sec-r"><div class="sec-nm">경기소비 (XLY)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"><div class="sb dn" style="width:29%;"></div></div><div class="sec-bar-c right"></div></div><div class="sec-v c-dn">-0.72%</div></div>
+    <div class="sec-r"><div class="sec-nm">산업재 (XLI)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"><div class="sb dn" style="width:29%;"></div></div><div class="sec-bar-c right"></div></div><div class="sec-v c-dn">-0.72%</div></div>
+    <div class="sec-r"><div class="sec-nm">소재 (XLB)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"><div class="sb dn" style="width:40%;"></div></div><div class="sec-bar-c right"></div></div><div class="sec-v c-dn">-0.99%</div></div>
+    <div class="sec-r"><div class="sec-nm">지역은행 (KRE)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"><div class="sb dn" style="width:42%;"></div></div><div class="sec-bar-c right"></div></div><div class="sec-v c-dn">-1.04%</div></div>
+    <div class="sec-r"><div class="sec-nm">헬스케어 (XLV)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"><div class="sb dn" style="width:46%;"></div></div><div class="sec-bar-c right"></div></div><div class="sec-v c-dn">-1.14%</div></div>
+    <div class="sec-r"><div class="sec-nm">바이오 (XBI)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"><div class="sb dn" style="width:86%;"></div></div><div class="sec-bar-c right"></div></div><div class="sec-v c-dn">-2.15%</div></div>
+    <div class="sec-r"><div class="sec-nm">태양광 (TAN)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"><div class="sb dn" style="width:90%;"></div></div><div class="sec-bar-c right"></div></div><div class="sec-v c-dn">-2.24%</div></div>
+  </div>
+</div>
+
+</div>
