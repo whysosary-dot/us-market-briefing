@@ -108,12 +108,12 @@
   .sec-nm { flex: 0 0 130px; font-size: 10.5pt; font-weight: 600; color: var(--slate); }
   .sec-vis { flex: 1; height: 18px; background: var(--slate6); border-radius: 3px; position: relative; overflow: hidden; }
   .sec-vis .mid { position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: var(--slate3); }
-  .sec-bar-c { position: absolute; top: 0; bottom: 0; }
-  .sec-bar-c.left { right: 50%; }
-  .sec-bar-c.right { left: 50%; }
-  .sb { height: 100%; opacity: 0.85; border-radius: 2px; }
-  .sb.up { background: var(--red); float: left; }
-  .sb.dn { background: var(--blue); float: right; }
+  .sec-bar-c { position: absolute; top: 0; bottom: 0; width: 50%; }
+  .sec-bar-c.left { left: 0; right: auto; }
+  .sec-bar-c.right { left: 50%; right: auto; }
+  .sb { position: absolute; top: 0; height: 100%; opacity: 0.85; border-radius: 2px; min-width: 2px; }
+  .sb.up { background: var(--red); left: 0; }
+  .sb.dn { background: var(--blue); right: 0; }
   .sec-v { flex: 0 0 70px; text-align: right; font-size: 11.25pt; font-weight: 800; }
 
   .tbl { width: 100%; border-collapse: collapse; font-size: 12pt; }
