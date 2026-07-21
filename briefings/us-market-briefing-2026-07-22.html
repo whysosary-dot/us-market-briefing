@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>미국 시장 모닝 브리핑 | 2026.07.22</title>
+<style>
+  @page { size: A4 portrait; margin: 2mm 2.4mm; }
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+
+  :root {
+    --red: #dc2626; --red-bg: #fef2f2; --red-light: #fee2e2;
+    --blue: #2563eb; --blue-bg: #eff6ff; --blue-light: #dbeafe;
+    --green: #16a34a; --green-bg: #f0fdf4;
+    --amber: #d97706; --amber-bg: #fffbeb;
+    --slate: #334155; --slate2: #64748b; --slate3: #94a3b8;
+    --slate4: #cbd5e1; --slate5: #e2e8f0; --slate6: #f1f5f9;
+    --white: #ffffff; --ink: #0f172a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+  body { font-family: 'Noto Sans KR', -apple-system, sans-serif; color: var(--ink); background: var(--white); font-size: 13.5pt; line-height: 1.5; }
+  .page { width: 100%; max-width: 100%; margin: 0 auto; }
+  .page-break { page-break-before: always; }
+  .nb { page-break-inside: avoid; break-inside: avoid; }
+  @media screen {
+    body { background: #e2e8f0; padding: 0; margin: 0; }
+    .page { background: #fff; padding: 4px 6px; box-shadow: 0 4px 20px rgba(0,0,0,0.12); border-radius: 6px; margin-bottom: 4px; width: 100%; max-width: 100%; }
+  }
+  @media print { .page { width: 100%; max-width: 100%; padding: 0; } }
+
+  .hdr { background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%) !important; border-radius: 8px; padding: 14px 18px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; color: #fff; }
+  .hdr h1 { font-size: 22.5pt; font-weight: 900; letter-spacing: -0.8px; }
+  .hdr .sub { font-size: 11.25pt; color: #94a3b8; margin-top: 2px; font-weight: 400; }
+  .hdr .dt { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); padding: 5px 14px; border-radius: 20px; font-size: 12pt; font-weight: 700; }
+
+  .hero { border-radius: 8px; padding: 12px 16px; margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
+  .hero.positive { background: linear-gradient(135deg, #fef2f2 0%, #fff1f2 100%) !important; border: 1.5px solid #fca5a5; }
+  .hero.positive .hero-icon { background: var(--red); }
+  .hero.positive .hero-text { color: #991b1b; }
+  .hero.positive .hero-text b { color: var(--red); }
+  .hero.negative { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%) !important; border: 1.5px solid #93c5fd; }
+  .hero.negative .hero-icon { background: var(--blue); }
+  .hero.negative .hero-text { color: #1e3a8a; }
+  .hero.negative .hero-text b { color: var(--blue); }
+  .hero.mixed { background: linear-gradient(135deg, #fffbeb 0%, #fefce8 100%) !important; border: 1.5px solid #fde68a; }
+  .hero.mixed .hero-icon { background: var(--amber); }
+  .hero.mixed .hero-text { color: #92400e; }
+  .hero.mixed .hero-text b { color: var(--amber); }
+  .hero-icon { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; color: #fff; }
+  .hero-text { font-size: 12.75pt; line-height: 1.6; }
+
+  .kpi-row { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; margin-bottom: 12px; }
+  .kpi { text-align: center; padding: 8px 4px; border-radius: 6px; border: 1px solid var(--slate5); }
+  .kpi.neg { background: var(--blue-bg); border-color: var(--blue-light); }
+  .kpi.pos { background: var(--red-bg); border-color: var(--red-light); }
+  .kpi.neu { background: var(--slate6); }
+  .kpi-lb { font-size: 9.75pt; font-weight: 700; color: var(--slate3); text-transform: uppercase; letter-spacing: 0.5px; }
+  .kpi-v { font-size: 19.5pt; font-weight: 900; margin-top: 2px; }
+
+  .top2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+
+  .sent { border: 1px solid var(--slate5); border-radius: 8px; padding: 12px 14px; background: var(--white); }
+  .sent-hdr { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .sent-badge { font-size: 16.5pt; font-weight: 900; padding: 4px 12px; border-radius: 16px; }
+  .sent-badge.fear { color: var(--amber); background: var(--amber-bg); border: 1px solid #fde68a; }
+  .sent-badge.extreme-fear { color: var(--blue); background: var(--blue-bg); border: 1px solid var(--blue-light); }
+  .sent-badge.greed { color: var(--red); background: var(--red-bg); border: 1px solid var(--red-light); }
+  .sent-badge.neutral { color: var(--slate2); background: var(--slate6); border: 1px solid var(--slate5); }
+  .sent-mode { font-size: 11.25pt; font-weight: 700; color: var(--red); background: var(--red-bg); border: 1px solid #fecaca; padding: 3px 10px; border-radius: 12px; }
+  .gauge-wrap { margin-top: 6px; }
+  .gauge-lbl { display: flex; justify-content: space-between; font-size: 9pt; color: var(--slate3); margin-top: 4px; font-weight: 500; }
+
+  .idx-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .ix { border: 1px solid var(--slate5); border-radius: 6px; padding: 8px 10px; position: relative; overflow: hidden; }
+  .ix::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+  .ix.dn::after { background: var(--blue); }
+  .ix.up::after { background: var(--red); }
+  .ix-n { font-size: 9.75pt; color: var(--slate3); font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; }
+  .ix-v { font-size: 21pt; font-weight: 900; margin: 1px 0; }
+  .ix-c { font-size: 12pt; font-weight: 700; }
+  .ix-t { font-size: 9.75pt; display: inline-block; padding: 1px 5px; border-radius: 3px; font-weight: 700; margin-top: 2px; }
+  .t-dn { background: var(--blue-bg); color: var(--blue); }
+  .t-up { background: var(--red-bg); color: var(--red); }
+  .t-warn { background: var(--amber-bg); color: var(--amber); }
+
+  .stit { font-size: 15pt; font-weight: 900; color: var(--ink); margin-bottom: 6px; padding-bottom: 4px; border-bottom: 2.5px solid var(--ink); display: flex; align-items: center; gap: 6px; }
+
+  .g3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .mb { margin-bottom: 10px; }
+
+  .dcard { border: 1px solid var(--slate5); border-radius: 6px; padding: 8px 10px; background: var(--white); }
+  .dcard-t { font-size: 10.5pt; font-weight: 700; color: var(--slate3); text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 5px; }
+  .dr { display: flex; justify-content: space-between; align-items: center; padding: 3px 0; }
+  .dr + .dr { border-top: 1px solid var(--slate6); }
+  .dr-l { font-size: 11.25pt; color: var(--slate2); }
+  .dr-r { font-size: 11.25pt; font-weight: 700; }
+  .c-up { color: var(--red); }
+  .c-dn { color: var(--blue); }
+  .c-am { color: var(--amber); }
+
+  .sec-chart { border: 1px solid var(--slate5); border-radius: 6px; padding: 10px 12px; }
+  .sec-r { display: flex; align-items: center; gap: 6px; padding: 3px 0; }
+  .sec-nm { flex: 0 0 130px; font-size: 10.5pt; font-weight: 600; color: var(--slate); }
+  .sec-vis { flex: 1; height: 18px; background: var(--slate6); border-radius: 3px; position: relative; overflow: hidden; }
+  .sec-vis .mid { position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: var(--slate3); }
+  .sec-bar-c { position: absolute; top: 0; bottom: 0; width: 50%; }
+  .sec-bar-c.left { left: 0; right: auto; }
+  .sec-bar-c.right { left: 50%; right: auto; }
+  .sb { position: absolute; top: 0; height: 100%; opacity: 0.85; border-radius: 2px; min-width: 2px; }
+  .sb.up { background: var(--red); left: 0; }
+  .sb.dn { background: var(--blue); right: 0; }
+  .sec-v { flex: 0 0 70px; text-align: right; font-size: 11.25pt; font-weight: 800; }
+
+  .tbl { width: 100%; border-collapse: collapse; font-size: 12pt; }
+  .tbl th { background: var(--slate6); padding: 7px 8px; text-align: left; font-weight: 700; color: var(--slate); font-size: 10.5pt; text-transform: uppercase; letter-spacing: 0.3px; border-bottom: 2px solid var(--slate4); }
+  .tbl td { padding: 7px 8px; border-bottom: 1px solid var(--slate5); }
+  .tbl tr:nth-child(even) td { background: var(--slate6); }
+  .tk { font-weight: 900; font-size: 13.5pt; }
+  .co { font-size: 9.75pt; color: var(--slate3); font-weight: 500; }
+  .nt { font-size: 11.25pt; color: var(--slate); line-height: 1.5; }
+  .pct-pill { display: inline-block; padding: 2px 8px; border-radius: 12px; font-weight: 700; font-size: 11.25pt; }
+  .pct-pill.up { background: var(--red-bg); color: var(--red); }
+  .pct-pill.dn { background: var(--blue-bg); color: var(--blue); }
+  .pct-pill.flt { background: var(--slate6); color: var(--slate2); }
+
+  .kr-card { border: 1.5px solid var(--slate4); border-radius: 8px; overflow: hidden; }
+  .kr-hdr { background: linear-gradient(90deg, #0f172a 0%, #334155 100%); color: #fff; padding: 8px 12px; font-size: 11.25pt; font-weight: 700; }
+  .kr-body { padding: 8px 12px; }
+  .kr-r { display: grid; grid-template-columns: 110px 1fr 70px; gap: 8px; padding: 5px 0; align-items: start; }
+  .kr-r + .kr-r { border-top: 1px solid var(--slate6); }
+  .kr-sec { font-size: 11.25pt; font-weight: 700; color: var(--slate); }
+  .kr-desc { font-size: 11.25pt; color: var(--slate); line-height: 1.5; }
+  .kr-impact { font-size: 11.25pt; font-weight: 800; text-align: right; }
+
+  .ins { border-radius: 8px; padding: 12px 14px; margin-bottom: 8px; border-left: 5px solid var(--slate3); background: var(--white); }
+  .ins.i-red { border-left-color: var(--red); background: linear-gradient(90deg, #fef2f2 0%, #ffffff 30%) !important; }
+  .ins.i-blue { border-left-color: var(--blue); background: linear-gradient(90deg, #eff6ff 0%, #ffffff 30%) !important; }
+  .ins.i-green { border-left-color: var(--green); background: linear-gradient(90deg, #f0fdf4 0%, #ffffff 30%) !important; }
+  .ins.i-amber { border-left-color: var(--amber); background: linear-gradient(90deg, #fffbeb 0%, #ffffff 30%) !important; }
+  .ins h3 { font-size: 13.5pt; font-weight: 900; margin: 4px 0 6px; color: var(--ink); }
+  .ins p { font-size: 11.25pt; color: var(--slate); line-height: 1.55; }
+  .ins-tag { display: inline-block; font-size: 9.75pt; font-weight: 800; padding: 2px 8px; border-radius: 12px; }
+
+  .strat { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #fff; border-radius: 8px; padding: 14px 16px; margin-top: 10px; }
+  .strat-mode { display: inline-block; font-size: 12.75pt; font-weight: 900; padding: 5px 14px; border-radius: 20px; background: rgba(220,38,38,0.2); color: #fca5a5; border: 1px solid rgba(220,38,38,0.4); margin-bottom: 8px; }
+  .strat-list { list-style: none; }
+  .strat-list li { padding: 7px 0; display: flex; gap: 10px; align-items: flex-start; font-size: 11.25pt; line-height: 1.55; }
+  .strat-list li + li { border-top: 1px solid rgba(255,255,255,0.08); }
+  .strat-list .bullet { width: 22px; height: 22px; border-radius: 50%; background: var(--red); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 10.5pt; flex-shrink: 0; }
+  .strat-list b { color: #fff; }
+
+  .sched .dr-l { font-size: 11.25pt; color: var(--slate); font-weight: 500; }
+  .sched .dr-r { font-size: 11.25pt; font-weight: 700; color: var(--slate2); }
+  .tag { display: inline-block; padding: 1px 6px; border-radius: 4px; font-size: 9.75pt; font-weight: 700; margin-left: 4px; }
+  .tag.r { background: var(--red-bg); color: var(--red); }
+  .tag.g { background: var(--green-bg); color: var(--green); }
+  .tag.b { background: var(--blue-bg); color: var(--blue); }
+  .tag.y { background: var(--amber-bg); color: var(--amber); }
+
+  .summ { border-radius: 8px; overflow: hidden; border: 1.5px solid var(--slate4); }
+  .summ-hdr { background: linear-gradient(90deg, #0f172a 0%, #334155 100%); color: #fff; padding: 7px 14px; font-size: 12.75pt; font-weight: 900; }
+  .summ-body { padding: 10px 12px; }
+  .summ-item { display: flex; gap: 8px; padding: 5px 0; align-items: flex-start; }
+  .summ-item + .summ-item { border-top: 1px solid var(--slate6); }
+  .summ-n { width: 22px; height: 22px; border-radius: 50%; background: var(--ink); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 11.25pt; flex-shrink: 0; }
+  .summ-t { font-size: 11.25pt; line-height: 1.55; color: var(--slate); }
+
+  .ftr { margin-top: 8px; padding-top: 6px; border-top: 1px solid var(--slate5); }
+  .ftr p { font-size: 9.75pt; color: var(--slate3); line-height: 1.5; }
+
+  /* 태블릿/데스크탑/아이패드 ≥768px */
+  @media screen and (min-width: 768px) {
+    body { padding: 0 !important; margin: 0 !important; }
+    .page { width: 100% !important; max-width: 100% !important; padding: 6px 8px !important; border-radius: 8px; margin-left:0 !important; margin-right:0 !important; }
+  }
+
+  /* 모바일 ≤767px */
+  @media screen and (max-width: 767px) {
+    body { font-size: 13px; line-height: 1.55; padding: 0 !important; margin: 0 !important; background: #f1f5f9; }
+    .page { width: 100% !important; max-width: 100% !important; padding: 4px 4px !important; margin: 0 0 2px 0 !important; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+    .page-break { page-break-before: auto; }
+    .hdr { padding: 12px 14px; flex-direction: column; align-items: flex-start; gap: 8px; }
+    .hdr h1 { font-size: 17px; line-height: 1.3; }
+    .hdr .sub { font-size: 11px; line-height: 1.5; }
+    .hdr .dt { font-size: 11px; padding: 4px 12px; align-self: flex-start; }
+    .hero { flex-direction: row; align-items: flex-start; padding: 12px 14px; gap: 10px; }
+    .hero-icon { width: 32px; height: 32px; font-size: 16px; }
+    .hero-text { font-size: 12.5px; line-height: 1.65; }
+    .kpi-row { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+    .kpi { padding: 8px 4px; }
+    .kpi-lb { font-size: 9px; }
+    .kpi-v { font-size: 15px; }
+    .top2 { grid-template-columns: 1fr; gap: 10px; }
+    .g3 { grid-template-columns: 1fr; gap: 8px; }
+    .g2 { grid-template-columns: 1fr; gap: 8px; }
+    .idx-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
+    .ix { padding: 8px 10px; }
+    .ix-n { font-size: 9px; }
+    .ix-v { font-size: 16px; }
+    .ix-c { font-size: 11px; }
+    .ix-t { font-size: 9px; }
+    .sent { padding: 12px 14px; }
+    .sent-badge { font-size: 13px; }
+    .sent-mode { font-size: 10px; }
+    .gauge-lbl { font-size: 8px; }
+    .dcard { padding: 10px 12px; }
+    .dcard-t { font-size: 10px; }
+    .dr { padding: 4px 0; }
+    .dr-l, .dr-r { font-size: 11px; }
+    .stit { font-size: 13px; padding-bottom: 5px; margin-bottom: 8px; }
+    .sec-chart { padding: 10px 10px; }
+    .sec-nm { flex: 0 0 88px; font-size: 10px; }
+    .sec-v { flex: 0 0 50px; font-size: 11px; }
+    .tbl { font-size: 11px; }
+    .tbl th { font-size: 9px; padding: 6px 6px; }
+    .tbl td { padding: 6px 6px; font-size: 11px; }
+    .tk { font-size: 12px; }
+    .co { font-size: 9px; }
+    .nt { font-size: 10.5px; line-height: 1.55; }
+    .pct-pill { font-size: 11px; padding: 2px 6px; }
+    .ins { padding: 12px 14px; margin-bottom: 8px; }
+    .ins h3 { font-size: 13px; line-height: 1.45; }
+    .ins p { font-size: 11.5px; line-height: 1.7; }
+    .ins-tag { font-size: 9px; }
+    .kr-card .kr-hdr { font-size: 10px; padding: 6px 10px; line-height: 1.5; }
+    .kr-r { grid-template-columns: 80px 1fr; row-gap: 4px; }
+    .kr-r .kr-impact { grid-column: 1 / -1; text-align: left; padding-top: 2px; }
+    .kr-sec { font-size: 11px; }
+    .kr-desc { font-size: 10.5px; line-height: 1.6; }
+    .kr-impact { font-size: 10.5px; }
+    .strat { padding: 12px 14px; }
+    .strat-mode { font-size: 13px; padding: 6px 14px; }
+    .strat-list li { font-size: 11.5px; padding: 6px 0; line-height: 1.7; }
+    .strat-list .bullet { width: 18px; height: 18px; font-size: 9px; }
+    .sched .dr-l { font-size: 11px; line-height: 1.6; }
+    .sched .dr-r { font-size: 10.5px; }
+    .tag { font-size: 9px; }
+    .summ-hdr { font-size: 12px; padding: 7px 14px; }
+    .summ-body { padding: 10px 12px; }
+    .summ-t { font-size: 12px; line-height: 1.7; }
+    .summ-n { width: 22px; height: 22px; font-size: 12px; }
+    .ftr p { font-size: 9.5px; line-height: 1.65; }
+  }
+
+  /* 좁은 폰 ≤420px — 추가 압축 + 극소 여백 */
+  @media screen and (max-width: 420px) {
+    .page { padding: 3px 3px !important; margin: 0 !important; }
+    .kpi-row { grid-template-columns: repeat(2, 1fr); }
+    .idx-grid { grid-template-columns: 1fr; }
+    .ix-v { font-size: 18px; }
+    .hero-text { font-size: 12px; }
+    .tbl th { font-size: 8.5px; padding: 5px 4px; }
+    .tbl td { padding: 5px 4px; font-size: 10.5px; }
+    .tk { font-size: 11px; }
+    .nt { font-size: 10px; }
+    .pct-pill { font-size: 10.5px; padding: 2px 5px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="page">
+
+<div class="hdr nb">
+  <div>
+    <h1>🇺🇸 미국 시장 모닝 브리핑</h1>
+    <div class="sub">7/21(화) 마감 — 반도체 슈퍼 랠리·메모리 폭등·4대 지수 동반 강세·SW 로테이션 아웃·변동성 급락·빅테크 실적 D-1</div>
+  </div>
+  <div class="dt">2026.07.22 (수) 07:00</div>
+</div>
+
+<div class="hero positive nb">
+  <div class="hero-icon">🚀</div>
+  <div class="hero-text">
+    <b>반도체가 시장을 통째로 끌어올렸다 — 메모리·스토리지가 두 자릿수로 폭등하고 반도체 지수가 급반등하면서 4대 지수가 나란히 오르고 소형주까지 위험선호가 확산.</b>
+    <b>반도체·기술이 강세를 주도한 반면 자금은 대형 소프트웨어·커뮤니케이션에서 빠져나가는 로테이션 구도. 채권금리는 소폭 반등했으나 변동성은 급락하며 위험선호가 뚜렷.</b>
+    <b>한국 시장 영향 — 메모리 슈퍼 랠리가 삼성전자·SK하이닉스에 강력한 우호 이월, 이번엔 장비·소부장까지 광역 강세. 다만 소프트웨어 로테이션 아웃은 플랫폼주에 부담, 빅테크 실적 대기.</b>
+  </div>
+</div>
+
+<div class="kpi-row nb">
+  <div class="kpi pos"><div class="kpi-lb">S&amp;P 500</div><div class="kpi-v c-up">+0.89%</div></div>
+  <div class="kpi pos"><div class="kpi-lb">NASDAQ</div><div class="kpi-v c-up">+1.29%</div></div>
+  <div class="kpi pos"><div class="kpi-lb">SOX</div><div class="kpi-v c-up">+5.21%</div></div>
+  <div class="kpi neg"><div class="kpi-lb">10Y 금리</div><div class="kpi-v c-up">4.63%</div></div>
+  <div class="kpi pos"><div class="kpi-lb">WTI</div><div class="kpi-v c-up">84.52</div></div>
+  <div class="kpi neu"><div class="kpi-lb">USD/KRW</div><div class="kpi-v c-dn">1,480</div></div>
+</div>
+
+<div class="top2 nb">
+  <div class="sent">
+    <div class="sent-hdr">
+      <div class="sent-badge greed">탐욕 (63)</div>
+      <div class="sent-mode">반도체 슈퍼 랠리 · 메모리 폭등 · 위험선호 회귀 · 변동성 급락 · 빅테크 실적 D-1</div>
+    </div>
+    <div class="gauge-wrap">
+      <svg width="100%" height="56" viewBox="0 0 280 56">
+        <defs>
+          <linearGradient id="g1" x1="0" x2="1">
+            <stop offset="0%" stop-color="#2563eb"/>
+            <stop offset="25%" stop-color="#60a5fa"/>
+            <stop offset="50%" stop-color="#fbbf24"/>
+            <stop offset="75%" stop-color="#fb923c"/>
+            <stop offset="100%" stop-color="#dc2626"/>
+          </linearGradient>
+        </defs>
+        <rect x="10" y="22" width="260" height="10" rx="5" fill="url(#g1)"/>
+        <polygon points="174,18 181,8 167,8" fill="#0f172a"/>
+        <text x="174" y="50" text-anchor="middle" font-size="9" font-weight="800" fill="#0f172a">63</text>
+      </svg>
+      <div class="gauge-lbl"><span>0 극공포</span><span>25</span><span>50 중립</span><span>75</span><span>100 극탐욕</span></div>
+    </div>
+    <div style="margin-top:10px; font-size: 11.25pt; color:var(--slate2); line-height:1.6;">
+      <b>반도체·메모리 슈퍼 랠리 / 위험선호 회귀 / 변동성 급락 / SW·커뮤니케이션 로테이션 아웃 / 빅테크 실적 대기</b>
+    </div>
+  </div>
+  <div>
+    <div class="idx-grid">
+      <div class="ix up"><div class="ix-n">DOW (7/21)</div><div class="ix-v">52,224.64</div><div class="ix-c c-up">+385.38 (+0.74%)</div><span class="ix-t t-up">★★사흘 만에 반등·경기민감 동반 강세</span></div>
+      <div class="ix up"><div class="ix-n">S&amp;P 500 (7/21)</div><div class="ix-v">7,509.20</div><div class="ix-c c-up">+65.92 (+0.89%)</div><span class="ix-t t-up">★★3거래일 하락 마감·7,500선 회복</span></div>
+      <div class="ix up"><div class="ix-n">NASDAQ (7/21)</div><div class="ix-v">25,837.21</div><div class="ix-c c-up">+329.14 (+1.29%)</div><span class="ix-t t-up">★★★반도체 급등이 지수 견인</span></div>
+      <div class="ix up"><div class="ix-n">RUSSELL 2000 (7/21)</div><div class="ix-v">2,987.40</div><div class="ix-c c-up">+44.97 (+1.53%)</div><span class="ix-t t-up">★★위험선호 확산·소형주 최강</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="g3 mb nb">
+  <div class="dcard">
+    <div class="dcard-t">📊 채권금리 (7/21 종가)</div>
+    <div class="dr"><span class="dr-l">10Y 美 국채</span><span class="dr-r c-up">4.630% (+3bp)</span></div>
+    <div class="dr"><span class="dr-l">5Y</span><span class="dr-r c-up">4.370% (+4bp)</span></div>
+    <div class="dr"><span class="dr-l">13주</span><span class="dr-r c-up">3.730% (+3bp)</span></div>
+    <div class="dr"><span class="dr-l">10Y-3M 스프레드</span><span class="dr-r c-up">+90bp (유지)</span></div>
+    <div class="dr"><span class="dr-l">금리 톤</span><span class="dr-r">★위험선호에 완만한 금리 반등</span></div>
+  </div>
+  <div class="dcard">
+    <div class="dcard-t">💱 환율</div>
+    <div class="dr"><span class="dr-l">DXY 달러인덱스</span><span class="dr-r c-up">101.21 (+0.22%)</span></div>
+    <div class="dr"><span class="dr-l">USD/KRW</span><span class="dr-r c-dn">1,480.31 (-7.08)</span></div>
+    <div class="dr"><span class="dr-l">USD/JPY</span><span class="dr-r c-up">163.14 (+0.38%)</span></div>
+    <div class="dr"><span class="dr-l">EUR/USD</span><span class="dr-r c-dn">1.1385 (-0.22%)</span></div>
+    <div class="dr"><span class="dr-l">원화 톤</span><span class="dr-r">★달러 강보합에도 원화는 강세</span></div>
+  </div>
+  <div class="dcard">
+    <div class="dcard-t">🛢️ 원자재 · 변동성 · 크립토</div>
+    <div class="dr"><span class="dr-l">WTI 선물</span><span class="dr-r c-up">84.52 (+1.55%)</span></div>
+    <div class="dr"><span class="dr-l">브렌트</span><span class="dr-r c-up">91.44 (+2.49%)</span></div>
+    <div class="dr"><span class="dr-l">금 / 은</span><span class="dr-r c-up">4,082.10 (+1.79%) / 59.07 (+3.99%)</span></div>
+    <div class="dr"><span class="dr-l">VIX</span><span class="dr-r c-dn">17.05 (-8.58%·급락)</span></div>
+    <div class="dr"><span class="dr-l">비트코인</span><span class="dr-r c-up">66,320 (+1.67%)</span></div>
+  </div>
+</div>
+
+<div class="nb">
+  <div class="stit">📊 섹터별 등락률 (7/21 종가 · 반도체 압도적 강세 주도 vs 커뮤니케이션·필수소비만 약세)</div>
+  <div class="sec-chart">
+    <div class="sec-r"><div class="sec-nm">반도체 (SOX)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:88%;"></div></div></div><div class="sec-v c-up">+5.21%</div></div>
+    <div class="sec-r"><div class="sec-nm">기술 (XLK)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:49%;"></div></div></div><div class="sec-v c-up">+2.89%</div></div>
+    <div class="sec-r"><div class="sec-nm">에너지 (XLE)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:17%;"></div></div></div><div class="sec-v c-up">+0.97%</div></div>
+    <div class="sec-r"><div class="sec-nm">헬스케어 (XLV)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:11%;"></div></div></div><div class="sec-v c-up">+0.63%</div></div>
+    <div class="sec-r"><div class="sec-nm">산업재 (XLI)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:6%;"></div></div></div><div class="sec-v c-up">+0.30%</div></div>
+    <div class="sec-r"><div class="sec-nm">경기소비 (XLY)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:5%;"></div></div></div><div class="sec-v c-up">+0.23%</div></div>
+    <div class="sec-r"><div class="sec-nm">소재 (XLB)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:3%;"></div></div></div><div class="sec-v c-up">+0.14%</div></div>
+    <div class="sec-r"><div class="sec-nm">금융 (XLF)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:2%;"></div></div></div><div class="sec-v c-up">+0.12%</div></div>
+    <div class="sec-r"><div class="sec-nm">유틸리티 (XLU)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"><div class="sb dn" style="width:2%;"></div></div><div class="sec-bar-c right"></div></div><div class="sec-v c-dn">-0.04%</div></div>
+    <div class="sec-r"><div class="sec-nm">부동산 (XLRE)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"><div class="sb dn" style="width:2%;"></div></div><div class="sec-bar-c right"></div></div><div class="sec-v c-dn">-0.07%</div></div>
+    <div class="sec-r"><div class="sec-nm">커뮤니케이션 (XLC)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"><div class="sb dn" style="width:12%;"></div></div><div class="sec-bar-c right"></div></div><div class="sec-v c-dn">-0.69%</div></div>
+    <div class="sec-r"><div class="sec-nm">필수소비 (XLP)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"><div class="sb dn" style="width:16%;"></div></div><div class="sec-bar-c right"></div></div><div class="sec-v c-dn">-0.94%</div></div>
+  </div>
+</div>
+
+</div>
+
+<!-- PAGE 2 -->
+<div class="page page-break">
+
+<div class="stit nb">💻 주요 기술주 동향 (7/21 종가 · 메모리·스토리지·장비 광역 폭등 vs 대형 SW·플랫폼 로테이션 아웃)</div>
+<table class="tbl mb nb">
+  <thead>
+    <tr><th style="width:80px;">티커</th><th>기업</th><th style="width:85px;">종가($)</th><th style="width:80px;">일간</th><th>핵심</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><span class="tk">SNDK</span><div class="co">SanDisk</div></td><td>샌디스크</td><td>1,589.40</td><td><span class="pct-pill up">+14.27%</span></td><td class="nt"><b>★★★낸드 폭등·메모리 슈퍼 랠리 대장·투자은행 목표가 상향 러시</b></td></tr>
+    <tr><td><span class="tk">WDC</span><div class="co">Western Digital</div></td><td>웨스턴디지털</td><td>548.39</td><td><span class="pct-pill up">+12.51%</span></td><td class="nt"><b>★★★스토리지 동반 폭등·낸드 업황 반전 베팅</b></td></tr>
+    <tr><td><span class="tk">MU</span><div class="co">Micron</div></td><td>마이크론</td><td>970.82</td><td><span class="pct-pill up">+12.17%</span></td><td class="nt"><b>★★★D램·HBM 가격 인상 전망·국내 메모리 직결</b></td></tr>
+    <tr><td><span class="tk">INTC</span><div class="co">Intel</div></td><td>인텔</td><td>105.45</td><td><span class="pct-pill up">+8.64%</span></td><td class="nt"><b>★★2분기 어닝 서프라이즈 기대 상향·실적 D-2</b></td></tr>
+    <tr><td><span class="tk">AMD</span><div class="co">Adv. Micro Devices</div></td><td>AMD</td><td>544.43</td><td><span class="pct-pill up">+8.11%</span></td><td class="nt"><b>★★AI GPU 진영 강세·$540 돌파</b></td></tr>
+    <tr><td><span class="tk">ARM</span><div class="co">Arm Holdings</div></td><td>ARM</td><td>289.73</td><td><span class="pct-pill up">+7.46%</span></td><td class="nt">설계 IP 반도체 랠리 동참·월가 상향</td></tr>
+    <tr><td><span class="tk">AMAT</span><div class="co">Applied Materials</div></td><td>어플라이드</td><td>564.55</td><td><span class="pct-pill up">+7.39%</span></td><td class="nt"><b>★★이번엔 장비도 강세·칩·장비 동반 반등</b></td></tr>
+    <tr><td><span class="tk">TSM</span><div class="co">TSMC ADR</div></td><td>TSMC</td><td>424.61</td><td><span class="pct-pill up">+5.55%</span></td><td class="nt"><b>★파운드리 심리 개선·$420 돌파</b></td></tr>
+    <tr><td><span class="tk">LRCX</span><div class="co">Lam Research</div></td><td>램리서치</td><td>322.00</td><td><span class="pct-pill up">+4.97%</span></td><td class="nt"><b>★장비주 반등 합류·국내 장비주 우호</b></td></tr>
+    <tr><td><span class="tk">ASML</span><div class="co">ASML Holding</div></td><td>ASML</td><td>1,801.51</td><td><span class="pct-pill up">+3.59%</span></td><td class="nt"><b>★EUV 장비 동반 강세</b></td></tr>
+    <tr><td><span class="tk">TSLA</span><div class="co">Tesla</div></td><td>테슬라</td><td>378.93</td><td><span class="pct-pill up">+2.53%</span></td><td class="nt"><b>★★★오늘 밤 실적·수요 체력 검증</b></td></tr>
+    <tr><td><span class="tk">AVGO</span><div class="co">Broadcom</div></td><td>브로드컴</td><td>386.50</td><td><span class="pct-pill up">+2.21%</span></td><td class="nt">맞춤형 AI 칩 강세 동참</td></tr>
+    <tr><td><span class="tk">NVDA</span><div class="co">NVIDIA</div></td><td>엔비디아</td><td>207.29</td><td><span class="pct-pill up">+1.97%</span></td><td class="nt"><b>★대장주 반등·$200선 회복</b></td></tr>
+    <tr><td><span class="tk">QCOM</span><div class="co">Qualcomm</div></td><td>퀄컴</td><td>173.50</td><td><span class="pct-pill up">+1.87%</span></td><td class="nt">모바일 칩 반도체 랠리 동참</td></tr>
+    <tr><td><span class="tk">AAPL</span><div class="co">Apple</div></td><td>애플</td><td>327.74</td><td><span class="pct-pill up">+0.35%</span></td><td class="nt">보합권 방어·시총 1위 유지</td></tr>
+    <tr><td><span class="tk">META</span><div class="co">Meta Platforms</div></td><td>메타</td><td>643.81</td><td><span class="pct-pill flt">-0.32%</span></td><td class="nt">커뮤니케이션 로테이션 아웃</td></tr>
+    <tr><td><span class="tk">AMZN</span><div class="co">Amazon</div></td><td>아마존</td><td>247.55</td><td><span class="pct-pill dn">-0.98%</span></td><td class="nt">하이퍼스케일러 자금 이탈</td></tr>
+    <tr><td><span class="tk">MSFT</span><div class="co">Microsoft</div></td><td>마이크로소프트</td><td>397.75</td><td><span class="pct-pill dn">-1.13%</span></td><td class="nt"><b>★★칩으로 로테이션·$400선 이탈</b></td></tr>
+    <tr><td><span class="tk">GOOGL</span><div class="co">Alphabet</div></td><td>알파벳</td><td>347.15</td><td><span class="pct-pill dn">-1.38%</span></td><td class="nt"><b>★★★오늘 밤 실적·클라우드·자본지출 가이던스가 최대 관건</b></td></tr>
+  </tbody>
+</table>
+
+<div class="g2 mb nb">
+  <div>
+    <div class="stit">📈 급등 상위 (메모리·스토리지·장비·크립토)</div>
+    <table class="tbl">
+      <thead><tr><th>티커</th><th>일간</th><th>핵심</th></tr></thead>
+      <tbody>
+        <tr><td class="tk">샌디스크 SNDK</td><td><span class="pct-pill up">+14.27%</span></td><td class="nt">★★★낸드 폭등·메모리 랠리 대장</td></tr>
+        <tr><td class="tk">웨스턴디지털 WDC</td><td><span class="pct-pill up">+12.51%</span></td><td class="nt">★★★스토리지 동반 폭등</td></tr>
+        <tr><td class="tk">마이크론 MU</td><td><span class="pct-pill up">+12.17%</span></td><td class="nt">★★★D램·HBM 가격 인상 전망</td></tr>
+        <tr><td class="tk">코인베이스 COIN</td><td><span class="pct-pill up">+9.61%</span></td><td class="nt">★★위험선호·크립토 강세 연동</td></tr>
+        <tr><td class="tk">인텔 INTC</td><td><span class="pct-pill up">+8.64%</span></td><td class="nt">★★실적 기대·파운드리 분수령</td></tr>
+        <tr><td class="tk">AMD</td><td><span class="pct-pill up">+8.11%</span></td><td class="nt">★★AI GPU 진영 강세</td></tr>
+        <tr><td class="tk">어플라이드 AMAT</td><td><span class="pct-pill up">+7.39%</span></td><td class="nt">★★장비도 강세·칩·장비 동반</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <div class="stit">📉 하락 상위 (대형 SW·플랫폼 로테이션 아웃)</div>
+    <table class="tbl">
+      <thead><tr><th>티커</th><th>일간</th><th>핵심</th></tr></thead>
+      <tbody>
+        <tr><td class="tk">팔란티어 PLTR</td><td><span class="pct-pill dn">-1.62%</span></td><td class="nt">★★SW 진영 자금 이탈 주도</td></tr>
+        <tr><td class="tk">알파벳 GOOGL</td><td><span class="pct-pill dn">-1.38%</span></td><td class="nt">★★★실적 앞두고 경계·자금 이탈</td></tr>
+        <tr><td class="tk">마이크로소프트 MSFT</td><td><span class="pct-pill dn">-1.13%</span></td><td class="nt">★★칩으로 로테이션·$400 이탈</td></tr>
+        <tr><td class="tk">아마존 AMZN</td><td><span class="pct-pill dn">-0.98%</span></td><td class="nt">★하이퍼스케일러 자금 이탈</td></tr>
+        <tr><td class="tk">필수소비 XLP</td><td><span class="pct-pill dn">-0.94%</span></td><td class="nt">★위험선호에 방어주 소외</td></tr>
+        <tr><td class="tk">커뮤니케이션 XLC</td><td><span class="pct-pill dn">-0.69%</span></td><td class="nt">★플랫폼 로테이션 아웃</td></tr>
+        <tr><td class="tk">메타 META</td><td><span class="pct-pill flt">-0.32%</span></td><td class="nt">보합권·자본지출 논쟁 관망</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="stit nb">🇰🇷 한국 시장 영향 매핑 (7/22(수) — 메모리 슈퍼 랠리 강력 우호 vs SW 로테이션 아웃 부담 · 빅테크 실적 대기)</div>
+<div class="g2 mb nb">
+  <div class="kr-card">
+    <div class="kr-hdr">메모리·스토리지·장비 광역 폭등 + 이번엔 칩·장비 동반 강세 → 반도체 밸류체인 전방위 강력 우호</div>
+    <div class="kr-body">
+      <div class="kr-r"><div class="kr-sec">메모리·HBM</div><div class="kr-desc">낸드·D램이 두 자릿수로 폭등하고 가격 인상 전망이 랠리를 견인 = <b>★★★삼성전자·SK하이닉스 강력 우호</b>. 메모리 슈퍼사이클 논리가 주가로 확인되는 국면.</div><div class="kr-impact c-up">★★★우호</div></div>
+      <div class="kr-r"><div class="kr-sec">반도체 장비</div><div class="kr-desc">지난 국면과 달리 이번엔 미 장비 3사가 칩과 함께 급등 = <b>★★한미반도체·이오테크닉스·HPSP 우호</b>. 칩·장비 디커플링이 해소되며 소부장도 광역 강세 기대.</div><div class="kr-impact c-up">★★우호</div></div>
+      <div class="kr-r"><div class="kr-sec">SW·플랫폼</div><div class="kr-desc">자금이 소프트웨어에서 반도체로 이동하는 로테이션이 뚜렷 = <b>★네이버·카카오 상대 부담</b>. 지수는 오르되 플랫폼주는 상대적으로 소외될 소지.</div><div class="kr-impact c-dn">상대 부담</div></div>
+      <div class="kr-r"><div class="kr-sec">애플 밸류체인</div><div class="kr-desc">애플이 보합권을 방어하며 안정 = <b>★LG이노텍 등 부품주 중립</b>. 대형 IT 하드웨어 심리는 반도체 강세에 동반 개선.</div><div class="kr-impact c-am">중립~우호</div></div>
+    </div>
+  </div>
+  <div class="kr-card">
+    <div class="kr-hdr">유가 반등·금리 소폭 상승·변동성 급락·원화 강세 → 정유 우호·위험선호 회귀에 수급 우호·성장주 완충</div>
+    <div class="kr-body">
+      <div class="kr-r"><div class="kr-sec">정유·에너지</div><div class="kr-desc">WTI·브렌트가 함께 반등하고 미 에너지가 강세 = <b>★★S-Oil·GS·SK이노베이션 우호</b>. 유가 상방이 재개되며 정제마진 기대가 살아있는 국면.</div><div class="kr-impact c-up">★★우호</div></div>
+      <div class="kr-r"><div class="kr-sec">조선·방산</div><div class="kr-desc">위험선호 회귀 속 경기민감·산업재가 동반 강세 = <b>★한화에어로·HD현대중공업 우호</b>. 운임·수주 모멘텀이 유효한 가운데 투자심리 개선.</div><div class="kr-impact c-up">★우호</div></div>
+      <div class="kr-r"><div class="kr-sec">바이오·헬스케어</div><div class="kr-desc">미 헬스케어가 반등하고 금리 상승폭도 제한적 = <b>★셀트리온·삼성바이오로직스 중립</b>. 금리가 완만해 성장주 할인율 부담은 크지 않다.</div><div class="kr-impact c-am">중립</div></div>
+      <div class="kr-r"><div class="kr-sec">항공·화학·수급</div><div class="kr-desc">유가 반등은 원가 부담이나 위험선호·변동성 급락은 수급에 우호 = <b>★★외국인 매수 재개 여지</b>. 원화 강세와 낮은 변동성이 외국인 순매수를 뒷받침.</div><div class="kr-impact c-up">★★수급 우호</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="g2 nb">
+  <div>
+    <div class="stit">🌍 매크로 · 지정학</div>
+    <div class="dcard" style="margin-bottom:6px;">
+      <div class="dcard-t">⚡ 반도체 — 메모리 슈퍼 랠리·투자은행 목표가 상향 러시·D램/HBM/낸드 가격 인상 전망</div>
+      <div class="nt"><b>반도체 핵심 = 「메모리 가격 인상 전망 + 밸류에이션 리셋 + 밸류체인 전방위 강세」</b>. ① <b>★★★대형 투자은행이 3분기 메모리 가격 대폭 인상을 전망하며 낸드·D램·스토리지가 두 자릿수로 폭등</b> ② <b>★★★최근 한 달간의 급락을 「펀더멘털 훼손이 아닌 밸류에이션 리셋·과밀 포지션 청산」으로 규정하는 하우스 견해가 확산</b> ③ <b>★★HBM·D램·낸드 공급 타이트가 내년 이후까지 지속될 것이라는 전망이 랠리를 뒷받침</b> ④ <b>★★★이번엔 칩뿐 아니라 장비까지 동반 급등하며 반등의 폭과 질이 개선</b> ⑤ <b>★AI 메모리 수요 지속 서사가 재확인</b>. <b>한국 시사점</b>: ① <b>★★★삼성전자·SK하이닉스 강력 우호</b> ② <b>★★소부장·장비 광역 강세</b> ③ <b>★SK하이닉스 실적이 실체 최종 검증</b>.</div>
+    </div>
+    <div class="dcard">
+      <div class="dcard-t">📊 매크로 — 위험선호 회귀·변동성 급락·금리 소폭 반등·PCE 경계·FOMC D-7</div>
+      <div class="nt"><b>매크로 톤 = 「위험선호 회귀 + 변동성 급락 + 이벤트 밀집」</b>. ① <b>★★★4대 지수가 나란히 오르고 소형주까지 강세로 위험선호가 광범위하게 확산</b> ② <b>★★★변동성 지수가 큰 폭으로 하락하며 지난주 지정학·금리 경계가 빠르게 완화</b> ③ <b>★★금리는 소폭 반등에 그쳐 랠리를 방해하지 않는 수준</b> ④ <b>★★핵심 물가지표가 목표를 웃돌 것이라는 전망과 다음 주 통화정책 회의가 상방을 제어하는 변수</b> ⑤ <b>★경제지표는 한산하고 빅테크 실적이 다음 방향키</b>. <b>한국 시사점</b>: ① <b>★★위험선호·변동성 급락은 외국인 수급 우호</b> ② <b>★원화 강세가 순매수를 뒷받침</b> ③ <b>★실적 이벤트 전 방향성 베팅은 자제</b>.</div>
+    </div>
+  </div>
+  <div>
+    <div class="stit">🏛️ 이번 주 이벤트 · 신규 모멘텀</div>
+    <div class="dcard" style="margin-bottom:6px;">
+      <div class="dcard-t">⚡ D-Day 실적 — 알파벳·테슬라(오늘 밤 마감 후)·인텔(목)·SK하이닉스(7/29)·PCE·FOMC 대기</div>
+      <div class="nt">이번 주 모멘텀 핵심 = <b>「AI 자본지출 가이던스 1차 판정 + 메모리 업황 실체 검증」</b>. ① <b>★★★알파벳은 클라우드 성장 가속과 사상 최대 규모로 상향된 자본지출 계획의 지속성 여부가 AI 트레이드의 방향키</b> ② <b>★★테슬라는 경기소비 국면에서 수요 체력과 신규 사업 일정이 관건</b> ③ <b>★★인텔은 파운드리 논쟁 속 실적 서프라이즈 기대</b> ④ <b>★★★SK하이닉스 실적이 국내 메모리 업황의 실체를 가른다</b> ⑤ <b>★소폭 미달에도 두 자릿수 급락이 나오는 민감 국면</b>. 한국 매핑: <b>★★★반도체 강세 지속 여부는 실적 확인 후 결정</b>.</div>
+    </div>
+    <div class="dcard">
+      <div class="dcard-t">📊 어제 되짚기 — 반도체 슈퍼 랠리·메모리 폭등·SW 로테이션 아웃·위험선호 회귀·변동성 급락</div>
+      <div class="nt">어제 트리거: ① <b>★★★투자은행의 메모리 가격 인상 전망에 낸드·D램·스토리지가 두 자릿수로 폭등</b> ② <b>★★★반도체 지수가 급등하며 4대 지수를 나란히 끌어올림</b> ③ <b>★★★이번엔 칩과 장비가 동반 강세로 반등의 폭과 질이 개선</b> ④ <b>★★자금이 대형 소프트웨어·플랫폼에서 반도체로 이동하는 로테이션</b> ⑤ <b>★★변동성이 큰 폭 하락하며 위험선호가 소형주까지 확산</b> ⑥ <b>★유가·귀금속도 반등하며 광역 위험선호</b> ⑦ <b>★원화는 달러 강보합 속에서도 강세</b>. 한국 매핑: <b>★★★메모리·장비 강력 우호·수급 개선</b>.</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- PAGE 3 -->
+<div class="page page-break">
+
+<div class="stit nb">📈 분석 · 인사이트</div>
+<div class="g2 mb">
+  <div>
+    <div class="ins i-red nb">
+      <span class="ins-tag" style="background:var(--red-bg); color:var(--red);">SOX +5.21%·SNDK +14.27%·WDC +12.51%·MU +12.17%·SK하이닉스 ADR +14%·모건스탠리 3Q 메모리 +25% 전망</span>
+      <h3>「The Reset Rally — 급락은 펀더멘털이 아니라 포지션이었다」: 메모리 슈퍼사이클의 재확인</h3>
+      <p>메모리 핵심 = <b>「가격 인상 전망 + 밸류에이션 리셋 + 공급 타이트 지속」</b>. ① <b>★★★대형 투자은행이 3분기 메모리 가격 대폭 인상을 전망하자 낸드·D램·스토리지가 하루 만에 두 자릿수로 폭등</b> ② <b>★★★복수의 하우스가 지난 한 달의 20%대 급락을 「펀더멘털 훼손이 아닌 밸류에이션 리셋·과밀 트레이드 청산」으로 규정</b> ③ <b>★★HBM·D램·낸드 공급 타이트가 내년 이후까지 이어질 것이라는 전망이 랠리의 근거</b> ④ <b>★★★AI 메모리 수요가 구조적으로 강하다는 서사가 실적과 가격으로 재확인되는 국면</b> ⑤ <b>★급락 구간에서의 투매가 오히려 저가 매수 기회였다는 인식</b>. <b>반론</b>: <b>「한 달 새 20% 급락 후 하루 두 자릿수 급등은 변동성 자체가 커졌다는 방증이며, 실적으로 뒷받침되지 않으면 되돌림 위험도 크다」</b>. <b>한국 시사점</b>: ① <b>★★★삼성전자·SK하이닉스 강력 우호</b> ② <b>★★소부장·장비 광역 강세</b> ③ <b>★7/29 SK하이닉스 실적이 실체 최종 검증</b>.</p>
+    </div>
+    <div class="ins i-green nb">
+      <span class="ins-tag" style="background:var(--green-bg); color:var(--green);">AMAT +7.39%·LRCX +4.97%·ASML +3.59% (지난 국면 장비 역행 → 이번엔 동반 급등)·칩·장비 디커플링 해소</span>
+      <h3>「Chips Up, Tools Up — 이번엔 장비도 함께 올랐다」: 반등의 질이 달라졌다</h3>
+      <p>반도체 핵심 = <b>「칩·장비 동반 강세 + 디커플링 해소 + 반등의 폭 확대」</b>. ① <b>★★★직전 반등에서 소외됐던 반도체 장비 3사가 이번엔 칩과 나란히 급등</b> ② <b>★★★칩만 오르고 장비는 밀리던 디커플링이 해소된 것은 반등이 「단순 낙폭 되돌림」을 넘어 「업황 개선 기대」로 격상됐다는 신호</b> ③ <b>★★설비투자 눈높이가 다시 올라오면 장비는 칩과 함께 회복하는 구조</b> ④ <b>★그럼에도 하루 급등 폭이 과도해 실적 확인 전 추격은 리스크</b> ⑤ <b>★★★이번 주 실적이 반등의 지속성을 최종 판정</b>. <b>핵심 시사점</b>: ① <b>「칩·장비 동반 강세는 반등의 질이 개선됐다는 방증」</b> ② <b>「다만 하루 급등 후엔 실적 확인이 우선」</b>. 한국: <b>「★★메모리·장비 동반 우호·소부장까지 온기 확산」</b>.</p>
+    </div>
+  </div>
+  <div>
+    <div class="ins i-blue nb">
+      <span class="ins-tag" style="background:var(--blue-bg); color:var(--blue);">MSFT -1.13%·GOOGL -1.38%·AMZN -0.98%·PLTR -1.62% vs SOX +5.21%·R2K +1.53%·VIX 17.05(-8.58%)</span>
+      <h3>「The Great Rotation — 소프트웨어에서 반도체로, 그리고 소형주로」: 자금 흐름이 방향을 바꿨다</h3>
+      <p>로테이션 핵심 = <b>「SW·플랫폼 차익 + 반도체·소형주 순환매 + 위험선호 확산」</b>. ① <b>★★★4대 지수가 오른 날에도 대형 소프트웨어·플랫폼은 오히려 하락하며 자금이 반도체로 순환</b> ② <b>★★★소형주가 대형주를 앞서고 변동성이 급락하며 위험선호가 지수 전반으로 확산</b> ③ <b>★★올해 크게 오른 소프트웨어·플랫폼에서 이익을 실현해 상대적으로 눌려 있던 반도체로 옮겨가는 전형적 순환매</b> ④ <b>★실적을 앞둔 플랫폼주는 경계 매물이 겹침</b> ⑤ <b>★즉 지수 상승의 주체가 소수 빅테크에서 반도체·소형주로 넓어짐</b>. <b>핵심 시사점</b>: ① <b>「지수 방향보다 어느 그룹이 리더인지가 수익률을 가름」</b> ② <b>「순환매가 이어지면 반도체·경기민감의 상대 우위가 지속될 소지」</b>. 한국: <b>「★★반도체·소부장 우호·플랫폼주는 상대 부담」</b>.</p>
+    </div>
+    <div class="ins i-amber nb">
+      <span class="ins-tag" style="background:var(--amber-bg); color:var(--amber);">VIX 17.05(-8.58%)·R2K +1.53%·WTI 84.52(+1.55%)·브렌트 91.44·금 4,082(+1.79%)·은 59.07(+3.99%)·BTC 66,320</span>
+      <h3>「Risk-On Reboot — 변동성이 무너지자 위험자산이 일제히 올랐다」: 광역 위험선호의 복귀</h3>
+      <p>위험선호 핵심 = <b>「변동성 급락 + 전방위 위험자산 강세 + 이벤트 전 안도」</b>. ① <b>★★★변동성 지수가 큰 폭으로 하락하며 지난주의 지정학·금리 경계가 빠르게 해소</b> ② <b>★★★주식뿐 아니라 유가·귀금속·크립토까지 위험·경기 자산이 동반 강세</b> ③ <b>★★소형주가 대형주를 앞선 것은 위험선호가 시장 전반으로 넓어졌다는 방증</b> ④ <b>★금리가 소폭 반등에 그쳐 랠리를 방해하지 않은 점도 안도 요인</b> ⑤ <b>★다만 물가지표·빅테크 실적·통화정책 회의가 몰려 있어 안도가 언제든 뒤집힐 수 있는 국면</b>. <b>핵심 시사점</b>: ① <b>「위험선호 회귀는 외국인 수급에 우호적」</b> ② <b>「이벤트 밀집 구간이라 안도 랠리의 지속성은 실적이 결정」</b>. 한국: <b>「★★수급 우호·경기민감 온기·실적 전 방향 베팅 자제」</b>.</p>
+    </div>
+  </div>
+</div>
+
+<div class="strat nb">
+  <div class="strat-mode">🎯 전략 모드: Semis Momentum · 반도체 28% 확대 (메모리·장비 동반 강세) · 정유 10% 유지 · 조선/경기민감 10% · 플랫폼 비중 축소 · 현금 15%·헷지 15% · 실적 종목 이벤트 전 축소</div>
+  <ul class="strat-list">
+    <li><span class="bullet">1</span><span><b>★★★반도체 28%로 확대 — 메모리 슈퍼 랠리 + 칩·장비 동반 강세로 반등의 질이 개선</b>. ① <b>★★★삼성전자·SK하이닉스</b>(메모리 가격 인상 전망·코어 확대) ② <b>★★한미반도체·이오테크닉스·HPSP</b>(이번엔 장비도 동반 급등·소부장 온기 확산) ③ <b>★하루 급등 폭이 과도해 7/29 SK하이닉스 실적 확인 전 추격은 분할 접근</b>.</span></li>
+    <li><span class="bullet">2</span><span><b>★★플랫폼·성장 SW 비중 축소 — 자금이 반도체로 순환매</b>. ① <b>★★네이버·카카오</b>(미 대형 SW·플랫폼 로테이션 아웃 read-through) ② <b>★지수가 올라도 플랫폼은 상대적으로 소외될 소지</b> ③ <b>★리더십이 반도체·경기민감으로 넘어간 국면</b>.</span></li>
+    <li><span class="bullet">3</span><span><b>★★정유 10% 유지·조선/경기민감 10% — 위험선호 회귀에 경기민감 온기</b>. ① <b>★★S-Oil·GS·SK이노베이션</b>(유가·브렌트 동반 반등·정제마진 기대) ② <b>★★HD현대중공업·한화에어로</b>(위험선호·산업재 강세 동참) ③ <b>★유가 상방 재개는 항공·화학엔 원가 부담이므로 분리 대응</b>.</span></li>
+    <li><span class="bullet">4</span><span><b>★바이오·장기 성장주 중립 유지 — 금리 상승폭이 제한적이라 부담 완화</b>. ① <b>★셀트리온·삼성바이오로직스</b>(미 헬스케어 반등·금리 완만) ② <b>★★2차전지 등 듀레이션 자산도 위험선호 온기 수혜</b> ③ <b>★다만 물가지표·FOMC 전까지 비중 확대는 신중</b>.</span></li>
+    <li><span class="bullet">5</span><span><b>헷지 15% 유지 + 이벤트 밀집 구간 대응 — 오늘 밤 알파벳·테슬라, 목 인텔, 7/29 SK하이닉스·FOMC</b>. ① <b>★★★알파벳 자본지출 가이던스가 AI 논쟁의 1차 판정</b> ② <b>★★★SK하이닉스 실적이 메모리 랠리의 실체 최종 검증</b> ③ <b>★★변동성이 급락한 만큼 실적 실망 시 되돌림 폭도 커질 수 있음</b> ④ <b>★소폭 미달에도 두 자릿수 급락 나오는 민감 국면</b> ⑤ <b>★실적 발표 종목은 이벤트 전 비중 축소가 원칙</b>. 「Semis Momentum·반도체 28%·정유 10%·경기민감 10%·플랫폼 축소·현금 15%·헷지 15%」.</span></li>
+  </ul>
+</div>
+
+<div class="g2 nb" style="margin-top:10px;">
+  <div>
+    <div class="stit">📅 D-Day 일정 (7/22 수~)</div>
+    <div class="sched">
+      <div class="dr"><span class="dr-l">🇰🇷 KOSPI 7/22(수) 「메모리·장비 강력 우호·수급 개선·플랫폼 상대 부담」 <span class="tag r">최중요</span></span><span class="dr-r">09:00 KST</span></div>
+      <div class="dr"><span class="dr-l">📊 ★★★알파벳 실적·클라우드·자본지출 가이던스 <span class="tag y">실적</span></span><span class="dr-r">7/22(수) 장 마감 후</span></div>
+      <div class="dr"><span class="dr-l">🚗 ★★★테슬라 2분기 실적·수요 체력 검증 <span class="tag y">실적</span></span><span class="dr-r">7/22(수) 장 마감 후</span></div>
+      <div class="dr"><span class="dr-l">💻 ★★인텔 2분기 실적·파운드리 논쟁 <span class="tag y">실적</span></span><span class="dr-r">7/23(목) 장 마감 후</span></div>
+      <div class="dr"><span class="dr-l">📊 ★★미 기업 실적 — IBM·GM·허니웰·T-모바일 등 <span class="tag y">실적</span></span><span class="dr-r">7/22~24</span></div>
+      <div class="dr"><span class="dr-l">📊 ★★★SK하이닉스 2분기 실적·메모리 업황 실체 검증 <span class="tag y">실적</span></span><span class="dr-r">7/29(수)</span></div>
+      <div class="dr"><span class="dr-l">🏛️ ★★★FOMC 통화정책 회의 <span class="tag b">매크로</span></span><span class="dr-r">7/28~29</span></div>
+      <div class="dr"><span class="dr-l">📊 ★★★핵심 PCE 물가지표 (근원 2.9% 전망) <span class="tag b">매크로</span></span><span class="dr-r">7/31(금)</span></div>
+    </div>
+  </div>
+  <div>
+    <div class="stit">⚠️ 리스크 체크</div>
+    <div class="ins i-red" style="margin-bottom:6px;">
+      <span class="ins-tag" style="background:var(--red-bg); color:var(--red);">SNDK +14%·MU +12%·SOX +5.21%·한 달 -20% 후 하루 두 자릿수 급등·실적 미확인</span>
+      <h3>「Melt-Up Risk — 하루 두 자릿수 급등의 뒷면」</h3>
+      <p>리스크 1순위 — <b>급등 후 되돌림 리스크</b>. ① <b>★★★한 달 새 20%대 급락한 종목이 하루 만에 두 자릿수 급등한 것은 변동성 자체가 매우 커졌다는 방증</b> ② <b>★★★랠리의 근거가 투자은행 가격 전망이라 실적으로 뒷받침되지 않으면 급반락 위험</b> ③ <b>★★7/29 SK하이닉스 실적 전까지는 업황 실체가 미확인 상태</b> ④ <b>★★이 논리는 국내 메모리·소부장 급등주에도 동일하게 적용</b> ⑤ <b>★추격 매수는 실적 확인 후 분할 접근이 원칙</b>. <b>대응</b>: ① 반도체 28% 유지·추가 확대는 실적 후 ② 급등주 분할 접근 ③ 헷지 15% 유지 ④ 하루 급등 폭 과도 종목 추격 자제.</p>
+    </div>
+    <div class="ins i-amber">
+      <span class="ins-tag" style="background:var(--amber-bg); color:var(--amber);">알파벳·테슬라 7/22·인텔 7/23·SK하이닉스 7/29·FOMC 7/28~29·PCE 근원 2.9% 전망·VIX 17.05</span>
+      <h3>「Verdict Week — 안도 랠리의 지속성은 실적이 정한다」</h3>
+      <p>리스크 2순위 — <b>실적·매크로 이벤트 집중</b>. ① <b>★★★알파벳·테슬라가 오늘 밤 실적을 내며 AI 자본지출 논쟁의 1차 판정이 나옴</b> ② <b>★★★자본지출 가이던스가 상향되면 AI 트레이드가 강화되지만 반대의 경우 조정이 재개될 소지</b> ③ <b>★★변동성이 급락한 만큼 실적 실망 시 낙폭이 증폭되는 구조</b> ④ <b>★★핵심 물가지표가 목표를 웃돌 전망이고 통화정책 회의가 겹쳐 매크로 경계도 병존</b> ⑤ <b>★소폭 미달에도 두 자릿수 급락 나오는 민감 국면</b>. <b>대응</b>: ① 비중 70%·헷지 15%·현금 15% ② <b>★반도체 증액은 실적 확인 후</b> ③ <b>★실적 발표 종목은 이벤트 전 비중 축소</b> ④ 방향성 베팅 자제.</p>
+    </div>
+  </div>
+</div>
+
+<div class="summ nb" style="margin-top:10px;">
+  <div class="summ-hdr">📌 핵심 3줄 요약</div>
+  <div class="summ-body">
+    <div class="summ-item"><div class="summ-n">1</div><div class="summ-t"><b>7/21(화 마감) — 「반도체 슈퍼 랠리·메모리 폭등 → 4대 지수 동반 강세」</b>. DOW 52,224.64(+0.74%)·SPX 7,509.20(+0.89%)·NASDAQ 25,837.21(+1.29%)·R2K 2,987.40(+1.53%)·SOX 12,356.16(+5.21%). SNDK(+14.27%)·WDC(+12.51%)·MU(+12.17%)·INTC(+8.64%)·AMD(+8.11%) vs GOOGL(-1.38%)·MSFT(-1.13%)·PLTR(-1.62%). 10Y 4.630%(+3bp)·VIX 17.05(-8.58%)·DXY 101.21·USD/KRW 1,480.31·WTI 84.52·브렌트 91.44·금 4,082.10.</div></div>
+    <div class="summ-item"><div class="summ-n">2</div><div class="summ-t"><b>핵심 트리거 — ★★★알파벳·테슬라(오늘 밤)·인텔(7/23)·SK하이닉스(7/29) 실적, FOMC(7/28~29)·PCE(7/31)</b>. ① <b>★★★투자은행의 3분기 메모리 가격 인상 전망에 낸드·D램·스토리지가 두 자릿수 폭등</b> ② <b>★★★최근 한 달 급락을 「펀더멘털이 아닌 밸류에이션 리셋」으로 규정하는 하우스 견해 확산</b> ③ <b>★★★이번엔 칩과 장비가 동반 급등하며 반등의 질이 개선</b> ④ <b>★★자금이 대형 소프트웨어·플랫폼에서 반도체·소형주로 순환매</b> ⑤ <b>★★변동성 급락에 유가·귀금속·크립토까지 광역 위험선호</b>.</div></div>
+    <div class="summ-item"><div class="summ-n">3</div><div class="summ-t">한국 시장 영향(7/22 수) — <b>「메모리·장비 강력 우호 + 수급 개선 + 플랫폼 상대 부담」</b>. <b>★★★우호</b>: 삼성전자·SK하이닉스(메모리 슈퍼 랠리)·한미반도체·이오테크닉스·HPSP(장비 동반 급등)·S-Oil·GS(유가 반등)·HD현대중공업·한화에어로(위험선호). <b>★부담</b>: 네이버·카카오(SW 로테이션 아웃). <b>★중립</b>: 셀트리온·삼성바이오로직스(금리 완만)·LG이노텍(애플 안정). <b>★★★반도체 28% 확대·정유 10%·경기민감 10%·플랫폼 축소</b>. 비중 70%·헷지 15%·현금 15%.</div></div>
+  </div>
+</div>
+
+<div class="ftr nb">
+  <p><b>출처</b>: Yahoo Finance(7/21 정규장 종가 기준) · CNBC · Reuters · Bloomberg · 24/7 Wall St. · TradingKey · Morgan Stanley · The Motley Fool · Forbes.</p>
+  <p>본 자료는 정보 제공 목적이며 투자 권유가 아닙니다. 투자 결정의 책임은 본인에게 있습니다.</p>
+  <p>생성: 2026-07-22 07:00 KST · 미국 시장 모닝 브리핑 (7/21 화 정규장 종가 기준 · 7/22 수 국내장 프리뷰 — 반도체 슈퍼 랠리·SOX +5.21%·메모리 두 자릿수 폭등(SNDK +14.3%·MU +12.2%) + 투자은행 3Q 메모리 가격 인상 전망·밸류에이션 리셋론 확산 + 이번엔 칩·장비 동반 급등으로 반등의 질 개선 + 자금이 대형 SW·플랫폼에서 반도체·소형주로 순환매 + VIX -8.6% 급락에 광역 위험선호 회귀 · 7/22 알파벳/테슬라 실적, 7/29 SK하이닉스·FOMC 집중)</p>
+</div>
+
+</div>
+
+</body>
+</html>
