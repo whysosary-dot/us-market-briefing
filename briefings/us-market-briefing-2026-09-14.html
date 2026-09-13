@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>미국 시장 모닝 브리핑 | 2026.09.14</title>
+<style>
+  @page { size: A4 portrait; margin: 2mm 2.4mm; }
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+
+  :root {
+    --red: #dc2626; --red-bg: #fef2f2; --red-light: #fee2e2;
+    --blue: #2563eb; --blue-bg: #eff6ff; --blue-light: #dbeafe;
+    --green: #16a34a; --green-bg: #f0fdf4;
+    --amber: #d97706; --amber-bg: #fffbeb;
+    --slate: #334155; --slate2: #64748b; --slate3: #94a3b8;
+    --slate4: #cbd5e1; --slate5: #e2e8f0; --slate6: #f1f5f9;
+    --white: #ffffff; --ink: #0f172a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+  body { font-family: 'Noto Sans KR', -apple-system, sans-serif; color: var(--ink); background: var(--white); font-size: 13.5pt; line-height: 1.5; }
+  .page { width: 100%; max-width: 100%; margin: 0 auto; }
+  .page-break { page-break-before: always; }
+  .nb { page-break-inside: avoid; break-inside: avoid; }
+  @media screen {
+    body { background: #e2e8f0; padding: 0; margin: 0; }
+    .page { background: #fff; padding: 4px 6px; box-shadow: 0 4px 20px rgba(0,0,0,0.12); border-radius: 6px; margin-bottom: 4px; width: 100%; max-width: 100%; }
+  }
+  @media print { .page { width: 100%; max-width: 100%; padding: 0; } }
+
+  .hdr { background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%) !important; border-radius: 8px; padding: 14px 18px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; color: #fff; }
+  .hdr h1 { font-size: 22.5pt; font-weight: 900; letter-spacing: -0.8px; }
+  .hdr .sub { font-size: 11.25pt; color: #94a3b8; margin-top: 2px; font-weight: 400; }
+  .hdr .dt { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); padding: 5px 14px; border-radius: 20px; font-size: 12pt; font-weight: 700; }
+
+  .hero { border-radius: 8px; padding: 12px 16px; margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
+  .hero.positive { background: linear-gradient(135deg, #fef2f2 0%, #fff1f2 100%) !important; border: 1.5px solid #fca5a5; }
+  .hero.positive .hero-icon { background: var(--red); }
+  .hero.positive .hero-text { color: #991b1b; }
+  .hero.positive .hero-text b { color: var(--red); }
+  .hero.negative { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%) !important; border: 1.5px solid #93c5fd; }
+  .hero.negative .hero-icon { background: var(--blue); }
+  .hero.negative .hero-text { color: #1e3a8a; }
+  .hero.negative .hero-text b { color: var(--blue); }
+  .hero.mixed { background: linear-gradient(135deg, #fffbeb 0%, #fefce8 100%) !important; border: 1.5px solid #fde68a; }
+  .hero.mixed .hero-icon { background: var(--amber); }
+  .hero.mixed .hero-text { color: #92400e; }
+  .hero.mixed .hero-text b { color: var(--amber); }
+  .hero-icon { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; color: #fff; }
+  .hero-text { font-size: 12.75pt; line-height: 1.6; }
+
+  .kpi-row { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; margin-bottom: 12px; }
+  .kpi { text-align: center; padding: 8px 4px; border-radius: 6px; border: 1px solid var(--slate5); }
+  .kpi.neg { background: var(--blue-bg); border-color: var(--blue-light); }
+  .kpi.pos { background: var(--red-bg); border-color: var(--red-light); }
+  .kpi.neu { background: var(--slate6); }
+  .kpi-lb { font-size: 9.75pt; font-weight: 700; color: var(--slate3); text-transform: uppercase; letter-spacing: 0.5px; }
+  .kpi-v { font-size: 19.5pt; font-weight: 900; margin-top: 2px; }
+
+  .top2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+
+  .sent { border: 1px solid var(--slate5); border-radius: 8px; padding: 12px 14px; background: var(--white); }
+  .sent-hdr { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .sent-badge { font-size: 16.5pt; font-weight: 900; padding: 4px 12px; border-radius: 16px; }
+  .sent-badge.fear { color: var(--amber); background: var(--amber-bg); border: 1px solid #fde68a; }
+  .sent-badge.extreme-fear { color: var(--blue); background: var(--blue-bg); border: 1px solid var(--blue-light); }
+  .sent-badge.greed { color: var(--red); background: var(--red-bg); border: 1px solid var(--red-light); }
+  .sent-badge.neutral { color: var(--slate2); background: var(--slate6); border: 1px solid var(--slate5); }
+  .sent-mode { font-size: 11.25pt; font-weight: 700; color: var(--blue); background: var(--blue-bg); border: 1px solid #bfdbfe; padding: 3px 10px; border-radius: 12px; }
+  .gauge-wrap { margin-top: 6px; }
+  .gauge-lbl { display: flex; justify-content: space-between; font-size: 9pt; color: var(--slate3); margin-top: 4px; font-weight: 500; }
+
+  .idx-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .ix { border: 1px solid var(--slate5); border-radius: 6px; padding: 8px 10px; position: relative; overflow: hidden; }
+  .ix::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+  .ix.dn::after { background: var(--blue); }
+  .ix.up::after { background: var(--red); }
+  .ix-n { font-size: 9.75pt; color: var(--slate3); font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; }
+  .ix-v { font-size: 21pt; font-weight: 900; margin: 1px 0; }
+  .ix-c { font-size: 12pt; font-weight: 700; }
+  .ix-t { font-size: 9.75pt; display: inline-block; padding: 1px 5px; border-radius: 3px; font-weight: 700; margin-top: 2px; }
+  .t-dn { background: var(--blue-bg); color: var(--blue); }
+  .t-up { background: var(--red-bg); color: var(--red); }
+  .t-warn { background: var(--amber-bg); color: var(--amber); }
+
+  .stit { font-size: 15pt; font-weight: 900; color: var(--ink); margin-bottom: 6px; padding-bottom: 4px; border-bottom: 2.5px solid var(--ink); display: flex; align-items: center; gap: 6px; }
+
+  .g3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .mb { margin-bottom: 10px; }
+
+  .dcard { border: 1px solid var(--slate5); border-radius: 6px; padding: 8px 10px; background: var(--white); }
+  .dcard-t { font-size: 10.5pt; font-weight: 700; color: var(--slate3); text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 5px; }
+  .dr { display: flex; justify-content: space-between; align-items: center; padding: 3px 0; }
+  .dr + .dr { border-top: 1px solid var(--slate6); }
+  .dr-l { font-size: 11.25pt; color: var(--slate2); }
+  .dr-r { font-size: 11.25pt; font-weight: 700; }
+  .c-up { color: var(--red); }
+  .c-dn { color: var(--blue); }
+  .c-am { color: var(--amber); }
+
+  .sec-chart { border: 1px solid var(--slate5); border-radius: 6px; padding: 10px 12px; }
+  .sec-r { display: flex; align-items: center; gap: 6px; padding: 3px 0; }
+  .sec-nm { flex: 0 0 130px; font-size: 10.5pt; font-weight: 600; color: var(--slate); }
+  .sec-vis { flex: 1; height: 18px; background: var(--slate6); border-radius: 3px; position: relative; overflow: hidden; }
+  .sec-vis .mid { position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: var(--slate3); }
+  .sec-bar-c { position: absolute; top: 0; bottom: 0; width: 50%; }
+  .sec-bar-c.left { left: 0; right: auto; }
+  .sec-bar-c.right { left: 50%; right: auto; }
+  .sb { position: absolute; top: 0; height: 100%; opacity: 0.85; border-radius: 2px; min-width: 2px; }
+  .sb.up { background: var(--red); left: 0; }
+  .sb.dn { background: var(--blue); right: 0; }
+  .sec-v { flex: 0 0 70px; text-align: right; font-size: 11.25pt; font-weight: 800; }
+
+  .tbl { width: 100%; border-collapse: collapse; font-size: 12pt; }
+  .tbl th { background: var(--slate6); padding: 7px 8px; text-align: left; font-weight: 700; color: var(--slate); font-size: 10.5pt; text-transform: uppercase; letter-spacing: 0.3px; border-bottom: 2px solid var(--slate4); }
+  .tbl td { padding: 7px 8px; border-bottom: 1px solid var(--slate5); }
+  .tbl tr:nth-child(even) td { background: var(--slate6); }
+  .tk { font-weight: 900; font-size: 13.5pt; }
+  .co { font-size: 9.75pt; color: var(--slate3); font-weight: 500; }
+  .nt { font-size: 11.25pt; color: var(--slate); line-height: 1.5; }
+  .pct-pill { display: inline-block; padding: 2px 8px; border-radius: 12px; font-weight: 700; font-size: 11.25pt; }
+  .pct-pill.up { background: var(--red-bg); color: var(--red); }
+  .pct-pill.dn { background: var(--blue-bg); color: var(--blue); }
+  .pct-pill.flt { background: var(--slate6); color: var(--slate2); }
+
+  .kr-card { border: 1.5px solid var(--slate4); border-radius: 8px; overflow: hidden; }
+  .kr-hdr { background: linear-gradient(90deg, #0f172a 0%, #334155 100%); color: #fff; padding: 8px 12px; font-size: 11.25pt; font-weight: 700; }
+  .kr-body { padding: 8px 12px; }
+  .kr-r { display: grid; grid-template-columns: 110px 1fr 70px; gap: 8px; padding: 5px 0; align-items: start; }
+  .kr-r + .kr-r { border-top: 1px solid var(--slate6); }
+  .kr-sec { font-size: 11.25pt; font-weight: 700; color: var(--slate); }
+  .kr-desc { font-size: 11.25pt; color: var(--slate); line-height: 1.5; }
+  .kr-impact { font-size: 11.25pt; font-weight: 800; text-align: right; }
+
+  .ins { border-radius: 8px; padding: 12px 14px; margin-bottom: 8px; border-left: 5px solid var(--slate3); background: var(--white); }
+  .ins.i-red { border-left-color: var(--red); background: linear-gradient(90deg, #fef2f2 0%, #ffffff 30%) !important; }
+  .ins.i-blue { border-left-color: var(--blue); background: linear-gradient(90deg, #eff6ff 0%, #ffffff 30%) !important; }
+  .ins.i-green { border-left-color: var(--green); background: linear-gradient(90deg, #f0fdf4 0%, #ffffff 30%) !important; }
+  .ins.i-amber { border-left-color: var(--amber); background: linear-gradient(90deg, #fffbeb 0%, #ffffff 30%) !important; }
+  .ins h3 { font-size: 13.5pt; font-weight: 900; margin: 4px 0 6px; color: var(--ink); }
+  .ins p { font-size: 11.25pt; color: var(--slate); line-height: 1.55; }
+  .ins-tag { display: inline-block; font-size: 9.75pt; font-weight: 800; padding: 2px 8px; border-radius: 12px; }
+
+  .strat { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #fff; border-radius: 8px; padding: 14px 16px; margin-top: 10px; }
+  .strat-mode { display: inline-block; font-size: 12.75pt; font-weight: 900; padding: 5px 14px; border-radius: 20px; background: rgba(37,99,235,0.2); color: #93c5fd; border: 1px solid rgba(37,99,235,0.4); margin-bottom: 8px; }
+  .strat-list { list-style: none; }
+  .strat-list li { padding: 7px 0; display: flex; gap: 10px; align-items: flex-start; font-size: 11.25pt; line-height: 1.55; }
+  .strat-list li + li { border-top: 1px solid rgba(255,255,255,0.08); }
+  .strat-list .bullet { width: 22px; height: 22px; border-radius: 50%; background: var(--blue); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 10.5pt; flex-shrink: 0; }
+  .strat-list b { color: #fff; }
+
+  .sched .dr-l { font-size: 11.25pt; color: var(--slate); font-weight: 500; }
+  .sched .dr-r { font-size: 11.25pt; font-weight: 700; color: var(--slate2); }
+  .tag { display: inline-block; padding: 1px 6px; border-radius: 4px; font-size: 9.75pt; font-weight: 700; margin-left: 4px; }
+  .tag.r { background: var(--red-bg); color: var(--red); }
+  .tag.g { background: var(--green-bg); color: var(--green); }
+  .tag.b { background: var(--blue-bg); color: var(--blue); }
+  .tag.y { background: var(--amber-bg); color: var(--amber); }
+
+  .summ { border-radius: 8px; overflow: hidden; border: 1.5px solid var(--slate4); }
+  .summ-hdr { background: linear-gradient(90deg, #0f172a 0%, #334155 100%); color: #fff; padding: 7px 14px; font-size: 12.75pt; font-weight: 900; }
+  .summ-body { padding: 10px 12px; }
+  .summ-item { display: flex; gap: 8px; padding: 5px 0; align-items: flex-start; }
+  .summ-item + .summ-item { border-top: 1px solid var(--slate6); }
+  .summ-n { width: 22px; height: 22px; border-radius: 50%; background: var(--ink); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 11.25pt; flex-shrink: 0; }
+  .summ-t { font-size: 11.25pt; line-height: 1.55; color: var(--slate); }
+
+  .ftr { margin-top: 8px; padding-top: 6px; border-top: 1px solid var(--slate5); }
+  .ftr p { font-size: 9.75pt; color: var(--slate3); line-height: 1.5; }
+
+  /* 태블릿/데스크탑/아이패드 ≥768px */
+  @media screen and (min-width: 768px) {
+    body { padding: 0 !important; margin: 0 !important; }
+    .page { width: 100% !important; max-width: 100% !important; padding: 6px 8px !important; border-radius: 8px; margin-left:0 !important; margin-right:0 !important; }
+  }
+
+  /* 모바일 ≤767px */
+  @media screen and (max-width: 767px) {
+    body { font-size: 13px; line-height: 1.55; padding: 0 !important; margin: 0 !important; background: #f1f5f9; }
+    .page { width: 100% !important; max-width: 100% !important; padding: 4px 4px !important; margin: 0 0 2px 0 !important; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+    .page-break { page-break-before: auto; }
+    .hdr { padding: 12px 14px; flex-direction: column; align-items: flex-start; gap: 8px; }
+    .hdr h1 { font-size: 17px; line-height: 1.3; }
+    .hdr .sub { font-size: 11px; line-height: 1.5; }
+    .hdr .dt { font-size: 11px; padding: 4px 12px; align-self: flex-start; }
+    .hero { flex-direction: row; align-items: flex-start; padding: 12px 14px; gap: 10px; }
+    .hero-icon { width: 32px; height: 32px; font-size: 16px; }
+    .hero-text { font-size: 12.5px; line-height: 1.65; }
+    .kpi-row { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+    .kpi { padding: 8px 4px; }
+    .kpi-lb { font-size: 9px; }
+    .kpi-v { font-size: 15px; }
+    .top2 { grid-template-columns: 1fr; gap: 10px; }
+    .g3 { grid-template-columns: 1fr; gap: 8px; }
+    .g2 { grid-template-columns: 1fr; gap: 8px; }
+    .idx-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
+    .ix { padding: 8px 10px; }
+    .ix-n { font-size: 9px; }
+    .ix-v { font-size: 16px; }
+    .ix-c { font-size: 11px; }
+    .ix-t { font-size: 9px; }
+    .sent { padding: 12px 14px; }
+    .sent-badge { font-size: 13px; }
+    .sent-mode { font-size: 10px; }
+    .gauge-lbl { font-size: 8px; }
+    .dcard { padding: 10px 12px; }
+    .dcard-t { font-size: 10px; }
+    .dr { padding: 4px 0; }
+    .dr-l, .dr-r { font-size: 11px; }
+    .stit { font-size: 13px; padding-bottom: 5px; margin-bottom: 8px; }
+    .sec-chart { padding: 10px 10px; }
+    .sec-nm { flex: 0 0 88px; font-size: 10px; }
+    .sec-v { flex: 0 0 50px; font-size: 11px; }
+    .tbl { font-size: 11px; }
+    .tbl th { font-size: 9px; padding: 6px 6px; }
+    .tbl td { padding: 6px 6px; font-size: 11px; }
+    .tk { font-size: 12px; }
+    .co { font-size: 9px; }
+    .nt { font-size: 10.5px; line-height: 1.55; }
+    .pct-pill { font-size: 11px; padding: 2px 6px; }
+    .ins { padding: 12px 14px; margin-bottom: 8px; }
+    .ins h3 { font-size: 13px; line-height: 1.45; }
+    .ins p { font-size: 11.5px; line-height: 1.7; }
+    .ins-tag { font-size: 9px; }
+    .kr-card .kr-hdr { font-size: 10px; padding: 6px 10px; line-height: 1.5; }
+    .kr-r { grid-template-columns: 80px 1fr; row-gap: 4px; }
+    .kr-r .kr-impact { grid-column: 1 / -1; text-align: left; padding-top: 2px; }
+    .kr-sec { font-size: 11px; }
+    .kr-desc { font-size: 10.5px; line-height: 1.6; }
+    .kr-impact { font-size: 10.5px; }
+    .strat { padding: 12px 14px; }
+    .strat-mode { font-size: 13px; padding: 6px 14px; }
+    .strat-list li { font-size: 11.5px; padding: 6px 0; line-height: 1.7; }
+    .strat-list .bullet { width: 18px; height: 18px; font-size: 9px; }
+    .sched .dr-l { font-size: 11px; line-height: 1.6; }
+    .sched .dr-r { font-size: 10.5px; }
+    .tag { font-size: 9px; }
+    .summ-hdr { font-size: 12px; padding: 7px 14px; }
+    .summ-body { padding: 10px 12px; }
+    .summ-t { font-size: 12px; line-height: 1.7; }
+    .summ-n { width: 22px; height: 22px; font-size: 12px; }
+    .ftr p { font-size: 9.5px; line-height: 1.65; }
+  }
+
+  /* 좁은 폰 ≤420px — 추가 압축 + 극소 여백 */
+  @media screen and (max-width: 420px) {
+    .page { padding: 3px 3px !important; margin: 0 !important; }
+    .kpi-row { grid-template-columns: repeat(2, 1fr); }
+    .idx-grid { grid-template-columns: 1fr; }
+    .ix-v { font-size: 18px; }
+    .hero-text { font-size: 12px; }
+    .tbl th { font-size: 8.5px; padding: 5px 4px; }
+    .tbl td { padding: 5px 4px; font-size: 10.5px; }
+    .tk { font-size: 11px; }
+    .nt { font-size: 10px; }
+    .pct-pill { font-size: 10.5px; padding: 2px 5px; }
+  }
+</style>
+</head><body>
+
+<!-- PAGE 1 -->
+<div class="page">
+
+<div class="hdr nb">
+  <div>
+    <h1>🇺🇸 미국 시장 모닝 브리핑</h1>
+    <div class="sub">9/11(금) 마감 리뷰 · 국내장 9/14(월) 프리뷰 — 주말 휴장에 금 종가 유지 · CPI 인라인·유가 하락에 4일 하락 마감·안도 반등 · 기술·메가캡 회복 주도 · 국채금리 전 구간 52주 최고·9월 인상 사실상 확정 · 에너지만 약세 · 이번 주 FOMC(화~수)가 최대 관문 · 출처 CNBC·Bloomberg·Reuters·Yahoo·TheStreet·Schwab</div>
+  </div>
+  <div class="dt">2026.09.14 (월) 07:00</div>
+</div>
+
+<div class="hero positive nb">
+  <div class="hero-icon">📈</div>
+  <div class="hero-text">
+    <b>Relief Rally, Hawkish Gate — 8월 CPI가 대체로 예상 부합으로 나오고 유가가 하락 반전하며 4거래일 연속 하락을 안도 반등으로 마감했다. 기술·커뮤니케이션·메가캡이 회복을 주도했다.</b>
+    <b>다만 근원 물가는 여전히 뜨거워 9월 인상이 사실상 확정 수준으로 굳어졌고, 국채금리는 전 구간이 52주 최고로 치솟았다. 유가 하락에 에너지만 홀로 약세로 전환하며 전형적 순환매 장세가 나타났다.</b>
+    <b>한국 시장 영향(9/14 월) — 반도체·기술 반등과 유가 하락은 성장·항공·화학에 안도. 다만 美 금리 52주 최고·9월 인상 임박·달러 강세는 외국인 수급·롱듀레이션·정유엔 부담 지속, 안도 반등 속 이벤트 경계 우위.</b>
+  </div>
+</div>
+
+<div class="kpi-row nb">
+  <div class="kpi pos"><div class="kpi-lb">S&amp;P 500</div><div class="kpi-v c-up">+0.86%</div></div>
+  <div class="kpi pos"><div class="kpi-lb">DOW</div><div class="kpi-v c-up">+0.98%</div></div>
+  <div class="kpi pos"><div class="kpi-lb">반도체 SOX</div><div class="kpi-v c-up">+1.8%</div></div>
+  <div class="kpi neu"><div class="kpi-lb">10Y 금리</div><div class="kpi-v c-up">4.97%</div></div>
+  <div class="kpi neg"><div class="kpi-lb">WTI 유가</div><div class="kpi-v c-dn">-3.35%</div></div>
+  <div class="kpi neu"><div class="kpi-lb">USD/KRW</div><div class="kpi-v c-up">~1,349</div></div>
+</div>
+
+<div class="top2 nb">
+  <div class="sent">
+    <div class="sent-hdr">
+      <div class="sent-badge neutral">중립·탐욕 기울기 (55)</div>
+      <div class="sent-mode">CPI 인라인 · 유가 하락 · 안도 반등 · 4일 하락 마감 · 9월 인상 임박 · FOMC D-2</div>
+    </div>
+    <div class="gauge-wrap">
+      <svg width="100%" height="56" viewBox="0 0 280 56">
+        <defs>
+          <linearGradient id="g1" x1="0" x2="1">
+            <stop offset="0%" stop-color="#2563eb"/>
+            <stop offset="25%" stop-color="#60a5fa"/>
+            <stop offset="50%" stop-color="#fbbf24"/>
+            <stop offset="75%" stop-color="#fb923c"/>
+            <stop offset="100%" stop-color="#dc2626"/>
+          </linearGradient>
+        </defs>
+        <rect x="10" y="22" width="260" height="10" rx="5" fill="url(#g1)"/>
+        <polygon points="153,18 160,8 146,8" fill="#0f172a"/>
+        <text x="153" y="50" text-anchor="middle" font-size="9" font-weight="800" fill="#0f172a">55</text>
+      </svg>
+      <div class="gauge-lbl"><span>0 극공포</span><span>25</span><span>50 중립</span><span>75</span><span>100 극탐욕</span></div>
+    </div>
+    <div style="margin-top:10px; font-size: 11.25pt; color:var(--slate2); line-height:1.6;">
+      <b>CPI가 대체로 예상 부합 / 유가 하락 반전에 인플레 부담 완화 / 4거래일 연속 하락 마감·안도 반등 / 기술·메가캡·반도체가 회복 주도 / 근원물가는 여전히 뜨거워 9월 인상 사실상 확정 / 국채금리 전 구간 52주 최고 / 에너지만 유가 하락에 약세 / 이번 주 FOMC가 최대 관문</b>
+    </div>
+  </div>
+  <div>
+    <div class="idx-grid">
+      <div class="ix up"><div class="ix-n">S&amp;P 500 (9/11)</div><div class="ix-v">7,656.98</div><div class="ix-c c-up">+65.28 (+0.86%)</div><span class="ix-t t-up">4일 하락 마감·안도 반등</span></div>
+      <div class="ix up"><div class="ix-n">NASDAQ (9/11)</div><div class="ix-v">26,333.03</div><div class="ix-c c-up">+251.31 (+0.96%)</div><span class="ix-t t-up">기술·메가캡 회복 주도</span></div>
+      <div class="ix up"><div class="ix-n">DOW (9/11)</div><div class="ix-v">52,573.29</div><div class="ix-c c-up">+509.19 (+0.98%)</div><span class="ix-t t-up">경기민감·산업재 반등</span></div>
+      <div class="ix up"><div class="ix-n">RUSSELL 2000 (9/11)</div><div class="ix-v">2,895.67</div><div class="ix-c c-up">+12.99 (+0.45%)</div><span class="ix-t t-warn">금리 최고에 소형주 상승폭 제한</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="g3 mb nb">
+  <div class="dcard">
+    <div class="dcard-t">📊 채권금리 (9/11 종가 · 전 구간 52주 최고)</div>
+    <div class="dr"><span class="dr-l">10Y 美 국채</span><span class="dr-r c-up">4.97% (+3bp·52주 최고)</span></div>
+    <div class="dr"><span class="dr-l">30Y</span><span class="dr-r c-up">5.35% (52주 최고권)</span></div>
+    <div class="dr"><span class="dr-l">2Y(단기)</span><span class="dr-r c-up">4.63% (+8bp·52주 최고)</span></div>
+    <div class="dr"><span class="dr-l">10Y-2Y 스프레드</span><span class="dr-r">+33bp</span></div>
+    <div class="dr"><span class="dr-l">금리 톤</span><span class="dr-r">★근원 CPI 여전히 뜨거워 전 구간 52주 최고·단기금리 주도·9월 인상 베팅 90%대·인상은 사실상 확정</span></div>
+  </div>
+  <div class="dcard">
+    <div class="dcard-t">💱 환율</div>
+    <div class="dr"><span class="dr-l">DXY 달러인덱스</span><span class="dr-r c-up">~99.8 (+0.2%·1주 최고)</span></div>
+    <div class="dr"><span class="dr-l">USD/KRW</span><span class="dr-r c-up">~1,349 (원화 약보합)</span></div>
+    <div class="dr"><span class="dr-l">달러 톤</span><span class="dr-r">강보합</span></div>
+    <div class="dr"><span class="dr-l">원화 톤</span><span class="dr-r">★달러 강세·美 금리 최고에 원화 약보합·외국인 수급엔 여전히 부담(주말 휴장·9/14 재개)</span></div>
+  </div>
+  <div class="dcard">
+    <div class="dcard-t">🛢️ 원자재 · 변동성</div>
+    <div class="dr"><span class="dr-l">WTI 선물</span><span class="dr-r c-dn">99.05 (-3.35%·$100 하회)</span></div>
+    <div class="dr"><span class="dr-l">브렌트</span><span class="dr-r c-dn">103.70 (-3.61%·급락)</span></div>
+    <div class="dr"><span class="dr-l">금</span><span class="dr-r c-up">~4,410 (반등·낙폭 만회)</span></div>
+    <div class="dr"><span class="dr-l">VIX</span><span class="dr-r c-dn">15.84 (-11%·6주 최저권)</span></div>
+    <div class="dr"><span class="dr-l">원자재 톤</span><span class="dr-r">★유가 하락 반전에 인플레 부담 완화·에너지 순환매·VIX 안정·금은 낙폭 만회하며 반등</span></div>
+  </div>
+</div>
+
+<div class="nb">
+  <div class="stit">📊 섹터별 등락률 (9/11 종가 · CPI 인라인·유가 하락에 기술·커뮤니케이션·메가캡이 반등을 주도, 산업재·경기민감도 회복 — 반면 에너지만 유가 급락에 홀로 약세로 전환한 전형적 순환매 장세) ※근사치</div>
+  <div class="sec-chart">
+    <div class="sec-r"><div class="sec-nm">커뮤니케이션 (XLC)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:75%;"></div></div></div><div class="sec-v c-up">+1.50%</div></div>
+    <div class="sec-r"><div class="sec-nm">반도체 (SOX)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:90%;"></div></div></div><div class="sec-v c-up">+1.81%</div></div>
+    <div class="sec-r"><div class="sec-nm">기술 (XLK)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:70%;"></div></div></div><div class="sec-v c-up">+1.40%</div></div>
+    <div class="sec-r"><div class="sec-nm">산업재 (XLI)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:55%;"></div></div></div><div class="sec-v c-up">+1.10%</div></div>
+    <div class="sec-r"><div class="sec-nm">임의소비재 (XLY)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:50%;"></div></div></div><div class="sec-v c-up">+1.00%</div></div>
+    <div class="sec-r"><div class="sec-nm">금융 (XLF)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:40%;"></div></div></div><div class="sec-v c-up">+0.80%</div></div>
+    <div class="sec-r"><div class="sec-nm">헬스케어 (XLV)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:30%;"></div></div></div><div class="sec-v c-up">+0.60%</div></div>
+    <div class="sec-r"><div class="sec-nm">부동산 (XLRE)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:20%;"></div></div></div><div class="sec-v c-up">+0.40%</div></div>
+    <div class="sec-r"><div class="sec-nm">소재 (XLB)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:15%;"></div></div></div><div class="sec-v c-up">+0.30%</div></div>
+    <div class="sec-r"><div class="sec-nm">유틸리티 (XLU)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"></div><div class="sec-bar-c right"><div class="sb up" style="width:10%;"></div></div></div><div class="sec-v c-up">+0.20%</div></div>
+    <div class="sec-r"><div class="sec-nm">필수소비재 (XLP)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"><div class="sb dn" style="width:10%;"></div></div><div class="sec-bar-c right"></div></div><div class="sec-v c-dn">-0.20%</div></div>
+    <div class="sec-r"><div class="sec-nm">에너지 (XLE)</div><div class="sec-vis"><div class="mid"></div><div class="sec-bar-c left"><div class="sb dn" style="width:60%;"></div></div><div class="sec-bar-c right"></div></div><div class="sec-v c-dn">-1.20%</div></div>
+  </div>
+</div>
+
+</div>
+
+<!-- PAGE 2 -->
+<div class="page page-break">
+
+<div class="stit nb">💻 주요 기술주 동향 (9/11 종가 · CPI 인라인·유가 하락·금리 안도에 반도체·메가캡 광역 반등, 에너지만 예외)</div>
+<table class="tbl mb nb">
+  <thead>
+    <tr><th style="width:80px;">티커</th><th>기업</th><th style="width:90px;">종가($)</th><th style="width:80px;">일간</th><th>핵심</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><span class="tk">GOOGL</span><div class="co">Alphabet</div></td><td>알파벳</td><td>334.4</td><td><span class="pct-pill up">+2.66%</span></td><td class="nt"><b>★★메가캡 반등 주도·커뮤니케이션 최강</b></td></tr>
+    <tr><td><span class="tk">AAPL</span><div class="co">Apple</div></td><td>애플</td><td>319.8</td><td><span class="pct-pill up">+2.23%</span></td><td class="nt"><b>★하드웨어 강세·아이폰 이벤트 후 재평가</b></td></tr>
+    <tr><td><span class="tk">HPE</span><div class="co">HP Enterprise</div></td><td>HPE</td><td>—</td><td><span class="pct-pill up">+11.6%</span></td><td class="nt"><b>★★AI 서버·네트워킹·스토리지 수요에 급등</b></td></tr>
+    <tr><td><span class="tk">DELL</span><div class="co">Dell Tech</div></td><td>델</td><td>—</td><td><span class="pct-pill up">+10.0%</span></td><td class="nt"><b>★★RBC 매수 개시·9/21 S&amp;P100 편입</b></td></tr>
+    <tr><td><span class="tk">NVDA</span><div class="co">NVIDIA</div></td><td>엔비디아</td><td>221.5</td><td><span class="pct-pill up">+1.3%</span></td><td class="nt"><b>★★AI 대장·반도체 반등 동참</b></td></tr>
+    <tr><td><span class="tk">AMD</span><div class="co">Adv. Micro Devices</div></td><td>AMD</td><td>515.0</td><td><span class="pct-pill up">+1.5%</span></td><td class="nt"><b>★반도체 회복에 반등</b></td></tr>
+    <tr><td><span class="tk">TSM</span><div class="co">TSMC ADR</div></td><td>TSMC</td><td>434.5</td><td><span class="pct-pill up">+1.4%</span></td><td class="nt"><b>★파운드리 반등</b></td></tr>
+    <tr><td><span class="tk">AVGO</span><div class="co">Broadcom</div></td><td>브로드컴</td><td>361.5</td><td><span class="pct-pill up">+1.3%</span></td><td class="nt">AI ASIC 회복</td></tr>
+    <tr><td><span class="tk">ASML</span><div class="co">ASML Holding</div></td><td>ASML</td><td>1,715.0</td><td><span class="pct-pill up">+1.2%</span></td><td class="nt"><b>★EUV 장비 반등</b></td></tr>
+    <tr><td><span class="tk">MU</span><div class="co">Micron</div></td><td>마이크론</td><td>1,027.5</td><td><span class="pct-pill up">+1.0%</span></td><td class="nt"><b>★메모리 회복·9/30 실적 대기</b></td></tr>
+    <tr><td><span class="tk">MSFT</span><div class="co">Microsoft</div></td><td>마이크로소프트</td><td>491.5</td><td><span class="pct-pill up">+1.0%</span></td><td class="nt">SW 메가캡 회복</td></tr>
+    <tr><td><span class="tk">META</span><div class="co">Meta Platforms</div></td><td>메타</td><td>651.5</td><td><span class="pct-pill up">+1.2%</span></td><td class="nt">커뮤니케이션 강세 동참</td></tr>
+    <tr><td><span class="tk">AMZN</span><div class="co">Amazon</div></td><td>아마존</td><td>251.9</td><td><span class="pct-pill up">+1.0%</span></td><td class="nt">메가캡 반등</td></tr>
+    <tr><td><span class="tk">TSLA</span><div class="co">Tesla</div></td><td>테슬라</td><td>364.0</td><td><span class="pct-pill up">+1.0%</span></td><td class="nt">고베타 반등</td></tr>
+    <tr><td><span class="tk">INTC</span><div class="co">Intel</div></td><td>인텔</td><td>105.4</td><td><span class="pct-pill up">+0.8%</span></td><td class="nt">반도체 회복 동참</td></tr>
+    <tr><td><span class="tk">XOM</span><div class="co">Exxon Mobil</div></td><td>엑슨모빌</td><td>—</td><td><span class="pct-pill dn">-1.5%</span></td><td class="nt"><b>★★유가 하락에 에너지 홀로 약세</b></td></tr>
+    <tr><td><span class="tk">STX</span><div class="co">Seagate</div></td><td>씨게이트</td><td>—</td><td><span class="pct-pill dn">-3.1%</span></td><td class="nt"><b>★급등 후 차익·고멀티플 부담</b></td></tr>
+  </tbody>
+</table>
+
+<div class="g2 mb nb">
+  <div>
+    <div class="stit">📈 강세 (기술·메가캡·AI 인프라 중심)</div>
+    <table class="tbl">
+      <thead><tr><th>티커</th><th>일간</th><th>핵심</th></tr></thead>
+      <tbody>
+        <tr><td class="tk">HPE</td><td><span class="pct-pill up">+11.6%</span></td><td class="nt"><b>★★AI 서버·인프라 수요 재평가</b></td></tr>
+        <tr><td class="tk">델 DELL</td><td><span class="pct-pill up">+10.0%</span></td><td class="nt"><b>★★RBC 매수 개시·S&amp;P100 편입</b></td></tr>
+        <tr><td class="tk">HP HPQ</td><td><span class="pct-pill up">+8.0%</span></td><td class="nt"><b>★RBC 커버리지 개시</b></td></tr>
+        <tr><td class="tk">알파벳 GOOGL</td><td><span class="pct-pill up">+2.66%</span></td><td class="nt"><b>★메가캡 반등 주도</b></td></tr>
+        <tr><td class="tk">애플 AAPL</td><td><span class="pct-pill up">+2.23%</span></td><td class="nt"><b>★하드웨어 강세</b></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <div class="stit">📉 부진·약세 (에너지·유가 하락·차익)</div>
+    <table class="tbl">
+      <thead><tr><th>티커</th><th>일간</th><th>핵심</th></tr></thead>
+      <tbody>
+        <tr><td class="tk">씨게이트 STX</td><td><span class="pct-pill dn">-3.1%</span></td><td class="nt"><b>★급등 후 차익·고멀티플</b></td></tr>
+        <tr><td class="tk">클로락스 CLX</td><td><span class="pct-pill dn">-3.1%</span></td><td class="nt">바클레이즈 목표가 하향</td></tr>
+        <tr><td class="tk">앨버말 ALB</td><td><span class="pct-pill dn">-2.5%</span></td><td class="nt">배당락·리튬 시장 신중</td></tr>
+        <tr><td class="tk">원전 OKLO·SMR</td><td><span class="pct-pill dn">약세</span></td><td class="nt"><b>★원전 테마 차익</b></td></tr>
+        <tr><td class="tk">에너지 XLE</td><td><span class="pct-pill dn">-1.2%</span></td><td class="nt"><b>★★유가 하락에 홀로 약세</b></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="stit nb">🇰🇷 한국 시장 영향 매핑 (9/14(월) · 반도체·기술 반등 = 성장·코스닥 우호 · 유가 하락 = 항공·화학 원가 부담 완화 vs 정유 정제마진 부담 · 美 금리 52주 최고·9월 인상 임박·달러 강세 = 외국인 수급·롱듀레이션 부담 지속)</div>
+<div class="g2 mb nb">
+  <div class="kr-card">
+    <div class="kr-hdr">반도체·기술 반등 + 유가 하락 → 성장·항공·화학 안도</div>
+    <div class="kr-body">
+      <div class="kr-r"><div class="kr-sec">반도체</div><div class="kr-desc">SOX·엔비디아·장비 광역 반등 = <b>★★삼성·SK하이닉스·장비 심리 안도</b>.</div><div class="kr-impact c-up">★★우호</div></div>
+      <div class="kr-r"><div class="kr-sec">성장·코스닥</div><div class="kr-desc">메가캡·기술 반등·CPI 인라인 = <b>★코스닥·성장·바이오 반등 시도 우호</b>.</div><div class="kr-impact c-up">★우호</div></div>
+      <div class="kr-r"><div class="kr-sec">항공·화학</div><div class="kr-desc">유가 하락 반전 = <b>★★항공 연료비·화학 원가 부담 완화</b>.</div><div class="kr-impact c-up">★★우호</div></div>
+      <div class="kr-r"><div class="kr-sec">자동차·산업재</div><div class="kr-desc">위험선호 회복·경기민감 반등 = <b>★자동차·산업재 투자심리 우호</b>.</div><div class="kr-impact c-up">★우호</div></div>
+    </div>
+  </div>
+  <div class="kr-card">
+    <div class="kr-hdr">美 금리 52주 최고 + 9월 인상 임박 + 유가 하락 + 달러 강세 → 정유·수급·금리민감 부담</div>
+    <div class="kr-body">
+      <div class="kr-r"><div class="kr-sec">정유·에너지</div><div class="kr-desc">유가 하락 반전 = <b>★★정제마진·에너지 관련주(S-Oil·SK이노) 차익 부담</b>.</div><div class="kr-impact c-dn">★★유의</div></div>
+      <div class="kr-r"><div class="kr-sec">수급·환율</div><div class="kr-desc">달러 강세·美 금리 최고 = <b>★★외국인 매도·롱듀레이션 부담 지속</b>.</div><div class="kr-impact c-dn">★★유의</div></div>
+      <div class="kr-r"><div class="kr-sec">금리민감·부동산</div><div class="kr-desc">국채금리 52주 최고 = <b>★고밸류·부동산·유틸 등 금리민감 부담</b>.</div><div class="kr-impact c-dn">유의</div></div>
+      <div class="kr-r"><div class="kr-sec">방산</div><div class="kr-desc">중동 긴장 지속 vs 유가 하락 = <b>★방산 모멘텀 중립·선별</b>.</div><div class="kr-impact c-am">중립</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="g2 nb">
+  <div>
+    <div class="stit">🌍 매크로 · 통화정책</div>
+    <div class="dcard" style="margin-bottom:6px;">
+      <div class="dcard-t">🏛️ 통화정책 — CPI 인라인이나 근원 여전히 뜨거워 인상 확정</div>
+      <div class="nt"><b>핵심 = 「8월 CPI가 대체로 예상 부합했지만 근원 물가가 여전히 높아 이번 주 인상이 사실상 확정됐다」</b>. ① <b>★★★헤드라인·근원 CPI가 대체로 컨센서스 부합·시장은 안도 반등</b> ② <b>★★근원은 여전히 목표 상회·9월 인상 베팅 90%대로 급등</b> ③ <b>★국채금리 전 구간 52주 최고·단기금리 주도·이번 주 FOMC가 직접 분수령</b>. <b>한국 시사점</b>: ① <b>★반도체·성장 안도 반등</b> ② <b>★수급·금리민감·정유 부담 지속</b> ③ <b>★FOMC 대기</b>.</div>
+    </div>
+    <div class="dcard">
+      <div class="dcard-t">🛢️ 원자재 — 유가 하락 반전·인플레 부담 완화·금 반등</div>
+      <div class="nt"><b>핵심 = 「중동 긴장 속에서도 유가가 하락 반전하며 인플레·위험선호 압박을 일부 덜어냈다」</b>. ① <b>★★유가가 $100을 하회하며 에너지가 홀로 약세로 전환</b> ② <b>★금은 초반 약세를 딛고 낙폭을 만회하며 반등</b> ③ <b>★달러 강보합에 원화는 약보합</b>. <b>한국 시사점</b>: ① <b>★★항공·화학 안도·정유 차익 부담</b> ② <b>★조선·에너지 수주 서사는 유지</b> ③ <b>★환율 부담은 여전</b>.</div>
+    </div>
+  </div>
+  <div>
+    <div class="stit">🏛️ 이번 주 이벤트 · 신규 모멘텀</div>
+    <div class="dcard" style="margin-bottom:6px;">
+      <div class="dcard-t">⚡ 개별 이슈 — AI 인프라 급등·메가캡 회복·에너지 약세</div>
+      <div class="nt">핵심 = <b>「AI 인프라·메가캡이 반등을 주도, 에너지만 유가 하락에 약세」</b>. ① <b>★★HPE·델·HP가 AI 서버·인프라 수요 재평가로 급등</b> ② <b>★★알파벳·애플 등 메가캡이 회복을 주도하며 반도체 광역 반등</b> ③ <b>★유가 하락에 엑슨·에너지만 약세로 전환</b>. 한국 매핑: <b>★반도체·성장 안도·정유 차익</b>.</div>
+    </div>
+    <div class="dcard">
+      <div class="dcard-t">📅 이번 주 일정 — FOMC·인상 여부·유가 경로</div>
+      <div class="nt">정리: ① <b>★★★9월 FOMC(9/15~16·결정 수 9/16)가 최대 관문·인상(4.00%) 베팅 90%대·점도표/코멘트가 관건</b> ② <b>★★엠파이어스테이트(화)·소매판매/수입물가(수) 등 지표 병행</b> ③ <b>★국채금리 52주 최고 지속 여부·유가 경로</b> ④ <b>★주말 무이벤트·선물 보합에 금 9/11 종가 서사 유지</b> ⑤ <b>★델 S&amp;P100 편입(9/21)·마이크론 실적(9/30)</b>. 한국 매핑: <b>★반도체·성장 반등 참여·수급·금리민감은 FOMC 경계</b>.</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- PAGE 3 -->
+<div class="page page-break">
+
+<div class="stit nb">📈 분석 · 인사이트</div>
+<div class="g2 mb">
+  <div>
+    <div class="ins i-red nb">
+      <span class="ins-tag" style="background:var(--red-bg); color:var(--red);">CPI 인라인·유가 하락·안도 반등</span>
+      <h3>「Relief Rally — CPI 통과·안도 반등」</h3>
+      <p>핵심 = <b>「CPI가 대체로 예상에 부합하고 유가가 하락 반전하며 4일 연속 하락을 안도 반등으로 마감」</b>. ① <b>★★★헤드라인·근원 CPI가 대체로 컨센서스 부합·과도한 인플레 공포 완화</b> ② <b>★★유가 하락 반전에 물가 상방 압박 경감</b> ③ <b>★기술·커뮤니케이션·메가캡이 회복 주도·반도체 광역 반등</b> ④ <b>★4대 지수 동반 상승</b>. <b>반론</b>: <b>「근원은 여전히 뜨거워 반등은 기술적 성격」</b>. <b>한국 시사점</b>: ① <b>★반도체·성장 안도</b> ② <b>★항공·화학 원가 완화</b>.</p>
+    </div>
+    <div class="ins i-blue nb">
+      <span class="ins-tag" style="background:var(--blue-bg); color:var(--blue);">근원 물가·금리 52주 최고·인상 임박</span>
+      <h3>「Hawkish Gate — 인상은 사실상 확정」</h3>
+      <p>핵심 = <b>「지수는 반등했지만 근원 물가가 뜨거워 이번 주 인상이 사실상 확정됐다」</b>. ① <b>★★근원 CPI가 목표를 여전히 상회·9월 인상 베팅 90%대</b> ② <b>★★국채금리가 전 구간 52주 최고로 단기금리 주도</b> ③ <b>★달러 강세·유동성 여건 타이트</b> ④ <b>★이번 주 FOMC 점도표·코멘트가 방향 결정</b>. <b>핵심 시사점</b>: ① <b>「반등에도 금리 부담은 상수」</b> ② <b>「롱듀레이션·고밸류 경계」</b>. 한국: <b>「★수급·금리민감 부담 지속」</b>.</p>
+    </div>
+  </div>
+  <div>
+    <div class="ins i-green nb">
+      <span class="ins-tag" style="background:var(--green-bg); color:var(--green);">AI 인프라 급등·순환매</span>
+      <h3>「AI Infra Leads — AI 인프라가 반등 주도」</h3>
+      <p>핵심 = <b>「HPE·델·HP 등 AI 서버·인프라가 급등하며 반등을 이끌고 에너지에서 자금이 빠지는 순환매」</b>. ① <b>★★HPE가 AI 서버·네트워킹·스토리지 수요 재평가에 급등</b> ② <b>★★델은 RBC 매수 개시·S&amp;P100 편입 호재로 동반 강세</b> ③ <b>★유가 하락에 에너지에서 기술·성장으로 순환매</b> ④ <b>★반도체·메가캡 광역 반등</b>. <b>핵심 시사점</b>: ① <b>「AI 인프라 수요 구조적」</b> ② <b>「순환매 성격」</b>. 한국: <b>「★반도체·서버·성장 우호」</b>.</p>
+    </div>
+    <div class="ins i-amber nb">
+      <span class="ins-tag" style="background:var(--amber-bg); color:var(--amber);">9월 FOMC 분수령</span>
+      <h3>「FOMC D-Day — 인상 관문 도래」</h3>
+      <p>핵심 = <b>「CPI를 통과했지만 최대 관문인 9월 FOMC가 이번 주로 도래」</b>. ① <b>★★★9월 FOMC(9/16)가 인상 여부·점도표의 직접 분수령</b> ② <b>★★인상은 사실상 확정·향후 경로 코멘트가 관건</b> ③ <b>★★금리 52주 최고·달러 강세 유지</b> ④ <b>★유가·중동 긴장 병행 변수</b>. <b>핵심 시사점</b>: ① <b>「이벤트 전 방향 베팅 자제」</b> ② <b>「반등엔 참여하되 헷지 유지」</b>. 한국: <b>「★반도체·성장 반등 참여·수급·금리민감 경계·현금·헷지 유지」</b>.</p>
+    </div>
+  </div>
+</div>
+
+<div class="strat nb">
+  <div class="strat-mode">🎯 전략 모드: Relief-Rally Participation, FOMC-Gated · CPI 통과·유가 하락에 반도체·기술·성장 안도 반등 참여 · 항공·화학 원가 완화 수혜 · 정유·에너지는 차익 경계 · 美 금리 52주 최고·9월 인상 임박에 롱듀레이션·수급·금리민감 부담 지속 · 현금 25%·헷지 20% · 이번 주 9월 FOMC(9/16) 확인 후 비중 조정</div>
+  <ul class="strat-list">
+    <li><span class="bullet">1</span><span><b>★★반도체·기술·성장 안도 반등 참여 — CPI 통과·메가캡 회복</b>. ① <b>★삼성·SK하이닉스·장비 심리 안도·분할 참여</b> ② <b>★코스닥 성장·바이오 반등 시도</b> ③ <b>★급반등 시 추격 자제</b>.</span></li>
+    <li><span class="bullet">2</span><span><b>★★항공·화학 원가 완화 수혜 — 유가 하락 반전</b>. ① <b>★항공 연료비·화학 스프레드 부담 경감</b> ② <b>★위험선호 회복 시 경기민감·자동차 동반</b> ③ <b>★유가 재급등 리스크 병행 점검</b>.</span></li>
+    <li><span class="bullet">3</span><span><b>★정유·에너지 차익 경계 — 유가 하락 순환매</b>. ① <b>★정제마진 우호 논리 약화·차익 소지</b> ② <b>★중동 긴장 재부각 시 되돌림 가능·양방향</b> ③ <b>★비중 상단은 분할 축소</b>.</span></li>
+    <li><span class="bullet">4</span><span><b>★★수급·금리민감 부담 지속 — 금리 52주 최고·달러 강세</b>. ① <b>★외국인 매도·환율 부담에 대형주 선별</b> ② <b>★롱듀레이션·부동산·유틸 등 금리민감 경계</b> ③ <b>★고밸류 추격 자제</b>.</span></li>
+    <li><span class="bullet">5</span><span><b>FOMC-Gated + 현금 25%·헷지 20% — 이번 주 9월 FOMC 대기</b>. ① <b>★★★FOMC(9/16)가 인상·점도표 직접 분수령</b> ② <b>★★인상 사실상 확정·코멘트가 방향 결정</b> ③ <b>★유가·금리·환율 변동성 대비</b> ④ <b>★양방향 시나리오 대비</b> ⑤ <b>★이벤트 통과 후 비중 조정</b>. 「반도체·성장 반등 참여·수급·금리민감 경계·현금 25%·헷지 20%」.</span></li>
+  </ul>
+</div>
+
+<div class="g2 nb" style="margin-top:10px;">
+  <div>
+    <div class="stit">📅 D-Day 일정 (9/14 월~ · 이번 주 FOMC 관문)</div>
+    <div class="sched">
+      <div class="dr"><span class="dr-l">🏛️ ★★★9월 FOMC 인상 여부·점도표·코멘트 <span class="tag r">최중요</span></span><span class="dr-r">9/16(수)</span></div>
+      <div class="dr"><span class="dr-l">🏦 ★재무장관 대형은행 제재 예고(이란 전략) <span class="tag y">지정학</span></span><span class="dr-r">9/14(월)</span></div>
+      <div class="dr"><span class="dr-l">📈 ★★국채금리 전 구간 52주 최고 지속 여부 <span class="tag b">통화정책</span></span><span class="dr-r">진행</span></div>
+      <div class="dr"><span class="dr-l">🛢️ ★★유가 경로·중동 긴장 전개 <span class="tag r">지정학</span></span><span class="dr-r">진행</span></div>
+      <div class="dr"><span class="dr-l">💱 ★달러 강세·원화 약보합·외국인 수급 <span class="tag y">수급</span></span><span class="dr-r">상시</span></div>
+      <div class="dr"><span class="dr-l">🖥️ ★델 S&amp;P100 편입 <span class="tag g">테크</span></span><span class="dr-r">9/21</span></div>
+      <div class="dr"><span class="dr-l">💾 ★마이크론 실적·메모리 사이클 <span class="tag g">테크</span></span><span class="dr-r">9/30</span></div>
+      <div class="dr"><span class="dr-l">🤖 ★AI 인프라·서버 수요 모멘텀 <span class="tag g">테크</span></span><span class="dr-r">확인</span></div>
+    </div>
+  </div>
+  <div>
+    <div class="stit">⚠️ 리스크 체크</div>
+    <div class="ins i-red" style="margin-bottom:6px;">
+      <span class="ins-tag" style="background:var(--red-bg); color:var(--red);">근원 물가·금리 52주 최고·인상 임박</span>
+      <h3>「Hawkish FOMC — 인상·금리 리스크」</h3>
+      <p>리스크 1순위 — <b>근원 물가가 여전히 뜨거운 가운데 이번 주 FOMC에서 인상과 함께 매파적 점도표·코멘트가 나오면 반등이 되돌려지고 위험자산이 재차 압박받을 소지</b>. ① <b>★★★매파 FOMC 시 금리 재급등·성장주 밸류 압박</b> ② <b>★★국채금리 52주 최고 지속 시 롱듀레이션 부담</b> ③ <b>★달러 강세·원화 약세·외국인 수급 부담</b> ④ <b>★고밸류·코스닥·반도체 되돌림</b>. <b>대응</b>: ① 반등 참여는 분할·선별 ② 현금 25%·헷지 20% ③ 금리·환율 변동성 대비 ④ FOMC 확인 후 판단.</p>
+    </div>
+    <div class="ins i-amber">
+      <span class="ins-tag" style="background:var(--amber-bg); color:var(--amber);">순환매·리더십 이동·유가 변수</span>
+      <h3>「Rotation Risk — 순환매·주도주 이동」</h3>
+      <p>리스크 2순위 — <b>유가 하락에 에너지에서 기술·성장으로 자금이 이동한 순환매 성격이라 유가가 재급등하면 리더십이 다시 뒤집힐 수 있는 국면</b>. ① <b>★중동 긴장 재부각 시 유가·에너지 되돌림</b> ② <b>★반등이 AI 인프라·메가캡 소수에 집중돼 폭이 좁음</b> ③ <b>★FOMC 전 관망에 거래 위축 가능</b> ④ <b>★변동성 재확대 경계</b>. <b>대응</b>: ① <b>★반도체·성장 분할·선별 접근</b> ② 항공·화학 원가 수혜 활용 ③ <b>★정유·에너지는 양방향 대비</b> ④ 이벤트 소화 확인 후 판단.</p>
+    </div>
+  </div>
+</div>
+
+<div class="summ nb" style="margin-top:10px;">
+  <div class="summ-hdr">📌 핵심 3줄 요약</div>
+  <div class="summ-body">
+    <div class="summ-item"><div class="summ-n">1</div><div class="summ-t"><b>9/11(금 마감) — 「CPI 인라인·유가 하락에 4일 하락 마감·안도 반등」</b>. SPX 7,656.98(+0.86%)·NASDAQ 26,333.03(+0.96%)·DOW 52,573.29(+0.98%·+509p)·R2K +0.45%·SOX +1.81%. 10Y 4.97%(52주 최고)·2Y 4.63%·WTI $99.05(-3.35%)·VIX 15.84·USD/KRW 약 1,349.</div></div>
+    <div class="summ-item"><div class="summ-n">2</div><div class="summ-t"><b>핵심 트리거 — ★★★8월 CPI 대체로 인라인·유가 $100 하회·기술/메가캡 반등·근원은 여전히 뜨거워 9월 인상 사실상 확정</b>. ① <b>★★GOOGL +2.66%·AAPL +2.23% 메가캡 반등 주도</b> ② <b>★★HPE +11.6%·DELL +10% AI 인프라 급등</b> ③ <b>★에너지(XLE 약 -1.2%)만 유가 하락에 약세</b>.</div></div>
+    <div class="summ-item"><div class="summ-n">3</div><div class="summ-t">한국 시장 영향(9/14 월) — <b>「반도체·기술 반등·유가 하락 안도 vs 금리 52주 최고·인상 임박 부담」</b>. <b>★★우호</b>: 반도체·성장·항공·화학·자동차. <b>★유의</b>: 정유·에너지·외국인 수급·금리민감. <b>★★반등 분할 참여·수급/금리민감 경계·현금 25%·헷지 20%·이번 주 FOMC(9/16) 대기</b>.</div></div>
+  </div>
+</div>
+
+<div class="ftr nb">
+  <p><b>출처</b>: Yahoo Finance(9/11 정규장 종가 기준) · CNBC · Reuters · Bloomberg · TheStreet · Charles Schwab. ※SOX·섹터 ETF·개별 종목 등락률·2Y/30Y·DXY·USD/KRW·VIX·금 일부 수치는 근사치.</p>
+  <p>본 자료는 정보 제공 목적이며 투자 권유가 아닙니다. 투자 결정의 책임은 본인에게 있습니다.</p>
+  <p>생성: 2026-09-14 07:00 KST · 미국 시장 모닝 브리핑 (9/11 금 정규장 종가 기준 · 국내장 9/14 월 프리뷰 — 8월 CPI가 대체로 예상에 부합(헤드라인 +3.4%y/y·근원 +2.4%y/y)하고 중동 긴장 속에서도 유가가 하락 반전(WTI -3.35% $99.05·브렌트 -3.61% $103.70·$100 하회)하며 4거래일 연속 하락을 안도 반등으로 마감 — S&amp;P 500이 7,656.98(+0.86%)·나스닥 26,333.03(+0.96%)·다우 52,573.29(+0.98%·+509p)·러셀2000 +0.45%로 동반 상승 — 알파벳(+2.66%)·애플(+2.23%) 등 메가캡과 HPE(+11.6%)·델(+10%) AI 인프라가 반등을 주도, 반도체(SOX +1.81%)도 광역 회복, 에너지(XLE 약 -1.2%)만 유가 하락에 홀로 약세 — 다만 근원 물가가 여전히 뜨거워 9월 인상 베팅이 90%대로 굳어졌고 국채금리는 전 구간 52주 최고(10Y 4.97%·2Y 4.63%) — VIX 15.84(안정)·금 약 4,410(낙폭 만회 반등)·달러 강보합·원화 약보합 — 이번 주 9월 FOMC(9/16 수)가 최대 관문 · 10Y 4.96%·WTI $99.05·USD/KRW 약 1,349)</p>
+</div>
+
+</div>
+
+</body>
+</html>
